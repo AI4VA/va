@@ -1,0 +1,9 @@
+digraph "Call graph" {
+	label="Call graph";
+
+	Node0x55bcf2c4b470 [shape=record,label="{external node}"];
+	Node0x55bcf2c4b470 -> Node0x55bcf2c4b510;
+	Node0x55bcf2c4b470 -> Node0x55bcf2c4b5b0;
+	Node0x55bcf2c4b510 [shape=record,label="{main}"];
+	Node0x55bcf2c4b5b0 [shape=record,label="{llvm.dbg.declare}"];
+}
