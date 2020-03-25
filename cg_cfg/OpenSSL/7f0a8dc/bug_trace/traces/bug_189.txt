@@ -1,0 +1,124 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:206: error: RESOURCE_LEAK
+  resource acquired by call to `BIO_socket()` at line 137, column 19 is not released after line 206, column 18.
+Showing all 16 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:75:1: start of procedure conn_state()
+73.   };
+74.   
+75. > static int conn_state(BIO *b, BIO_CONNECT *c)
+76.   {
+77.       int ret = -1, i;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:77:5: 
+75.   static int conn_state(BIO *b, BIO_CONNECT *c)
+76.   {
+77. >     int ret = -1, i;
+78.       BIO_info_cb *cb = NULL;
+79.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:78:5: 
+76.   {
+77.       int ret = -1, i;
+78. >     BIO_info_cb *cb = NULL;
+79.   
+80.       if (c->info_callback != NULL)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:80:9: Taking true branch
+78.       BIO_info_cb *cb = NULL;
+79.   
+80.       if (c->info_callback != NULL)
+              ^
+81.           cb = c->info_callback;
+82.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:81:9: 
+79.   
+80.       if (c->info_callback != NULL)
+81. >         cb = c->info_callback;
+82.   
+83.       for (;;) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:209:5: Loop condition is true. Entering loop body
+207.                   goto end;
+208.           }
+209.       }
+           ^
+210.   
+211.       /* Loop does not exit */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:84:9: 
+82.   
+83.       for (;;) {
+84. >         switch (c->state) {
+85.           case BIO_CONN_S_BEFORE:
+86.               if (c->param_hostname == NULL && c->param_service == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:85:9: Switch condition is false. Skipping switch case
+83.       for (;;) {
+84.           switch (c->state) {
+85.           case BIO_CONN_S_BEFORE:
+              ^
+86.               if (c->param_hostname == NULL && c->param_service == NULL) {
+87.                   BIOerr(BIO_F_CONN_STATE, BIO_R_NO_HOSTNAME_OR_SERVICE_SPECIFIED);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:96:9: Switch condition is false. Skipping switch case
+94.               break;
+95.   
+96.           case BIO_CONN_S_GET_ADDR:
+              ^
+97.               {
+98.                   int family = AF_UNSPEC;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:136:9: Switch condition is true. Entering switch case
+134.               break;
+135.   
+136.           case BIO_CONN_S_CREATE_SOCKET:
+               ^
+137.               ret = BIO_socket(BIO_ADDRINFO_family(c->addr_iter),
+138.                                BIO_ADDRINFO_socktype(c->addr_iter),
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:137:13: 
+135.   
+136.           case BIO_CONN_S_CREATE_SOCKET:
+137. >             ret = BIO_socket(BIO_ADDRINFO_family(c->addr_iter),
+138.                                BIO_ADDRINFO_socktype(c->addr_iter),
+139.                                BIO_ADDRINFO_protocol(c->addr_iter), 0);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:140:17: Taking false branch
+138.                                BIO_ADDRINFO_socktype(c->addr_iter),
+139.                                BIO_ADDRINFO_protocol(c->addr_iter), 0);
+140.               if (ret == (int)INVALID_SOCKET) {
+                       ^
+141.                   ERR_raise_data(ERR_LIB_SYS, get_last_socket_error(),
+142.                                  "calling socket(%s, %s)",
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:147:13: 
+145.                   goto exit_loop;
+146.               }
+147. >             b->num = ret;
+148.               c->state = BIO_CONN_S_CONNECT;
+149.               break;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:148:13: 
+146.               }
+147.               b->num = ret;
+148. >             c->state = BIO_CONN_S_CONNECT;
+149.               break;
+150.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:205:13: Taking true branch
+203.           }
+204.   
+205.           if (cb != NULL) {
+                   ^
+206.               if ((ret = cb((BIO *)b, c->state, ret)) == 0)
+207.                   goto end;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:206:17: Skipping __function_pointer__(): unresolved function pointer
+204.   
+205.           if (cb != NULL) {
+206.               if ((ret = cb((BIO *)b, c->state, ret)) == 0)
+                       ^
+207.                   goto end;
+208.           }

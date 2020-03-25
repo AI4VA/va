@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_dyn.c:218: error: DEAD_STORE
+  The value written to &new_idx (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_dyn.c:218:13: Write of unused value
+216.               /* Good, someone didn't beat us to it */
+217.               dynamic_ex_data_idx = new_idx;
+218.               new_idx = -1;
+                   ^
+219.           }
+220.           CRYPTO_THREAD_unlock(global_engine_lock);

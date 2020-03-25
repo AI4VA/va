@@ -1,0 +1,62 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1739: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 1685 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1739, column 9.
+Showing all 8 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1680:1: start of procedure do_sign_init()
+1678.   #endif
+1679.   
+1680. > static int do_sign_init(EVP_MD_CTX *ctx, EVP_PKEY *pkey,
+1681.                           const EVP_MD *md, STACK_OF(OPENSSL_STRING) *sigopts)
+1682.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1683:5: 
+1681.                           const EVP_MD *md, STACK_OF(OPENSSL_STRING) *sigopts)
+1682.   {
+1683. >     EVP_PKEY_CTX *pkctx = NULL;
+1684.   #ifndef OPENSSL_NO_SM2
+1685.       EVP_PKEY_CTX *pctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1685:5: 
+1683.       EVP_PKEY_CTX *pkctx = NULL;
+1684.   #ifndef OPENSSL_NO_SM2
+1685. >     EVP_PKEY_CTX *pctx = NULL;
+1686.   #endif
+1687.       int i, def_nid, ret = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1687:5: 
+1685.       EVP_PKEY_CTX *pctx = NULL;
+1686.   #endif
+1687. >     int i, def_nid, ret = 0;
+1688.   
+1689.       if (ctx == NULL)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1689:9: Taking true branch
+1687.       int i, def_nid, ret = 0;
+1688.   
+1689.       if (ctx == NULL)
+                ^
+1690.           goto err;
+1691.   #ifndef OPENSSL_NO_SM2
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1736:2: 
+1734.   
+1735.       ret = 1;
+1736. >  err:
+1737.   #ifndef OPENSSL_NO_SM2
+1738.       if (!ret)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1738:10: Taking true branch
+1736.    err:
+1737.   #ifndef OPENSSL_NO_SM2
+1738.       if (!ret)
+                 ^
+1739.           EVP_PKEY_CTX_free(pctx);
+1740.   #endif
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1739:9: 
+1737.   #ifndef OPENSSL_NO_SM2
+1738.       if (!ret)
+1739. >         EVP_PKEY_CTX_free(pctx);
+1740.   #endif
+1741.       return ret;

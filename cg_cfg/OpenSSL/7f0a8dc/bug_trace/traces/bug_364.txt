@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/params_api_test.c:411: error: UNINITIALIZED_VALUE
+  The value read from p was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/params_api_test.c:411:15: 
+409.       param.data = &p;
+410.       return TEST_true(OSSL_PARAM_set_double(&param, 3.14159))
+411. >            && TEST_double_eq(p, 3.14159);
+412.   }
+413.   

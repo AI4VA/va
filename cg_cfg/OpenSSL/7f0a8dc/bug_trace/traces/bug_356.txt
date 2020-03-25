@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct.c:383: error: DEAD_STORE
+  The value written to &is_sct_valid (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct.c:383:9: Write of unused value
+381.   
+382.       for (i = 0; i < sct_count; ++i) {
+383.           int is_sct_valid = -1;
+               ^
+384.           SCT *sct = sk_SCT_value(scts, i);
+385.   

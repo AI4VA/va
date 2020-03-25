@@ -1,0 +1,108 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:493: error: NULL_DEREFERENCE
+  pointer `server_ctx` last assigned on line 394 could be null and is dereferenced by call to `SSL_CTX_free()` at line 493, column 5.
+Showing all 14 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:391:1: start of procedure test_handshake()
+389.   }
+390.   
+391. > static int test_handshake(int idx)
+392.   {
+393.       int ret = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:393:5: 
+391.   static int test_handshake(int idx)
+392.   {
+393. >     int ret = 0;
+394.       SSL_CTX *server_ctx = NULL, *server2_ctx = NULL, *client_ctx = NULL,
+395.           *resume_server_ctx = NULL, *resume_client_ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:394:5: 
+392.   {
+393.       int ret = 0;
+394. >     SSL_CTX *server_ctx = NULL, *server2_ctx = NULL, *client_ctx = NULL,
+395.           *resume_server_ctx = NULL, *resume_client_ctx = NULL;
+396.       SSL_TEST_CTX *test_ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:396:5: 
+394.       SSL_CTX *server_ctx = NULL, *server2_ctx = NULL, *client_ctx = NULL,
+395.           *resume_server_ctx = NULL, *resume_client_ctx = NULL;
+396. >     SSL_TEST_CTX *test_ctx = NULL;
+397.       HANDSHAKE_RESULT *result = NULL;
+398.       char test_app[MAX_TESTCASE_NAME_LENGTH];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:397:5: 
+395.           *resume_server_ctx = NULL, *resume_client_ctx = NULL;
+396.       SSL_TEST_CTX *test_ctx = NULL;
+397. >     HANDSHAKE_RESULT *result = NULL;
+398.       char test_app[MAX_TESTCASE_NAME_LENGTH];
+399.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:400:5: Skipping BIO_snprintf(): empty list of specs
+398.       char test_app[MAX_TESTCASE_NAME_LENGTH];
+399.   
+400.       BIO_snprintf(test_app, sizeof(test_app), "test-%d", idx);
+           ^
+401.   
+402.       test_ctx = SSL_TEST_CTX_create(conf, test_app);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:402:5: Skipping SSL_TEST_CTX_create(): empty list of specs
+400.       BIO_snprintf(test_app, sizeof(test_app), "test-%d", idx);
+401.   
+402.       test_ctx = SSL_TEST_CTX_create(conf, test_app);
+           ^
+403.       if (!TEST_ptr(test_ctx))
+404.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:403:10: Taking false branch
+401.   
+402.       test_ctx = SSL_TEST_CTX_create(conf, test_app);
+403.       if (!TEST_ptr(test_ctx))
+                ^
+404.           goto err;
+405.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:407:9: Taking false branch
+405.   
+406.   #ifndef OPENSSL_NO_DTLS
+407.       if (test_ctx->method == SSL_TEST_METHOD_DTLS) {
+               ^
+408.           server_ctx = SSL_CTX_new(DTLS_server_method());
+409.           if (!TEST_true(SSL_CTX_set_max_proto_version(server_ctx, 0)))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:432:9: Taking false branch
+430.       }
+431.   #endif
+432.       if (test_ctx->method == SSL_TEST_METHOD_TLS) {
+               ^
+433.           server_ctx = SSL_CTX_new(TLS_server_method());
+434.           if (!TEST_true(SSL_CTX_set_max_proto_version(server_ctx, 0)))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:466:10: Taking true branch
+464.   #endif
+465.   
+466.       if (!TEST_ptr(server_ctx)
+                ^
+467.               || !TEST_ptr(client_ctx)
+468.               || !TEST_int_gt(CONF_modules_load(conf, test_app, 0),  0))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:491:1: 
+489.           ret = check_test(result, test_ctx);
+490.   
+491. > err:
+492.       CONF_modules_unload(0);
+493.       SSL_CTX_free(server_ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:492:5: 
+490.   
+491.   err:
+492. >     CONF_modules_unload(0);
+493.       SSL_CTX_free(server_ctx);
+494.       SSL_CTX_free(server2_ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:493:5: 
+491.   err:
+492.       CONF_modules_unload(0);
+493. >     SSL_CTX_free(server_ctx);
+494.       SSL_CTX_free(server2_ctx);
+495.       SSL_CTX_free(client_ctx);

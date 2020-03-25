@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:2525: error: DEAD_STORE
+  The value written to &pbuf (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:2525:7: Write of unused value
+2523.           *(pbuf++) = ' ';
+2524.       *(pbuf++) = ':';
+2525.       *(pbuf++) = '\0';
+              ^
+2526.       BIO_puts(bio_err, buf);
+2527.   

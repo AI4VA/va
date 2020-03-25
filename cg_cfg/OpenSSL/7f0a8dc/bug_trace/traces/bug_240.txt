@@ -1,0 +1,76 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:136: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 136, column 9.
+Showing all 10 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:114:1: start of procedure select_server_ctx()
+112.    * An empty SNI extension also returns SSL_TSLEXT_ERR_NOACK.
+113.    */
+114. > static int select_server_ctx(SSL *s, void *arg, int ignore)
+115.   {
+116.       const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:116:5: 
+114.   static int select_server_ctx(SSL *s, void *arg, int ignore)
+115.   {
+116. >     const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+117.       HANDSHAKE_EX_DATA *ex_data =
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:117:5: 
+115.   {
+116.       const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+117. >     HANDSHAKE_EX_DATA *ex_data =
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+119.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:120:9: Taking false branch
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+119.   
+120.       if (servername == NULL) {
+               ^
+121.           ex_data->servername = SSL_TEST_SERVERNAME_SERVER1;
+122.           return SSL_TLSEXT_ERR_NOACK;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:125:9: Taking true branch
+123.       }
+124.   
+125.       if (strcmp(servername, "server2") == 0) {
+               ^
+126.           SSL_CTX *new_ctx = (SSL_CTX*)arg;
+127.           SSL_set_SSL_CTX(s, new_ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:126:9: 
+124.   
+125.       if (strcmp(servername, "server2") == 0) {
+126. >         SSL_CTX *new_ctx = (SSL_CTX*)arg;
+127.           SSL_set_SSL_CTX(s, new_ctx);
+128.           /*
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:127:9: 
+125.       if (strcmp(servername, "server2") == 0) {
+126.           SSL_CTX *new_ctx = (SSL_CTX*)arg;
+127. >         SSL_set_SSL_CTX(s, new_ctx);
+128.           /*
+129.            * Copy over all the SSL_CTX options - reasonable behavior
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:133:9: 
+131.            * contexts differ/conflict
+132.            */
+133. >         SSL_clear_options(s, 0xFFFFFFFFL);
+134.           SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+135.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:134:9: 
+132.            */
+133.           SSL_clear_options(s, 0xFFFFFFFFL);
+134. >         SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+135.   
+136.           ex_data->servername = SSL_TEST_SERVERNAME_SERVER2;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:136:9: 
+134.           SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+135.   
+136. >         ex_data->servername = SSL_TEST_SERVERNAME_SERVER2;
+137.           return SSL_TLSEXT_ERR_OK;
+138.       } else if (strcmp(servername, "server1") == 0) {

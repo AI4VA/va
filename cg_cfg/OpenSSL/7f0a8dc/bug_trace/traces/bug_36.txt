@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:98: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:98:9: Write of unused value
+96.           iv = &(*ivec)[0];
+97.           l2c(xor0, iv);
+98.           l2c(xor1, iv);
+               ^
+99.       }
+100.       tin0 = tin1 = tout0 = tout1 = xor0 = xor1 = 0;

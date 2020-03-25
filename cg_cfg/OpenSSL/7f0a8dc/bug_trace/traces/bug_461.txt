@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1625: error: DEAD_STORE
+  The value written to &cp (type unsigned char const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1625:20: Write of unused value
+1623.                      "/type0=value0/type1=value1/type2=... where characters may "
+1624.                      "be escaped by \\. This name is not in that format: '%s'\n",
+1625.                      --cp);
+                           ^
+1626.           return NULL;
+1627.       }

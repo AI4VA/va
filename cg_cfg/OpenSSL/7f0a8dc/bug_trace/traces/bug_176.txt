@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/keymgmt_lib.c:174: error: DEAD_STORE
+  The value written to &j (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/keymgmt_lib.c:174:5: Write of unused value
+172.        * outside the array.
+173.        */
+174.       j = ossl_assert(i < OSSL_NELEM(pk->pkeys));
+           ^
+175.   
+176.       if (provkey != NULL) {

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/mdc2test.c:53: error: DEAD_STORE
+  The value written to &i (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/mdc2test.c:53:12: Write of unused value
+51.       params[i++] = OSSL_PARAM_construct_uint(OSSL_DIGEST_PARAM_PAD_TYPE,
+52.                                               &pad_type),
+53.       params[i++] = OSSL_PARAM_construct_end();
+                 ^
+54.   
+55.       prov = OSSL_PROVIDER_load(NULL, "legacy");

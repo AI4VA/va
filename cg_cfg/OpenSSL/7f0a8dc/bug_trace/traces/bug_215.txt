@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_time.c:259: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_time.c:259:5: Write of unused value
+257.       totalTime += tm_Time_F(STOP); /* Add the time for this iteration */
+258.   
+259.       i = (int)((long)time(NULL) - finishtime + maxtime);
+           ^
+260.       printf
+261.           ("\n\n%d connections in %.2fs; %.2f connections/user sec, bytes read %ld\n",

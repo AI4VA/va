@@ -1,0 +1,104 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:582: error: NULL_DEREFERENCE
+  pointer `name` last assigned on line 573 could be null and is dereferenced by call to `strlen()` at line 582, column 45.
+Showing all 13 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:551:1: start of procedure EVP_PKEY_CTX_set_signature_md()
+549.   }
+550.   
+551. > int EVP_PKEY_CTX_set_signature_md(EVP_PKEY_CTX *ctx, const EVP_MD *md)
+552.   {
+553.       OSSL_PARAM sig_md_params[3], *p = sig_md_params;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:553:5: 
+551.   int EVP_PKEY_CTX_set_signature_md(EVP_PKEY_CTX *ctx, const EVP_MD *md)
+552.   {
+553. >     OSSL_PARAM sig_md_params[3], *p = sig_md_params;
+554.       size_t mdsize;
+555.       const char *name;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:9: Taking false branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:25: Taking true branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+                               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:25: Taking true branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+                               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:25: Taking true branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+                               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:25: Taking true branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+                               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:557:25: Taking false branch
+555.       const char *name;
+556.   
+557.       if (ctx == NULL || !EVP_PKEY_CTX_IS_SIGNATURE_OP(ctx)) {
+                               ^
+558.           ERR_raise(ERR_LIB_EVP, EVP_R_COMMAND_NOT_SUPPORTED);
+559.           /* Uses the same return values as EVP_PKEY_CTX_ctrl */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:564:9: Taking false branch
+562.   
+563.       /* TODO(3.0): Remove this eventually when no more legacy */
+564.       if (ctx->op.sig.sigprovctx == NULL)
+               ^
+565.           return EVP_PKEY_CTX_ctrl(ctx, -1, EVP_PKEY_OP_TYPE_SIG,
+566.                                    EVP_PKEY_CTRL_MD, 0, (void *)(md));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:568:9: Taking false branch
+566.                                    EVP_PKEY_CTRL_MD, 0, (void *)(md));
+567.   
+568.       if (md == NULL) {
+               ^
+569.           name = "";
+570.           mdsize = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:572:9: Skipping EVP_MD_size(): empty list of specs
+570.           mdsize = 0;
+571.       } else {
+572.           mdsize = EVP_MD_size(md);
+               ^
+573.           name = EVP_MD_name(md);
+574.       }
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:573:9: 
+571.       } else {
+572.           mdsize = EVP_MD_size(md);
+573. >         name = EVP_MD_name(md);
+574.       }
+575.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:576:5: 
+574.       }
+575.   
+576. >     *p++ = OSSL_PARAM_construct_utf8_string(OSSL_SIGNATURE_PARAM_DIGEST,
+577.                                               /*
+578.                                                * Cast away the const. This is read

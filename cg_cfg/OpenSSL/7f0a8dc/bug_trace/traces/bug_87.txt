@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:46: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:46:13: Write of unused value
+44.               l2n(t, dp);
+45.               t = ti[1];
+46.               l2n(t, dp);
+                  ^
+47.               save++;
+48.           }

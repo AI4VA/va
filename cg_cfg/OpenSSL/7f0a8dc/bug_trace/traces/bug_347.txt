@@ -1,0 +1,32 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:347: error: NULL_DEREFERENCE
+  pointer `local` last assigned on line 334 could be null and is dereferenced by call to `init_get_thread_local()` at line 347, column 13.
+Showing all 4 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:321:1: start of procedure ossl_init_thread_start()
+319.   }
+320.   
+321. > int ossl_init_thread_start(const void *index, void *arg,
+322.                              OSSL_thread_stop_handler_fn handfn)
+323.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:327:5: 
+325.       THREAD_EVENT_HANDLER *hand;
+326.   #ifdef FIPS_MODE
+327. >     OPENSSL_CTX *ctx = arg;
+328.   
+329.       /*
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:334:5: 
+332.        * gets informed about thread stop events individually.
+333.        */
+334. >     CRYPTO_THREAD_LOCAL *local
+335.           = openssl_ctx_get_data(ctx, OPENSSL_CTX_THREAD_EVENT_HANDLER_INDEX,
+336.                                  &thread_event_ossl_ctx_method);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:347:5: 
+345.   #endif
+346.   
+347. >     hands = init_get_thread_local(local, 1, 0);
+348.       if (hands == NULL)
+349.           return 0;

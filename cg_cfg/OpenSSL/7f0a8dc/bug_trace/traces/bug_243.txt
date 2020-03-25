@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:121: error: NULL_DEREFERENCE
+  pointer `next` last assigned on line 119 could be null and is dereferenced by call to `BIO_test_flags()` at line 121, column 13.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:116:1: start of procedure copy_flags()
+114.   }
+115.   
+116. > static void copy_flags(BIO *bio)
+117.   {
+118.       int flags;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:119:5: 
+117.   {
+118.       int flags;
+119. >     BIO *next = BIO_next(bio);
+120.   
+121.       flags = BIO_test_flags(next, BIO_FLAGS_SHOULD_RETRY | BIO_FLAGS_RWS);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:121:5: 
+119.       BIO *next = BIO_next(bio);
+120.   
+121. >     flags = BIO_test_flags(next, BIO_FLAGS_SHOULD_RETRY | BIO_FLAGS_RWS);
+122.       BIO_clear_flags(bio, BIO_FLAGS_SHOULD_RETRY | BIO_FLAGS_RWS);
+123.       BIO_set_flags(bio, flags);

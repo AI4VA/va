@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/time_offset_test.c:71: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/time_offset_test.c:71:5: Write of unused value
+69.       ASN1_TIME at;
+70.       const TESTDATA *testdata = &tests[idx];
+71.       int ret = -2;
+          ^
+72.       int day, sec;
+73.   

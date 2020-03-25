@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/app_params.c:69: error: DEAD_STORE
+  The value written to &bufsz (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/app_params.c:69:9: Write of unused value
+67.       if (printed_len > 0) {
+68.           buf += printed_len;
+69.           bufsz -= printed_len;
+              ^
+70.       }
+71.       *buf = '\0';

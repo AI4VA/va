@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1667: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.session_ticket_do_not_call was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1667:5: 
+1665.       else
+1666.           ret->session_id = SSL_TEST_SESSION_ID_YES;
+1667. >     ret->session_ticket_do_not_call = server_ex_data.session_ticket_do_not_call;
+1668.   
+1669.   #ifndef OPENSSL_NO_NEXTPROTONEG

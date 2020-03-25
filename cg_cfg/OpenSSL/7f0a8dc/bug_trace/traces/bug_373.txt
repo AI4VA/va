@@ -1,0 +1,49 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:436: error: NULL_DEREFERENCE
+  pointer `aa` last assigned on line 435 could be null and is dereferenced by call to `BN_set_negative()` at line 436, column 5.
+Showing all 6 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:427:1: start of procedure test_BN_abs_eq_word()
+425.   }
+426.   
+427. > int test_BN_abs_eq_word(const char *file, int line, const char *bns,
+428.                           const char *ws, const BIGNUM *a, BN_ULONG w)
+429.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:432:9: Taking true branch
+430.       BIGNUM *bw, *aa;
+431.   
+432.       if (a != NULL && BN_abs_is_word(a, w))
+               ^
+433.           return 1;
+434.       bw = BN_new();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:432:22: Taking false branch
+430.       BIGNUM *bw, *aa;
+431.   
+432.       if (a != NULL && BN_abs_is_word(a, w))
+                            ^
+433.           return 1;
+434.       bw = BN_new();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:434:5: Skipping BN_new(): empty list of specs
+432.       if (a != NULL && BN_abs_is_word(a, w))
+433.           return 1;
+434.       bw = BN_new();
+           ^
+435.       aa = BN_dup(a);
+436.       BN_set_negative(aa, 0);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:435:5: 
+433.           return 1;
+434.       bw = BN_new();
+435. >     aa = BN_dup(a);
+436.       BN_set_negative(aa, 0);
+437.       BN_set_word(bw, w);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:436:5: 
+434.       bw = BN_new();
+435.       aa = BN_dup(a);
+436. >     BN_set_negative(aa, 0);
+437.       BN_set_word(bw, w);
+438.       test_fail_bignum_message(NULL, file, line, "BIGNUM", bns, ws, "abs==",

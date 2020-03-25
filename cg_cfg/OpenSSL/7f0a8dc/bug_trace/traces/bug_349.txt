@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:333: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 331 could be null and is dereferenced at line 333, column 5.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:326:1: start of procedure do_not_call_session_ticket_cb()
+324.   }
+325.   
+326. > static int do_not_call_session_ticket_cb(SSL *s, unsigned char *key_name,
+327.                                            unsigned char *iv,
+328.                                            EVP_CIPHER_CTX *ctx,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:331:5: 
+329.                                            HMAC_CTX *hctx, int enc)
+330.   {
+331. >     HANDSHAKE_EX_DATA *ex_data =
+332.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+333.       ex_data->session_ticket_do_not_call = 1;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:333:5: 
+331.       HANDSHAKE_EX_DATA *ex_data =
+332.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+333. >     ex_data->session_ticket_do_not_call = 1;
+334.       return 0;
+335.   }

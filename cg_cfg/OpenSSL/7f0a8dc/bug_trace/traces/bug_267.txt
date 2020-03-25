@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:186: error: DEAD_STORE
+  The value written to &remaining (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:186:5: Write of unused value
+184.       if (len + 2 > remaining)
+185.           return 0;
+186.       remaining = len;
+           ^
+187.       servername = (const char *)p;
+188.   

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cbc_cksm.c:43: error: DEAD_STORE
+  The value written to &tout0 (type unsigned int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cbc_cksm.c:43:5: Write of unused value
+41.           l2c(tout1, out);
+42.       }
+43.       tout0 = tin0 = tin1 = tin[0] = tin[1] = 0;
+          ^
+44.       /*
+45.        * Transform the data in tout1 so that it will match the return value

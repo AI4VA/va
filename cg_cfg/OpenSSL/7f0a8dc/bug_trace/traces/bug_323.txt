@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/srp.c:400: error: DEAD_STORE
+  The value written to &userindex (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/srp.c:400:9: Write of unused value
+398.   
+399.       while (mode == OPT_LIST || user != NULL) {
+400.           int userindex = -1;
+               ^
+401.   
+402.           if (user != NULL && verbose > 1)

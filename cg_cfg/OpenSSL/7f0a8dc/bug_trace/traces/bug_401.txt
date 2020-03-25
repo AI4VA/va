@@ -1,0 +1,91 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:704: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 639 could be null and is dereferenced by call to `SSL_CTX_free()` at line 704, column 5.
+Showing all 12 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:634:1: start of procedure execute_test_large_message()
+632.   #endif
+633.   
+634. > static int execute_test_large_message(const SSL_METHOD *smeth,
+635.                                         const SSL_METHOD *cmeth,
+636.                                         int min_version, int max_version,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:639:5: 
+637.                                         int read_ahead)
+638.   {
+639. >     SSL_CTX *cctx = NULL, *sctx = NULL;
+640.       SSL *clientssl = NULL, *serverssl = NULL;
+641.       int testresult = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:640:5: 
+638.   {
+639.       SSL_CTX *cctx = NULL, *sctx = NULL;
+640. >     SSL *clientssl = NULL, *serverssl = NULL;
+641.       int testresult = 0;
+642.       int i;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:641:5: 
+639.       SSL_CTX *cctx = NULL, *sctx = NULL;
+640.       SSL *clientssl = NULL, *serverssl = NULL;
+641. >     int testresult = 0;
+642.       int i;
+643.       BIO *certbio = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:643:5: 
+641.       int testresult = 0;
+642.       int i;
+643. >     BIO *certbio = NULL;
+644.       X509 *chaincert = NULL;
+645.       int certlen;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:644:5: 
+642.       int i;
+643.       BIO *certbio = NULL;
+644. >     X509 *chaincert = NULL;
+645.       int certlen;
+646.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:647:10: Taking true branch
+645.       int certlen;
+646.   
+647.       if (!TEST_ptr(certbio = BIO_new_file(cert, "r")))
+                ^
+648.           goto end;
+649.       chaincert = PEM_read_bio_X509(certbio, NULL, NULL, NULL);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:700:2: 
+698.   
+699.       testresult = 1;
+700. >  end:
+701.       X509_free(chaincert);
+702.       SSL_free(serverssl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:701:5: 
+699.       testresult = 1;
+700.    end:
+701. >     X509_free(chaincert);
+702.       SSL_free(serverssl);
+703.       SSL_free(clientssl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:702:5: Skipping SSL_free(): empty list of specs
+700.    end:
+701.       X509_free(chaincert);
+702.       SSL_free(serverssl);
+           ^
+703.       SSL_free(clientssl);
+704.       SSL_CTX_free(sctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:703:5: Skipping SSL_free(): empty list of specs
+701.       X509_free(chaincert);
+702.       SSL_free(serverssl);
+703.       SSL_free(clientssl);
+           ^
+704.       SSL_CTX_free(sctx);
+705.       SSL_CTX_free(cctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:704:5: 
+702.       SSL_free(serverssl);
+703.       SSL_free(clientssl);
+704. >     SSL_CTX_free(sctx);
+705.       SSL_CTX_free(cctx);
+706.   

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs12/p12_utl.c:141: error: DEAD_STORE
+  The value written to &unitmp (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs12/p12_utl.c:141:6: Write of unused value
+139.       /* Make result double null terminated */
+140.       *unitmp++ = 0;
+141.       *unitmp++ = 0;
+            ^
+142.       if (unilen)
+143.           *unilen = ulen;

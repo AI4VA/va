@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:163: error: DEAD_STORE
+  The value written to &client_random_size (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:163:5: Write of unused value
+161.       char *token = NULL;
+162.       unsigned char actual_client_random[SSL3_RANDOM_SIZE] = {0};
+163.       size_t client_random_size = SSL3_RANDOM_SIZE;
+           ^
+164.       unsigned char actual_master_key[SSL_MAX_MASTER_KEY_LENGTH] = {0};
+165.       size_t master_key_size = SSL_MAX_MASTER_KEY_LENGTH;

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_lbuf.c:304: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_lbuf.c:304:5: Write of unused value
+302.   static long linebuffer_callback_ctrl(BIO *b, int cmd, BIO_info_cb *fp)
+303.   {
+304.       long ret = 1;
+           ^
+305.   
+306.       if (b->next_bio == NULL)

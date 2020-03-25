@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_mem.c:329: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_mem.c:329:5: Write of unused value
+327.   {
+328.       int i, j;
+329.       int ret = -1;
+           ^
+330.       char *p;
+331.       BIO_BUF_MEM *bbm = (BIO_BUF_MEM *)bp->ptr;

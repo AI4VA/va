@@ -1,0 +1,55 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:111: error: NULL_DEREFERENCE
+  pointer `data` last assigned on line 108 could be null and is dereferenced at line 111, column 23.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:102:1: start of procedure ui_read()
+100.       return 1;
+101.   }
+102. > static int ui_read(UI *ui, UI_STRING *uis)
+103.   {
+104.       switch (UI_get_string_type(uis)) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:104:5: 
+102.   static int ui_read(UI *ui, UI_STRING *uis)
+103.   {
+104. >     switch (UI_get_string_type(uis)) {
+105.       case UIT_PROMPT:
+106.           {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:105:5: Switch condition is true. Entering switch case
+103.   {
+104.       switch (UI_get_string_type(uis)) {
+105.       case UIT_PROMPT:
+           ^
+106.           {
+107.               char result[PEM_BUFSIZE + 1];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:108:13: 
+106.           {
+107.               char result[PEM_BUFSIZE + 1];
+108. >             const struct pem_password_cb_data *data =
+109.                   UI_method_get_ex_data(UI_get_method(ui), ui_method_data_index);
+110.               int maxsize = UI_get_result_maxsize(uis);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:110:13: 
+108.               const struct pem_password_cb_data *data =
+109.                   UI_method_get_ex_data(UI_get_method(ui), ui_method_data_index);
+110. >             int maxsize = UI_get_result_maxsize(uis);
+111.               int len = data->cb(result,
+112.                                  maxsize > PEM_BUFSIZE ? PEM_BUFSIZE : maxsize,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:112:32: Condition is false
+110.               int maxsize = UI_get_result_maxsize(uis);
+111.               int len = data->cb(result,
+112.                                  maxsize > PEM_BUFSIZE ? PEM_BUFSIZE : maxsize,
+                                      ^
+113.                                  data->rwflag, UI_get0_user_data(ui));
+114.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:111:13: 
+109.                   UI_method_get_ex_data(UI_get_method(ui), ui_method_data_index);
+110.               int maxsize = UI_get_result_maxsize(uis);
+111. >             int len = data->cb(result,
+112.                                  maxsize > PEM_BUFSIZE ? PEM_BUFSIZE : maxsize,
+113.                                  data->rwflag, UI_get0_user_data(ui));

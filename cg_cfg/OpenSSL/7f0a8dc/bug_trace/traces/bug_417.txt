@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:914: error: NULL_DEREFERENCE
+  pointer `meth` last assigned on line 912 could be null and is dereferenced at line 914, column 9.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:910:1: start of procedure RAND_status()
+908.   #endif
+909.   
+910. > int RAND_status(void)
+911.   {
+912.       const RAND_METHOD *meth = RAND_get_rand_method();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:912:5: 
+910.   int RAND_status(void)
+911.   {
+912. >     const RAND_METHOD *meth = RAND_get_rand_method();
+913.   
+914.       if (meth->status != NULL)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:914:9: 
+912.       const RAND_METHOD *meth = RAND_get_rand_method();
+913.   
+914. >     if (meth->status != NULL)
+915.           return meth->status();
+916.       return 0;

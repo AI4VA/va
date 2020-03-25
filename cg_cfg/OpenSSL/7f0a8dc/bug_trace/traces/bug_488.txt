@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve25519.c:4251: error: UNINITIALIZED_VALUE
+  The value read from e[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve25519.c:4251:5: 
+4249.           e[i] -= carry << 4;
+4250.       }
+4251. >     e[63] += carry;
+4252.       /* each e[i] is between -8 and 8 */
+4253.   

@@ -1,0 +1,56 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:92: error: NULL_DEREFERENCE
+  pointer `pt` last assigned on line 91 could be null and is dereferenced at line 92, column 12.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:78:1: start of procedure X509_check_purpose()
+76.    * things.
+77.    */
+78. > int X509_check_purpose(X509 *x, int id, int ca)
+79.   {
+80.       int idx;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:83:5: Skipping x509v3_cache_extensions(): empty list of specs
+81.       const X509_PURPOSE *pt;
+82.   
+83.       x509v3_cache_extensions(x);
+          ^
+84.   
+85.       /* Return if side-effect only call */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:86:9: Taking false branch
+84.   
+85.       /* Return if side-effect only call */
+86.       if (id == -1)
+              ^
+87.           return 1;
+88.       idx = X509_PURPOSE_get_by_id(id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:88:5: 
+86.       if (id == -1)
+87.           return 1;
+88. >     idx = X509_PURPOSE_get_by_id(id);
+89.       if (idx == -1)
+90.           return -1;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:89:9: Taking false branch
+87.           return 1;
+88.       idx = X509_PURPOSE_get_by_id(id);
+89.       if (idx == -1)
+              ^
+90.           return -1;
+91.       pt = X509_PURPOSE_get0(idx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:91:5: 
+89.       if (idx == -1)
+90.           return -1;
+91. >     pt = X509_PURPOSE_get0(idx);
+92.       return pt->check_purpose(pt, x, ca);
+93.   }
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:92:5: 
+90.           return -1;
+91.       pt = X509_PURPOSE_get0(idx);
+92. >     return pt->check_purpose(pt, x, ca);
+93.   }
+94.   

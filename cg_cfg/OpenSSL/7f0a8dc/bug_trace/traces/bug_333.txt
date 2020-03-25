@@ -1,0 +1,33 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:298: error: NULL_DEREFERENCE
+  pointer `ginfo` last assigned on line 295 could be null and is dereferenced at line 298, column 14.
+Showing all 4 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:293:1: start of procedure tls_valid_group()
+291.   }
+292.   
+293. > int tls_valid_group(SSL *s, uint16_t group_id, int version)
+294.   {
+295.       const TLS_GROUP_INFO *ginfo = tls1_group_id_lookup(group_id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:295:5: 
+293.   int tls_valid_group(SSL *s, uint16_t group_id, int version)
+294.   {
+295. >     const TLS_GROUP_INFO *ginfo = tls1_group_id_lookup(group_id);
+296.   
+297.       if (version < TLS1_3_VERSION) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:297:9: Taking true branch
+295.       const TLS_GROUP_INFO *ginfo = tls1_group_id_lookup(group_id);
+296.   
+297.       if (version < TLS1_3_VERSION) {
+               ^
+298.           if ((ginfo->flags & TLS_GROUP_ONLY_FOR_TLS1_3) != 0)
+299.               return 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:298:13: 
+296.   
+297.       if (version < TLS1_3_VERSION) {
+298. >         if ((ginfo->flags & TLS_GROUP_ONLY_FOR_TLS1_3) != 0)
+299.               return 0;
+300.       }

@@ -1,0 +1,85 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1472: error: NULL_DEREFERENCE
+  pointer `copy` last assigned on line 1427 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1472, column 5.
+Showing all 11 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1422:1: start of procedure pkey_test_run()
+1420.   }
+1421.   
+1422. > static int pkey_test_run(EVP_TEST *t)
+1423.   {
+1424.       PKEY_DATA *expected = t->data;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1424:5: 
+1422.   static int pkey_test_run(EVP_TEST *t)
+1423.   {
+1424. >     PKEY_DATA *expected = t->data;
+1425.       unsigned char *got = NULL;
+1426.       size_t got_len;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1425:5: 
+1423.   {
+1424.       PKEY_DATA *expected = t->data;
+1425. >     unsigned char *got = NULL;
+1426.       size_t got_len;
+1427.       EVP_PKEY_CTX *copy = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1427:5: 
+1425.       unsigned char *got = NULL;
+1426.       size_t got_len;
+1427. >     EVP_PKEY_CTX *copy = NULL;
+1428.   
+1429.       if (expected->keyop(expected->ctx, NULL, &got_len,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1429:9: Taking false branch
+1427.       EVP_PKEY_CTX *copy = NULL;
+1428.   
+1429.       if (expected->keyop(expected->ctx, NULL, &got_len,
+                ^
+1430.                           expected->input, expected->input_len) <= 0
+1431.               || !TEST_ptr(got = OPENSSL_malloc(got_len))) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1431:17: Taking false branch
+1429.       if (expected->keyop(expected->ctx, NULL, &got_len,
+1430.                           expected->input, expected->input_len) <= 0
+1431.               || !TEST_ptr(got = OPENSSL_malloc(got_len))) {
+                        ^
+1432.           t->err = "KEYOP_LENGTH_ERROR";
+1433.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1435:9: Taking false branch
+1433.           goto err;
+1434.       }
+1435.       if (expected->keyop(expected->ctx, got, &got_len,
+                ^
+1436.                           expected->input, expected->input_len) <= 0) {
+1437.           t->err = "KEYOP_ERROR";
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1440:10: Taking true branch
+1438.           goto err;
+1439.       }
+1440.       if (!memory_err_compare(t, "KEYOP_MISMATCH",
+                 ^
+1441.                               expected->output, expected->output_len,
+1442.                               got, got_len))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1470:2: 
+1468.           goto err;
+1469.   
+1470. >  err:
+1471.       OPENSSL_free(got);
+1472.       EVP_PKEY_CTX_free(copy);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1471:5: 
+1469.   
+1470.    err:
+1471. >     OPENSSL_free(got);
+1472.       EVP_PKEY_CTX_free(copy);
+1473.       return 1;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1472:5: 
+1470.    err:
+1471.       OPENSSL_free(got);
+1472. >     EVP_PKEY_CTX_free(copy);
+1473.       return 1;
+1474.   }

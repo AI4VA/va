@@ -1,0 +1,56 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2149: error: NULL_DEREFERENCE
+  pointer `ptmp` last assigned on line 2148 could be null and is dereferenced at line 2149, column 13.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2132:1: start of procedure X509_STORE_CTX_purpose_inherit()
+2130.    */
+2131.   
+2132. > int X509_STORE_CTX_purpose_inherit(X509_STORE_CTX *ctx, int def_purpose,
+2133.                                      int purpose, int trust)
+2134.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2137:10: Taking false branch
+2135.       int idx;
+2136.       /* If purpose not set use default */
+2137.       if (!purpose)
+                 ^
+2138.           purpose = def_purpose;
+2139.       /* If we have a purpose then check it is valid */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2140:9: Taking true branch
+2138.           purpose = def_purpose;
+2139.       /* If we have a purpose then check it is valid */
+2140.       if (purpose) {
+                ^
+2141.           X509_PURPOSE *ptmp;
+2142.           idx = X509_PURPOSE_get_by_id(purpose);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2142:9: 
+2140.       if (purpose) {
+2141.           X509_PURPOSE *ptmp;
+2142. >         idx = X509_PURPOSE_get_by_id(purpose);
+2143.           if (idx == -1) {
+2144.               X509err(X509_F_X509_STORE_CTX_PURPOSE_INHERIT,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2143:13: Taking false branch
+2141.           X509_PURPOSE *ptmp;
+2142.           idx = X509_PURPOSE_get_by_id(purpose);
+2143.           if (idx == -1) {
+                    ^
+2144.               X509err(X509_F_X509_STORE_CTX_PURPOSE_INHERIT,
+2145.                       X509_R_UNKNOWN_PURPOSE_ID);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2148:9: 
+2146.               return 0;
+2147.           }
+2148. >         ptmp = X509_PURPOSE_get0(idx);
+2149.           if (ptmp->trust == X509_TRUST_DEFAULT) {
+2150.               idx = X509_PURPOSE_get_by_id(def_purpose);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2149:13: 
+2147.           }
+2148.           ptmp = X509_PURPOSE_get0(idx);
+2149. >         if (ptmp->trust == X509_TRUST_DEFAULT) {
+2150.               idx = X509_PURPOSE_get_by_id(def_purpose);
+2151.               /*

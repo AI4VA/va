@@ -1,0 +1,33 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:384: error: NULL_DEREFERENCE
+  pointer `gtr` last assigned on line 382 could be null and is dereferenced at line 384, column 34.
+Showing all 4 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:377:1: start of procedure init_thread_deregister()
+375.   
+376.   #ifndef FIPS_MODE
+377. > static int init_thread_deregister(void *index, int all)
+378.   {
+379.       GLOBAL_TEVENT_REGISTER *gtr;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:382:5: 
+380.       int i;
+381.   
+382. >     gtr = get_global_tevent_register();
+383.       if (!all)
+384.           CRYPTO_THREAD_write_lock(gtr->lock);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:383:10: Taking true branch
+381.   
+382.       gtr = get_global_tevent_register();
+383.       if (!all)
+                ^
+384.           CRYPTO_THREAD_write_lock(gtr->lock);
+385.       for (i = 0; i < sk_THREAD_EVENT_HANDLER_PTR_num(gtr->skhands); i++) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:384:9: 
+382.       gtr = get_global_tevent_register();
+383.       if (!all)
+384. >         CRYPTO_THREAD_write_lock(gtr->lock);
+385.       for (i = 0; i < sk_THREAD_EVENT_HANDLER_PTR_num(gtr->skhands); i++) {
+386.           THREAD_EVENT_HANDLER **hands

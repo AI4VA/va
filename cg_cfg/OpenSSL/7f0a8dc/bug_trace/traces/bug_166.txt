@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:122: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:122:18: 
+120.                   goto end;
+121.               }
+122. >             if (!TEST_false(s > mtus[i] && reclen <= (size_t)(500 + i))) {
+123.                   /*
+124.                    * We sent a *larger* packet than mtus[i] and that *still*

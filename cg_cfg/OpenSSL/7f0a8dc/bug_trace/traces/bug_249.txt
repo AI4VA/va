@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/tasn_dec.c:346: error: DEAD_STORE
+  The value written to &q (type unsigned char const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/tasn_dec.c:346:17: Write of unused value
+344.                   len -= p - q;
+345.                   seq_eoc = 0;
+346.                   q = p;
+                       ^
+347.                   break;
+348.               }

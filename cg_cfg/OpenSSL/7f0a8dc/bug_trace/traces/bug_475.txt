@@ -1,0 +1,68 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2979: error: NULL_DEREFERENCE
+  pointer `pkey` last assigned on line 2978 could be null and is dereferenced by call to `EVP_PKEY_get0_RSA()` at line 2979, column 9.
+Showing all 9 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2959:1: start of procedure tls_construct_cke_rsa()
+2957.   }
+2958.   
+2959. > static int tls_construct_cke_rsa(SSL *s, WPACKET *pkt)
+2960.   {
+2961.   #ifndef OPENSSL_NO_RSA
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2962:5: 
+2960.   {
+2961.   #ifndef OPENSSL_NO_RSA
+2962. >     unsigned char *encdata = NULL;
+2963.       EVP_PKEY *pkey = NULL;
+2964.       EVP_PKEY_CTX *pctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2963:5: 
+2961.   #ifndef OPENSSL_NO_RSA
+2962.       unsigned char *encdata = NULL;
+2963. >     EVP_PKEY *pkey = NULL;
+2964.       EVP_PKEY_CTX *pctx = NULL;
+2965.       size_t enclen;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2964:5: 
+2962.       unsigned char *encdata = NULL;
+2963.       EVP_PKEY *pkey = NULL;
+2964. >     EVP_PKEY_CTX *pctx = NULL;
+2965.       size_t enclen;
+2966.       unsigned char *pms = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2966:5: 
+2964.       EVP_PKEY_CTX *pctx = NULL;
+2965.       size_t enclen;
+2966. >     unsigned char *pms = NULL;
+2967.       size_t pmslen = 0;
+2968.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2967:5: 
+2965.       size_t enclen;
+2966.       unsigned char *pms = NULL;
+2967. >     size_t pmslen = 0;
+2968.   
+2969.       if (s->session->peer == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2969:9: Taking false branch
+2967.       size_t pmslen = 0;
+2968.   
+2969.       if (s->session->peer == NULL) {
+                ^
+2970.           /*
+2971.            * We should always have a server certificate with SSL_kRSA.
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2978:5: 
+2976.       }
+2977.   
+2978. >     pkey = X509_get0_pubkey(s->session->peer);
+2979.       if (EVP_PKEY_get0_RSA(pkey) == NULL) {
+2980.           SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_TLS_CONSTRUCT_CKE_RSA,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2979:9: 
+2977.   
+2978.       pkey = X509_get0_pubkey(s->session->peer);
+2979. >     if (EVP_PKEY_get0_RSA(pkey) == NULL) {
+2980.           SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_TLS_CONSTRUCT_CKE_RSA,
+2981.                    ERR_R_INTERNAL_ERROR);

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:210: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:210:5: Write of unused value
+208.       MAC_PKEY_CTX *hctx = EVP_PKEY_CTX_get_data(ctx);
+209.       ASN1_OCTET_STRING *key = NULL;
+210.       int rv = 1;
+           ^
+211.       /*
+212.        * For MACs with the EVP_PKEY_FLAG_SIGCTX_CUSTOM flag set and that

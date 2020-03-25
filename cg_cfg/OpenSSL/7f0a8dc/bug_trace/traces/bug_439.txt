@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1433: error: DEAD_STORE
+  The value written to &status (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1433:5: Write of unused value
+1431.       int client_turn = 1, client_turn_count = 0, client_wait_count = 0;
+1432.       connect_phase_t phase = HANDSHAKE;
+1433.       handshake_status_t status = HANDSHAKE_RETRY;
+            ^
+1434.       const unsigned char* tick = NULL;
+1435.       size_t tick_len = 0;

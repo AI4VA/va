@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:115: error: UNINITIALIZED_VALUE
+  The value read from k[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:115:9: 
+113.   
+114.       for (i = 0; i < 16; i++) {
+115. >         key->data[i * 2] = k[i];
+116.           key->data[i * 2 + 1] = ((k[i + 16]) + 16) & 0x1f;
+117.       }

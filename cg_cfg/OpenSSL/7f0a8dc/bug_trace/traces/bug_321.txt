@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:253: error: DEAD_STORE
+  The value written to &cipher (type evp_cipher_st const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:253:5: Write of unused value
+251.   
+252.   #ifndef OPENSSL_NO_DES
+253.       cipher = EVP_des_ede3_cbc();
+           ^
+254.   #endif
+255.   

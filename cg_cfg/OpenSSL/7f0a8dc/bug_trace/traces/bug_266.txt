@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_acpt.c:266: error: DEAD_STORE
+  The value written to &s (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_acpt.c:266:13: Write of unused value
+264.                   BIO_ADDR_service_string(&c->cache_accepting_addr, 1);
+265.               c->state = ACPT_S_ACCEPT;
+266.               s = -1;
+                   ^
+267.               ret = 1;
+268.               goto end;

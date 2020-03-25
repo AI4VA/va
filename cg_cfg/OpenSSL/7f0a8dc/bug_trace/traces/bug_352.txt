@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/list.c:358: error: UNINITIALIZED_VALUE
+  The value read from dc.columns was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/list.c:358:17: 
+356.               BIO_printf(bio_out, "%s\n", fp->name);
+357.           } else {
+358. >             if (i % dc.columns == 0 && i > 0)
+359.                   BIO_printf(bio_out, "\n");
+360.               BIO_printf(bio_out, "%-*s", dc.width, fp->name);

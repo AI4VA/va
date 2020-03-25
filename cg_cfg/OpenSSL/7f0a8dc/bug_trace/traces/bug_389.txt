@@ -1,0 +1,74 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:530: error: NULL_DEREFERENCE
+  pointer `x` last assigned on line 529 could be null and is dereferenced by call to `X509_get1_ocsp()` at line 530, column 11.
+Showing all 10 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:513:1: start of procedure get_ocsp_resp_from_responder()
+511.    * them until they were considered "expired".
+512.    */
+513. > static int get_ocsp_resp_from_responder(SSL *s, tlsextstatusctx *srctx,
+514.                                           OCSP_RESPONSE **resp)
+515.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:516:5: 
+514.                                           OCSP_RESPONSE **resp)
+515.   {
+516. >     char *host = NULL, *port = NULL, *path = NULL;
+517.       int use_ssl;
+518.       STACK_OF(OPENSSL_STRING) *aia = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:518:5: 
+516.       char *host = NULL, *port = NULL, *path = NULL;
+517.       int use_ssl;
+518. >     STACK_OF(OPENSSL_STRING) *aia = NULL;
+519.       X509 *x = NULL;
+520.       X509_STORE_CTX *inctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:519:5: 
+517.       int use_ssl;
+518.       STACK_OF(OPENSSL_STRING) *aia = NULL;
+519. >     X509 *x = NULL;
+520.       X509_STORE_CTX *inctx = NULL;
+521.       X509_OBJECT *obj;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:520:5: 
+518.       STACK_OF(OPENSSL_STRING) *aia = NULL;
+519.       X509 *x = NULL;
+520. >     X509_STORE_CTX *inctx = NULL;
+521.       X509_OBJECT *obj;
+522.       OCSP_REQUEST *req = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:522:5: 
+520.       X509_STORE_CTX *inctx = NULL;
+521.       X509_OBJECT *obj;
+522. >     OCSP_REQUEST *req = NULL;
+523.       OCSP_CERTID *id = NULL;
+524.       STACK_OF(X509_EXTENSION) *exts;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:523:5: 
+521.       X509_OBJECT *obj;
+522.       OCSP_REQUEST *req = NULL;
+523. >     OCSP_CERTID *id = NULL;
+524.       STACK_OF(X509_EXTENSION) *exts;
+525.       int ret = SSL_TLSEXT_ERR_NOACK;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:525:5: 
+523.       OCSP_CERTID *id = NULL;
+524.       STACK_OF(X509_EXTENSION) *exts;
+525. >     int ret = SSL_TLSEXT_ERR_NOACK;
+526.       int i;
+527.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:529:5: 
+527.   
+528.       /* Build up OCSP query from server certificate */
+529. >     x = SSL_get_certificate(s);
+530.       aia = X509_get1_ocsp(x);
+531.       if (aia != NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:530:5: 
+528.       /* Build up OCSP query from server certificate */
+529.       x = SSL_get_certificate(s);
+530. >     aia = X509_get1_ocsp(x);
+531.       if (aia != NULL) {
+532.           if (!OCSP_parse_url(sk_OPENSSL_STRING_value(aia, 0),

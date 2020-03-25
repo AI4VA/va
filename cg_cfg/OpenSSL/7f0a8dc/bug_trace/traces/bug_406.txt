@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:691: error: UNINITIALIZED_VALUE
+  The value read from hints.ai_flags was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:691:13: 
+689.           if (family == AF_UNSPEC)
+690.   #  endif
+691. >             hints.ai_flags |= AI_ADDRCONFIG;
+692.   # endif
+693.   

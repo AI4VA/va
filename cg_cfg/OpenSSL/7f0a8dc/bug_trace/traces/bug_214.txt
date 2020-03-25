@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/pkeyutl.c:103: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/pkeyutl.c:103:5: Write of unused value
+101.       int keysize = -1, pkey_op = EVP_PKEY_OP_SIGN, key_type = KEY_PRIVKEY;
+102.       int engine_impl = 0;
+103.       int ret = 1, rv = -1;
+           ^
+104.       size_t buf_outlen;
+105.       const char *inkey = NULL;

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_ecb.c:38: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_ecb.c:38:5: Write of unused value
+36.       l2c(l, out);
+37.       l = d[1];
+38.       l2c(l, out);
+          ^
+39.       l = d[0] = d[1] = 0;
+40.   }

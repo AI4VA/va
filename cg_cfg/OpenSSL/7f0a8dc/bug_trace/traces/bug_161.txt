@@ -1,0 +1,93 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:63: error: NULL_DEREFERENCE
+  pointer `ex` last assigned on line 57 could be null and is dereferenced by call to `X509V3_EXT_print()` at line 63, column 14.
+Showing all 12 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:48:1: start of procedure TS_ext_print_bio()
+46.   }
+47.   
+48. > int TS_ext_print_bio(BIO *bio, const STACK_OF(X509_EXTENSION) *extensions)
+49.   {
+50.       int i, critical, n;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:54:5: Skipping BIO_printf(): empty list of specs
+52.       ASN1_OBJECT *obj;
+53.   
+54.       BIO_printf(bio, "Extensions:\n");
+          ^
+55.       n = X509v3_get_ext_count(extensions);
+56.       for (i = 0; i < n; i++) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:55:5: 
+53.   
+54.       BIO_printf(bio, "Extensions:\n");
+55. >     n = X509v3_get_ext_count(extensions);
+56.       for (i = 0; i < n; i++) {
+57.           ex = X509v3_get_ext(extensions, i);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:56:10: 
+54.       BIO_printf(bio, "Extensions:\n");
+55.       n = X509v3_get_ext_count(extensions);
+56. >     for (i = 0; i < n; i++) {
+57.           ex = X509v3_get_ext(extensions, i);
+58.           obj = X509_EXTENSION_get_object(ex);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:56:17: Loop condition is true. Entering loop body
+54.       BIO_printf(bio, "Extensions:\n");
+55.       n = X509v3_get_ext_count(extensions);
+56.       for (i = 0; i < n; i++) {
+                      ^
+57.           ex = X509v3_get_ext(extensions, i);
+58.           obj = X509_EXTENSION_get_object(ex);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:57:9: 
+55.       n = X509v3_get_ext_count(extensions);
+56.       for (i = 0; i < n; i++) {
+57. >         ex = X509v3_get_ext(extensions, i);
+58.           obj = X509_EXTENSION_get_object(ex);
+59.           if (i2a_ASN1_OBJECT(bio, obj) < 0)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:58:9: 
+56.       for (i = 0; i < n; i++) {
+57.           ex = X509v3_get_ext(extensions, i);
+58. >         obj = X509_EXTENSION_get_object(ex);
+59.           if (i2a_ASN1_OBJECT(bio, obj) < 0)
+60.               return 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:59:13: Taking false branch
+57.           ex = X509v3_get_ext(extensions, i);
+58.           obj = X509_EXTENSION_get_object(ex);
+59.           if (i2a_ASN1_OBJECT(bio, obj) < 0)
+                  ^
+60.               return 0;
+61.           critical = X509_EXTENSION_get_critical(ex);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:61:9: 
+59.           if (i2a_ASN1_OBJECT(bio, obj) < 0)
+60.               return 0;
+61. >         critical = X509_EXTENSION_get_critical(ex);
+62.           BIO_printf(bio, ":%s\n", critical ? " critical" : "");
+63.           if (!X509V3_EXT_print(bio, ex, 0, 4)) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:62:34: Condition is false
+60.               return 0;
+61.           critical = X509_EXTENSION_get_critical(ex);
+62.           BIO_printf(bio, ":%s\n", critical ? " critical" : "");
+                                       ^
+63.           if (!X509V3_EXT_print(bio, ex, 0, 4)) {
+64.               BIO_printf(bio, "%4s", "");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:62:9: Skipping BIO_printf(): empty list of specs
+60.               return 0;
+61.           critical = X509_EXTENSION_get_critical(ex);
+62.           BIO_printf(bio, ":%s\n", critical ? " critical" : "");
+              ^
+63.           if (!X509V3_EXT_print(bio, ex, 0, 4)) {
+64.               BIO_printf(bio, "%4s", "");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:63:14: 
+61.           critical = X509_EXTENSION_get_critical(ex);
+62.           BIO_printf(bio, ":%s\n", critical ? " critical" : "");
+63. >         if (!X509V3_EXT_print(bio, ex, 0, 4)) {
+64.               BIO_printf(bio, "%4s", "");
+65.               ASN1_STRING_print(bio, X509_EXTENSION_get_data(ex));

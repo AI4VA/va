@@ -1,0 +1,191 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1501: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 1404 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1501, column 5.
+Showing all 25 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1402:1: start of procedure test_EVP_PKEY_CTX_get_set_params()
+1400.   
+1401.   /* Test getting and setting parameters on an EVP_PKEY_CTX */
+1402. > static int test_EVP_PKEY_CTX_get_set_params(void)
+1403.   {
+1404.       EVP_PKEY_CTX *ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1404:5: 
+1402.   static int test_EVP_PKEY_CTX_get_set_params(void)
+1403.   {
+1404. >     EVP_PKEY_CTX *ctx = NULL;
+1405.       EVP_SIGNATURE *dsaimpl = NULL;
+1406.       const OSSL_PARAM *params;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1405:5: 
+1403.   {
+1404.       EVP_PKEY_CTX *ctx = NULL;
+1405. >     EVP_SIGNATURE *dsaimpl = NULL;
+1406.       const OSSL_PARAM *params;
+1407.       OSSL_PARAM ourparams[2], *param = ourparams;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1407:5: 
+1405.       EVP_SIGNATURE *dsaimpl = NULL;
+1406.       const OSSL_PARAM *params;
+1407. >     OSSL_PARAM ourparams[2], *param = ourparams;
+1408.       DSA *dsa = NULL;
+1409.       BIGNUM *p = NULL, *q = NULL, *g = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1408:5: 
+1406.       const OSSL_PARAM *params;
+1407.       OSSL_PARAM ourparams[2], *param = ourparams;
+1408. >     DSA *dsa = NULL;
+1409.       BIGNUM *p = NULL, *q = NULL, *g = NULL;
+1410.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1409:5: 
+1407.       OSSL_PARAM ourparams[2], *param = ourparams;
+1408.       DSA *dsa = NULL;
+1409. >     BIGNUM *p = NULL, *q = NULL, *g = NULL;
+1410.       EVP_PKEY *pkey = NULL;
+1411.       int ret = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1410:5: 
+1408.       DSA *dsa = NULL;
+1409.       BIGNUM *p = NULL, *q = NULL, *g = NULL;
+1410. >     EVP_PKEY *pkey = NULL;
+1411.       int ret = 0;
+1412.       const EVP_MD *md;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1411:5: 
+1409.       BIGNUM *p = NULL, *q = NULL, *g = NULL;
+1410.       EVP_PKEY *pkey = NULL;
+1411. >     int ret = 0;
+1412.       const EVP_MD *md;
+1413.       size_t mdsize = SHA512_DIGEST_LENGTH;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1413:5: 
+1411.       int ret = 0;
+1412.       const EVP_MD *md;
+1413. >     size_t mdsize = SHA512_DIGEST_LENGTH;
+1414.   
+1415.       /*
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1420:5: 
+1418.        * don't even need a pub_key/priv_key.
+1419.        */
+1420. >     dsa = DSA_new();
+1421.       p = BN_new();
+1422.       q = BN_new();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1421:5: Skipping BN_new(): empty list of specs
+1419.        */
+1420.       dsa = DSA_new();
+1421.       p = BN_new();
+            ^
+1422.       q = BN_new();
+1423.       g = BN_new();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1422:5: Skipping BN_new(): empty list of specs
+1420.       dsa = DSA_new();
+1421.       p = BN_new();
+1422.       q = BN_new();
+            ^
+1423.       g = BN_new();
+1424.       if (!TEST_ptr(dsa)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1423:5: Skipping BN_new(): empty list of specs
+1421.       p = BN_new();
+1422.       q = BN_new();
+1423.       g = BN_new();
+            ^
+1424.       if (!TEST_ptr(dsa)
+1425.               || !TEST_ptr(p)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1424:10: Taking false branch
+1422.       q = BN_new();
+1423.       g = BN_new();
+1424.       if (!TEST_ptr(dsa)
+                 ^
+1425.               || !TEST_ptr(p)
+1426.               || !TEST_ptr(q)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1425:17: Taking false branch
+1423.       g = BN_new();
+1424.       if (!TEST_ptr(dsa)
+1425.               || !TEST_ptr(p)
+                        ^
+1426.               || !TEST_ptr(q)
+1427.               || !TEST_ptr(g)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1426:17: Taking false branch
+1424.       if (!TEST_ptr(dsa)
+1425.               || !TEST_ptr(p)
+1426.               || !TEST_ptr(q)
+                        ^
+1427.               || !TEST_ptr(g)
+1428.               || !DSA_set0_pqg(dsa, p, q, g))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1427:17: Taking false branch
+1425.               || !TEST_ptr(p)
+1426.               || !TEST_ptr(q)
+1427.               || !TEST_ptr(g)
+                        ^
+1428.               || !DSA_set0_pqg(dsa, p, q, g))
+1429.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1428:17: Taking false branch
+1426.               || !TEST_ptr(q)
+1427.               || !TEST_ptr(g)
+1428.               || !DSA_set0_pqg(dsa, p, q, g))
+                        ^
+1429.           goto err;
+1430.       p = q = g = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1430:5: 
+1428.               || !DSA_set0_pqg(dsa, p, q, g))
+1429.           goto err;
+1430. >     p = q = g = NULL;
+1431.   
+1432.       pkey = EVP_PKEY_new();
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1432:5: Skipping EVP_PKEY_new(): empty list of specs
+1430.       p = q = g = NULL;
+1431.   
+1432.       pkey = EVP_PKEY_new();
+            ^
+1433.       if (!TEST_ptr(pkey)
+1434.               || !TEST_true(EVP_PKEY_assign_DSA(pkey, dsa)))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1433:10: Taking false branch
+1431.   
+1432.       pkey = EVP_PKEY_new();
+1433.       if (!TEST_ptr(pkey)
+                 ^
+1434.               || !TEST_true(EVP_PKEY_assign_DSA(pkey, dsa)))
+1435.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1434:17: Condition is false
+1432.       pkey = EVP_PKEY_new();
+1433.       if (!TEST_ptr(pkey)
+1434.               || !TEST_true(EVP_PKEY_assign_DSA(pkey, dsa)))
+                        ^
+1435.           goto err;
+1436.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1434:17: Taking true branch
+1432.       pkey = EVP_PKEY_new();
+1433.       if (!TEST_ptr(pkey)
+1434.               || !TEST_true(EVP_PKEY_assign_DSA(pkey, dsa)))
+                        ^
+1435.           goto err;
+1436.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1500:2: 
+1498.       ret = 1;
+1499.   
+1500. >  err:
+1501.       EVP_PKEY_CTX_free(ctx);
+1502.       EVP_SIGNATURE_free(dsaimpl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1501:5: 
+1499.   
+1500.    err:
+1501. >     EVP_PKEY_CTX_free(ctx);
+1502.       EVP_SIGNATURE_free(dsaimpl);
+1503.       EVP_PKEY_free(pkey);

@@ -1,0 +1,69 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:344: error: NULL_DEREFERENCE
+  pointer `server_proto` last assigned on line 333 could be null and is dereferenced by call to `memcmp()` at line 344, column 9.
+Showing all 9 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:328:1: start of procedure verify_alpn()
+326.   }
+327.   
+328. > static int verify_alpn(SSL *client, SSL *server)
+329.   {
+330.       const unsigned char *client_proto, *server_proto;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:331:5: 
+329.   {
+330.       const unsigned char *client_proto, *server_proto;
+331. >     unsigned int client_proto_len = 0, server_proto_len = 0;
+332.       SSL_get0_alpn_selected(client, &client_proto, &client_proto_len);
+333.       SSL_get0_alpn_selected(server, &server_proto, &server_proto_len);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:332:5: 
+330.       const unsigned char *client_proto, *server_proto;
+331.       unsigned int client_proto_len = 0, server_proto_len = 0;
+332. >     SSL_get0_alpn_selected(client, &client_proto, &client_proto_len);
+333.       SSL_get0_alpn_selected(server, &server_proto, &server_proto_len);
+334.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:333:5: 
+331.       unsigned int client_proto_len = 0, server_proto_len = 0;
+332.       SSL_get0_alpn_selected(client, &client_proto, &client_proto_len);
+333. >     SSL_get0_alpn_selected(server, &server_proto, &server_proto_len);
+334.   
+335.       OPENSSL_free(alpn_selected);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:335:5: 
+333.       SSL_get0_alpn_selected(server, &server_proto, &server_proto_len);
+334.   
+335. >     OPENSSL_free(alpn_selected);
+336.       alpn_selected = NULL;
+337.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:336:5: 
+334.   
+335.       OPENSSL_free(alpn_selected);
+336. >     alpn_selected = NULL;
+337.   
+338.       if (client_proto_len != server_proto_len) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:338:9: Taking false branch
+336.       alpn_selected = NULL;
+337.   
+338.       if (client_proto_len != server_proto_len) {
+               ^
+339.           BIO_printf(bio_stdout, "ALPN selected protocols differ!\n");
+340.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:343:9: Taking true branch
+341.       }
+342.   
+343.       if (client_proto != NULL &&
+               ^
+344.           memcmp(client_proto, server_proto, client_proto_len) != 0) {
+345.           BIO_printf(bio_stdout, "ALPN selected protocols differ!\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:344:9: 
+342.   
+343.       if (client_proto != NULL &&
+344. >         memcmp(client_proto, server_proto, client_proto_len) != 0) {
+345.           BIO_printf(bio_stdout, "ALPN selected protocols differ!\n");
+346.           goto err;

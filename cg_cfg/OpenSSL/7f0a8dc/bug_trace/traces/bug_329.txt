@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_asn1.c:271: error: UNINITIALIZED_VALUE
+  The value read from ret was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_asn1.c:271:5: 
+269.           }
+270.       }
+271. >     return ret;
+272.   }
+273.   

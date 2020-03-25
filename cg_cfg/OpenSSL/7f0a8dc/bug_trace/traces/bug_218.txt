@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:94: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:94:5: Write of unused value
+92.   static int ssl_read(BIO *b, char *buf, size_t size, size_t *readbytes)
+93.   {
+94.       int ret = 1;
+          ^
+95.       BIO_SSL *sb;
+96.       SSL *ssl;

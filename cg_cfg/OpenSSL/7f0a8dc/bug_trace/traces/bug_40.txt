@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_skey.c:27: error: DEAD_STORE
+  The value written to &key (type unsigned char const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_skey.c:27:5: Write of unused value
+25.       n2s(key, kt[5]);
+26.       n2s(key, kt[6]);
+27.       n2s(key, kt[7]);
+          ^
+28.   
+29.       kf = kt;

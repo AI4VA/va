@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_print.c:331: error: DEAD_STORE
+  The value written to &ch (type unsigned char) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_print.c:331:17: Write of unused value
+329.               case 'w':
+330.                   /* not supported yet, treat as next char */
+331.                   ch = *format++;
+                       ^
+332.                   break;
+333.               default:

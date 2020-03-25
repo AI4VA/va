@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:541: error: UNINITIALIZED_VALUE
+  The value read from allpkts[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:541:9: 
+539.        */
+540.       for (i = 0; i < (duprec ? 3 : 1); i++) {
+541. >         thispkt = allpkts[i];
+542.           if (!sk_MEMPACKET_push(ctx->pkts, thispkt))
+543.               goto err;

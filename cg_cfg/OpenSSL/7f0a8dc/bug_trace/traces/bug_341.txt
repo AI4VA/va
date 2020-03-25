@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:331: error: UNINITIALIZED_VALUE
+  The value read from permute[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:331:13: 
+329.               j = test_random() % (1 + i);
+330.               ii = permute[j];
+331. >             permute[j] = permute[i];
+332.               permute[i] = ii;
+333.           }

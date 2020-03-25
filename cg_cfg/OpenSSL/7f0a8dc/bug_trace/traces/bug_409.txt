@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:689: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:689:5: Write of unused value
+687.   static long always_retry_ctrl(BIO *bio, int cmd, long num, void *ptr)
+688.   {
+689.       long ret = 1;
+           ^
+690.   
+691.       switch (cmd) {

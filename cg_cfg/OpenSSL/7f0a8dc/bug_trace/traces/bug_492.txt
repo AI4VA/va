@@ -1,0 +1,99 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5582: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 5519 could be null and is dereferenced by call to `SSL_CTX_free()` at line 5582, column 5.
+Showing all 13 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5516:1: start of procedure test_srp()
+5514.    * Test 5: Connection failure due to bad password, vbase loaded from new file
+5515.    */
+5516. > static int test_srp(int tst)
+5517.   {
+5518.       char *userid = "test", *password = "password", *tstsrpfile;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5518:5: 
+5516.   static int test_srp(int tst)
+5517.   {
+5518. >     char *userid = "test", *password = "password", *tstsrpfile;
+5519.       SSL_CTX *cctx = NULL, *sctx = NULL;
+5520.       SSL *clientssl = NULL, *serverssl = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5519:5: 
+5517.   {
+5518.       char *userid = "test", *password = "password", *tstsrpfile;
+5519. >     SSL_CTX *cctx = NULL, *sctx = NULL;
+5520.       SSL *clientssl = NULL, *serverssl = NULL;
+5521.       int ret, testresult = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5520:5: 
+5518.       char *userid = "test", *password = "password", *tstsrpfile;
+5519.       SSL_CTX *cctx = NULL, *sctx = NULL;
+5520. >     SSL *clientssl = NULL, *serverssl = NULL;
+5521.       int ret, testresult = 0;
+5522.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5521:5: 
+5519.       SSL_CTX *cctx = NULL, *sctx = NULL;
+5520.       SSL *clientssl = NULL, *serverssl = NULL;
+5521. >     int ret, testresult = 0;
+5522.   
+5523.       vbase = SRP_VBASE_new(NULL);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5523:5: Skipping SRP_VBASE_new(): empty list of specs
+5521.       int ret, testresult = 0;
+5522.   
+5523.       vbase = SRP_VBASE_new(NULL);
+            ^
+5524.       if (!TEST_ptr(vbase))
+5525.           goto end;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5524:10: Taking true branch
+5522.   
+5523.       vbase = SRP_VBASE_new(NULL);
+5524.       if (!TEST_ptr(vbase))
+                 ^
+5525.           goto end;
+5526.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5577:2: 
+5575.       testresult = 1;
+5576.   
+5577. >  end:
+5578.       SRP_VBASE_free(vbase);
+5579.       vbase = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5578:5: 
+5576.   
+5577.    end:
+5578. >     SRP_VBASE_free(vbase);
+5579.       vbase = NULL;
+5580.       SSL_free(serverssl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5579:5: 
+5577.    end:
+5578.       SRP_VBASE_free(vbase);
+5579. >     vbase = NULL;
+5580.       SSL_free(serverssl);
+5581.       SSL_free(clientssl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5580:5: Skipping SSL_free(): empty list of specs
+5578.       SRP_VBASE_free(vbase);
+5579.       vbase = NULL;
+5580.       SSL_free(serverssl);
+            ^
+5581.       SSL_free(clientssl);
+5582.       SSL_CTX_free(sctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5581:5: Skipping SSL_free(): empty list of specs
+5579.       vbase = NULL;
+5580.       SSL_free(serverssl);
+5581.       SSL_free(clientssl);
+            ^
+5582.       SSL_CTX_free(sctx);
+5583.       SSL_CTX_free(cctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5582:5: 
+5580.       SSL_free(serverssl);
+5581.       SSL_free(clientssl);
+5582. >     SSL_CTX_free(sctx);
+5583.       SSL_CTX_free(cctx);
+5584.   

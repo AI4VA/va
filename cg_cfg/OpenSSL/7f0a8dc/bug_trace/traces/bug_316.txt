@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_prime.c:204: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_prime.c:204:5: Write of unused value
+202.                               int do_trial_division, BN_GENCB *cb)
+203.   {
+204.       int i, status, ret = -1;
+           ^
+205.   #ifndef FIPS_MODE
+206.       BN_CTX *ctxlocal = NULL;

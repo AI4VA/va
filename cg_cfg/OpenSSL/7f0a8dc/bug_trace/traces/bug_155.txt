@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock2.c:42: error: DEAD_STORE
+  The value written to &sock (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock2.c:42:5: Write of unused value
+40.   int BIO_socket(int domain, int socktype, int protocol, int options)
+41.   {
+42.       int sock = -1;
+          ^
+43.   
+44.       if (BIO_sock_init() != 1)

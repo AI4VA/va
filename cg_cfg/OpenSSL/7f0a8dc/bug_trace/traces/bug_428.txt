@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/ssl3_record.c:1269: error: DEAD_STORE
+  The value written to &j (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/ssl3_record.c:1269:16: Write of unused value
+1267.           header[j++] = rec->type;
+1268.           header[j++] = (unsigned char)(rec->length >> 8);
+1269.           header[j++] = (unsigned char)(rec->length & 0xff);
+                       ^
+1270.   
+1271.           /* Final param == is SSLv3 */

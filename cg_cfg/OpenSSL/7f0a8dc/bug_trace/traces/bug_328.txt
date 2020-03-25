@@ -1,0 +1,75 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:346: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 251 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 346, column 5.
+Showing all 10 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:246:1: start of procedure test_redirect()
+244.   }
+245.   
+246. > static int test_redirect(void)
+247.   {
+248.       const unsigned char pt[] = "Hello World\n";
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:248:5: 
+246.   static int test_redirect(void)
+247.   {
+248. >     const unsigned char pt[] = "Hello World\n";
+249.       unsigned char *tmp = NULL;
+250.       size_t len;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:249:5: 
+247.   {
+248.       const unsigned char pt[] = "Hello World\n";
+249. >     unsigned char *tmp = NULL;
+250.       size_t len;
+251.       EVP_PKEY_CTX *ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:251:5: 
+249.       unsigned char *tmp = NULL;
+250.       size_t len;
+251. >     EVP_PKEY_CTX *ctx = NULL;
+252.       ENGINE *e = NULL;
+253.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:252:5: 
+250.       size_t len;
+251.       EVP_PKEY_CTX *ctx = NULL;
+252. >     ENGINE *e = NULL;
+253.       EVP_PKEY *pkey = NULL;
+254.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:253:5: 
+251.       EVP_PKEY_CTX *ctx = NULL;
+252.       ENGINE *e = NULL;
+253. >     EVP_PKEY *pkey = NULL;
+254.   
+255.       int to_return = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:255:5: 
+253.       EVP_PKEY *pkey = NULL;
+254.   
+255. >     int to_return = 0;
+256.   
+257.       if (!TEST_ptr(pkey = get_test_pkey()))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:257:10: Taking true branch
+255.       int to_return = 0;
+256.   
+257.       if (!TEST_ptr(pkey = get_test_pkey()))
+                ^
+258.           goto err;
+259.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:345:2: 
+343.       to_return = 1;
+344.   
+345. >  err:
+346.       EVP_PKEY_CTX_free(ctx);
+347.       EVP_PKEY_free(pkey);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:346:5: 
+344.   
+345.    err:
+346. >     EVP_PKEY_CTX_free(ctx);
+347.       EVP_PKEY_free(pkey);
+348.       ENGINE_free(e);

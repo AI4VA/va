@@ -1,0 +1,64 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:140: error: NULL_DEREFERENCE
+  pointer `xtmp` last assigned on line 127 could be null and is dereferenced by call to `X509_up_ref()` at line 140, column 9.
+Showing all 8 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:124:1: start of procedure lookup_cert_match()
+122.   /* Given a certificate try and find an exact match in the store */
+123.   
+124. > static X509 *lookup_cert_match(X509_STORE_CTX *ctx, X509 *x)
+125.   {
+126.       STACK_OF(X509) *certs;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:127:5: 
+125.   {
+126.       STACK_OF(X509) *certs;
+127. >     X509 *xtmp = NULL;
+128.       int i;
+129.       /* Lookup all certs with matching subject name */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:130:5: Skipping __function_pointer__(): unresolved function pointer
+128.       int i;
+129.       /* Lookup all certs with matching subject name */
+130.       certs = ctx->lookup_certs(ctx, X509_get_subject_name(x));
+           ^
+131.       if (certs == NULL)
+132.           return NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:131:9: Taking false branch
+129.       /* Lookup all certs with matching subject name */
+130.       certs = ctx->lookup_certs(ctx, X509_get_subject_name(x));
+131.       if (certs == NULL)
+               ^
+132.           return NULL;
+133.       /* Look for exact match */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:134:10: 
+132.           return NULL;
+133.       /* Look for exact match */
+134. >     for (i = 0; i < sk_X509_num(certs); i++) {
+135.           xtmp = sk_X509_value(certs, i);
+136.           if (!X509_cmp(xtmp, x))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:134:17: Loop condition is false. Leaving loop
+132.           return NULL;
+133.       /* Look for exact match */
+134.       for (i = 0; i < sk_X509_num(certs); i++) {
+                       ^
+135.           xtmp = sk_X509_value(certs, i);
+136.           if (!X509_cmp(xtmp, x))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:139:9: Taking true branch
+137.               break;
+138.       }
+139.       if (i < sk_X509_num(certs))
+               ^
+140.           X509_up_ref(xtmp);
+141.       else
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:140:9: 
+138.       }
+139.       if (i < sk_X509_num(certs))
+140. >         X509_up_ref(xtmp);
+141.       else
+142.           xtmp = NULL;
