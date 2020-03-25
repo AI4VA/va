@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs7/pk7_doit.c:24: error: DEAD_STORE
+  The value written to &isOther (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs7/pk7_doit.c:24:5: Write of unused value
+22.   static int PKCS7_type_is_other(PKCS7 *p7)
+23.   {
+24.       int isOther = 1;
+          ^
+25.   
+26.       int nid = OBJ_obj2nid(p7->type);

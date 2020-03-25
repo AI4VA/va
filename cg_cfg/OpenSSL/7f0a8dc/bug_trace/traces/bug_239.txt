@@ -1,0 +1,40 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:121: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 121, column 9.
+Showing all 5 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:114:1: start of procedure select_server_ctx()
+112.    * An empty SNI extension also returns SSL_TSLEXT_ERR_NOACK.
+113.    */
+114. > static int select_server_ctx(SSL *s, void *arg, int ignore)
+115.   {
+116.       const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:116:5: 
+114.   static int select_server_ctx(SSL *s, void *arg, int ignore)
+115.   {
+116. >     const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+117.       HANDSHAKE_EX_DATA *ex_data =
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:117:5: 
+115.   {
+116.       const char *servername = SSL_get_servername(s, TLSEXT_NAMETYPE_host_name);
+117. >     HANDSHAKE_EX_DATA *ex_data =
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+119.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:120:9: Taking true branch
+118.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+119.   
+120.       if (servername == NULL) {
+               ^
+121.           ex_data->servername = SSL_TEST_SERVERNAME_SERVER1;
+122.           return SSL_TLSEXT_ERR_NOACK;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:121:9: 
+119.   
+120.       if (servername == NULL) {
+121. >         ex_data->servername = SSL_TEST_SERVERNAME_SERVER1;
+122.           return SSL_TLSEXT_ERR_NOACK;
+123.       }

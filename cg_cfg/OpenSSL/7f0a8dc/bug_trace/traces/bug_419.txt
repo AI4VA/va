@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_ciph.c:1184: error: UNINITIALIZED_VALUE
+  The value read from buflen was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_ciph.c:1184:18: 
+1182.           if (rule == CIPHER_SPECIAL) { /* special command */
+1183.               ok = 0;
+1184. >             if ((buflen == 8) && strncmp(buf, "STRENGTH", 8) == 0) {
+1185.                   ok = ssl_cipher_strength_sort(head_p, tail_p);
+1186.               } else if (buflen == 10 && strncmp(buf, "SECLEVEL=", 9) == 0) {

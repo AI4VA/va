@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/conf/conf_mod.c:487: error: DEAD_STORE
+  The value written to &sep (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/conf/conf_mod.c:487:5: Write of unused value
+485.   char *CONF_get1_default_config_file(void)
+486.   {
+487.       char *file, *sep = "";
+           ^
+488.       int len;
+489.   

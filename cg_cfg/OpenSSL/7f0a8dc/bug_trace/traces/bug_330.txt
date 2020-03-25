@@ -1,0 +1,123 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:303: error: NULL_DEREFERENCE
+  pointer `cancel_chars_copy` last assigned on line 269 could be null and is dereferenced by call to `general_allocate_boolean()` at line 303, column 12.
+Showing all 16 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:262:1: start of procedure UI_dup_input_boolean()
+260.   }
+261.   
+262. > int UI_dup_input_boolean(UI *ui, const char *prompt, const char *action_desc,
+263.                            const char *ok_chars, const char *cancel_chars,
+264.                            int flags, char *result_buf)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:266:5: 
+264.                            int flags, char *result_buf)
+265.   {
+266. >     char *prompt_copy = NULL;
+267.       char *action_desc_copy = NULL;
+268.       char *ok_chars_copy = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:267:5: 
+265.   {
+266.       char *prompt_copy = NULL;
+267. >     char *action_desc_copy = NULL;
+268.       char *ok_chars_copy = NULL;
+269.       char *cancel_chars_copy = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:268:5: 
+266.       char *prompt_copy = NULL;
+267.       char *action_desc_copy = NULL;
+268. >     char *ok_chars_copy = NULL;
+269.       char *cancel_chars_copy = NULL;
+270.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:269:5: 
+267.       char *action_desc_copy = NULL;
+268.       char *ok_chars_copy = NULL;
+269. >     char *cancel_chars_copy = NULL;
+270.   
+271.       if (prompt != NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:271:9: Taking true branch
+269.       char *cancel_chars_copy = NULL;
+270.   
+271.       if (prompt != NULL) {
+               ^
+272.           prompt_copy = OPENSSL_strdup(prompt);
+273.           if (prompt_copy == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:272:9: 
+270.   
+271.       if (prompt != NULL) {
+272. >         prompt_copy = OPENSSL_strdup(prompt);
+273.           if (prompt_copy == NULL) {
+274.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:273:13: Taking false branch
+271.       if (prompt != NULL) {
+272.           prompt_copy = OPENSSL_strdup(prompt);
+273.           if (prompt_copy == NULL) {
+                   ^
+274.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+275.               goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:279:9: Taking true branch
+277.       }
+278.   
+279.       if (action_desc != NULL) {
+               ^
+280.           action_desc_copy = OPENSSL_strdup(action_desc);
+281.           if (action_desc_copy == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:280:9: 
+278.   
+279.       if (action_desc != NULL) {
+280. >         action_desc_copy = OPENSSL_strdup(action_desc);
+281.           if (action_desc_copy == NULL) {
+282.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:281:13: Taking false branch
+279.       if (action_desc != NULL) {
+280.           action_desc_copy = OPENSSL_strdup(action_desc);
+281.           if (action_desc_copy == NULL) {
+                   ^
+282.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+283.               goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:287:9: Taking true branch
+285.       }
+286.   
+287.       if (ok_chars != NULL) {
+               ^
+288.           ok_chars_copy = OPENSSL_strdup(ok_chars);
+289.           if (ok_chars_copy == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:288:9: 
+286.   
+287.       if (ok_chars != NULL) {
+288. >         ok_chars_copy = OPENSSL_strdup(ok_chars);
+289.           if (ok_chars_copy == NULL) {
+290.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:289:13: Taking false branch
+287.       if (ok_chars != NULL) {
+288.           ok_chars_copy = OPENSSL_strdup(ok_chars);
+289.           if (ok_chars_copy == NULL) {
+                   ^
+290.               UIerr(UI_F_UI_DUP_INPUT_BOOLEAN, ERR_R_MALLOC_FAILURE);
+291.               goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:295:9: Taking false branch
+293.       }
+294.   
+295.       if (cancel_chars != NULL) {
+               ^
+296.           cancel_chars_copy = OPENSSL_strdup(cancel_chars);
+297.           if (cancel_chars_copy == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:303:5: 
+301.       }
+302.   
+303. >     return general_allocate_boolean(ui, prompt_copy, action_desc_copy,
+304.                                       ok_chars_copy, cancel_chars_copy, 1,
+305.                                       UIT_BOOLEAN, flags, result_buf);

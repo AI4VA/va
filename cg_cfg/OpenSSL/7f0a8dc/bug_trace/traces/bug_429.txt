@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/store/loader_file.c:1298: error: DEAD_STORE
+  The value written to &matchcount (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/store/loader_file.c:1298:9: Write of unused value
+1296.           } while (result == NULL && !file_eof(ctx));
+1297.       } else {
+1298.           int matchcount = -1;
+                ^
+1299.   
+1300.        again:

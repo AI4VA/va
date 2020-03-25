@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/enc.c:563: error: UNINITIALIZED_VALUE
+  The value read from salt[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/enc.c:563:21: 
+561.                   printf("salt=");
+562.                   for (i = 0; i < (int)sizeof(salt); i++)
+563. >                     printf("%02X", salt[i]);
+564.                   printf("\n");
+565.               }

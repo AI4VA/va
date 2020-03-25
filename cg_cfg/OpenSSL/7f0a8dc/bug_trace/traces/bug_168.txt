@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_x931p.c:121: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_x931p.c:121:30: Write of unused value
+119.       for (;;) {
+120.           int i = 1;
+121.           BN_GENCB_call(cb, 0, i++);
+                                    ^
+122.           if (!BN_copy(pm1, p))
+123.               goto err;

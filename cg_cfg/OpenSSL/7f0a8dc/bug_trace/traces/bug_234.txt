@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:173: error: DEAD_STORE
+  The value written to &tin0 (type unsigned int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:173:5: Write of unused value
+171.           l2n(xor1, ivec);
+172.       }
+173.       tin0 = tin1 = tout0 = tout1 = xor0 = xor1 = 0;
+           ^
+174.       tin[0] = tin[1] = 0;
+175.   }

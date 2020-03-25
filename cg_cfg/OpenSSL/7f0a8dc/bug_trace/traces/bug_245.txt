@@ -1,0 +1,54 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:147: error: NULL_DEREFERENCE
+  pointer `trtmp` last assigned on line 144 could be null and is dereferenced at line 147, column 9.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:123:1: start of procedure X509_TRUST_add()
+121.   }
+122.   
+123. > int X509_TRUST_add(int id, int flags, int (*ck) (X509_TRUST *, X509 *, int),
+124.                      const char *name, int arg1, void *arg2)
+125.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:131:5: 
+129.        * This is set according to what we change: application can't set it
+130.        */
+131. >     flags &= ~X509_TRUST_DYNAMIC;
+132.       /* This will always be set for application modified trust entries */
+133.       flags |= X509_TRUST_DYNAMIC_NAME;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:133:5: 
+131.       flags &= ~X509_TRUST_DYNAMIC;
+132.       /* This will always be set for application modified trust entries */
+133. >     flags |= X509_TRUST_DYNAMIC_NAME;
+134.       /* Get existing entry if any */
+135.       idx = X509_TRUST_get_by_id(id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:135:5: 
+133.       flags |= X509_TRUST_DYNAMIC_NAME;
+134.       /* Get existing entry if any */
+135. >     idx = X509_TRUST_get_by_id(id);
+136.       /* Need a new entry */
+137.       if (idx == -1) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:137:9: Taking false branch
+135.       idx = X509_TRUST_get_by_id(id);
+136.       /* Need a new entry */
+137.       if (idx == -1) {
+               ^
+138.           if ((trtmp = OPENSSL_malloc(sizeof(*trtmp))) == NULL) {
+139.               X509err(X509_F_X509_TRUST_ADD, ERR_R_MALLOC_FAILURE);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:144:9: 
+142.           trtmp->flags = X509_TRUST_DYNAMIC;
+143.       } else
+144. >         trtmp = X509_TRUST_get0(idx);
+145.   
+146.       /* OPENSSL_free existing name if dynamic */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:147:9: 
+145.   
+146.       /* OPENSSL_free existing name if dynamic */
+147. >     if (trtmp->flags & X509_TRUST_DYNAMIC_NAME)
+148.           OPENSSL_free(trtmp->name);
+149.       /* dup supplied name */

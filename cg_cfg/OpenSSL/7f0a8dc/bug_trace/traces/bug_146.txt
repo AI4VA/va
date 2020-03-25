@@ -1,0 +1,48 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:40: error: NULL_DEREFERENCE
+  pointer `data` last assigned on line 38 could be null and is dereferenced at line 40, column 16.
+Showing all 6 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:29:1: start of procedure X509_NAME_get_text_by_OBJ()
+27.   }
+28.   
+29. > int X509_NAME_get_text_by_OBJ(X509_NAME *name, const ASN1_OBJECT *obj,
+30.                                 char *buf, int len)
+31.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:35:5: 
+33.       const ASN1_STRING *data;
+34.   
+35. >     i = X509_NAME_get_index_by_OBJ(name, obj, -1);
+36.       if (i < 0)
+37.           return -1;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:36:9: Taking false branch
+34.   
+35.       i = X509_NAME_get_index_by_OBJ(name, obj, -1);
+36.       if (i < 0)
+              ^
+37.           return -1;
+38.       data = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(name, i));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:38:5: 
+36.       if (i < 0)
+37.           return -1;
+38. >     data = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(name, i));
+39.       if (buf == NULL)
+40.           return data->length;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:39:9: Taking true branch
+37.           return -1;
+38.       data = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(name, i));
+39.       if (buf == NULL)
+              ^
+40.           return data->length;
+41.       if (len <= 0)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:40:9: 
+38.       data = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(name, i));
+39.       if (buf == NULL)
+40. >         return data->length;
+41.       if (len <= 0)
+42.           return 0;

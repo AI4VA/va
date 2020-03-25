@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:591: error: DEAD_STORE
+  The value written to &carry (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:591:9: Write of unused value
+589.       u.f = bn_sub_words;
+590.       if (carry > 0) {
+591.           carry =
+               ^
+592.               (int)bn_sub_words(r_d, r_d, _nist_p_224[carry - 1],
+593.                                 BN_NIST_224_TOP);

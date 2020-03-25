@@ -1,0 +1,98 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:199: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 134 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 199, column 5.
+Showing all 13 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:120:1: start of procedure sign_and_verify()
+118.   }
+119.   
+120. > static int sign_and_verify(int len)
+121.   {
+122.       /*
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:128:5: 
+126.        */
+127.       size_t sigLength;
+128. >     int digestlen = BN_num_bytes(DSA_get0_q(dsakey));
+129.       int ok = 0;
+130.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:129:5: 
+127.       size_t sigLength;
+128.       int digestlen = BN_num_bytes(DSA_get0_q(dsakey));
+129. >     int ok = 0;
+130.   
+131.       unsigned char *dataToSign = OPENSSL_malloc(len);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:131:5: 
+129.       int ok = 0;
+130.   
+131. >     unsigned char *dataToSign = OPENSSL_malloc(len);
+132.       unsigned char *paddedData = OPENSSL_malloc(digestlen);
+133.       unsigned char *signature = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:132:5: 
+130.   
+131.       unsigned char *dataToSign = OPENSSL_malloc(len);
+132. >     unsigned char *paddedData = OPENSSL_malloc(digestlen);
+133.       unsigned char *signature = NULL;
+134.       EVP_PKEY_CTX *ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:133:5: 
+131.       unsigned char *dataToSign = OPENSSL_malloc(len);
+132.       unsigned char *paddedData = OPENSSL_malloc(digestlen);
+133. >     unsigned char *signature = NULL;
+134.       EVP_PKEY_CTX *ctx = NULL;
+135.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:134:5: 
+132.       unsigned char *paddedData = OPENSSL_malloc(digestlen);
+133.       unsigned char *signature = NULL;
+134. >     EVP_PKEY_CTX *ctx = NULL;
+135.       EVP_PKEY *pkey = NULL;
+136.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:135:5: 
+133.       unsigned char *signature = NULL;
+134.       EVP_PKEY_CTX *ctx = NULL;
+135. >     EVP_PKEY *pkey = NULL;
+136.   
+137.       if (!TEST_ptr(dataToSign) ||
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:137:10: Taking false branch
+135.       EVP_PKEY *pkey = NULL;
+136.   
+137.       if (!TEST_ptr(dataToSign) ||
+                ^
+138.           !TEST_ptr(paddedData) ||
+139.           !TEST_int_eq(RAND_bytes(dataToSign, len), 1))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:138:10: Taking false branch
+136.   
+137.       if (!TEST_ptr(dataToSign) ||
+138.           !TEST_ptr(paddedData) ||
+                ^
+139.           !TEST_int_eq(RAND_bytes(dataToSign, len), 1))
+140.           goto end;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:139:10: Taking true branch
+137.       if (!TEST_ptr(dataToSign) ||
+138.           !TEST_ptr(paddedData) ||
+139.           !TEST_int_eq(RAND_bytes(dataToSign, len), 1))
+                ^
+140.           goto end;
+141.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:198:1: 
+196.   
+197.       ok = 1;
+198. > end:
+199.       EVP_PKEY_CTX_free(ctx);
+200.       EVP_PKEY_free(pkey);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:199:5: 
+197.       ok = 1;
+198.   end:
+199. >     EVP_PKEY_CTX_free(ctx);
+200.       EVP_PKEY_free(pkey);
+201.   

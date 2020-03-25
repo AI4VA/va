@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:469: error: DEAD_STORE
+  The value written to &l (type long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:469:15: Write of unused value
+467.              && TEST_long_eq(++l, -9000L)
+468.              && TEST_long_ne(-9000L, l /= 2)
+469.              && TEST_long_lt(--l, -4500L)
+                     ^
+470.              /* char */
+471.              && TEST_char_eq(++c, 'e')

@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:150: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 148 could be null and is dereferenced at line 150, column 5.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:144:1: start of procedure kat_entropy()
+142.   } TEST_CTX;
+143.   
+144. > static size_t kat_entropy(RAND_DRBG *drbg, unsigned char **pout,
+145.                             int entropy, size_t min_len, size_t max_len,
+146.                             int prediction_resistance)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:148:5: 
+146.                             int prediction_resistance)
+147.   {
+148. >     TEST_CTX *t = (TEST_CTX *)RAND_DRBG_get_ex_data(drbg, app_data_index);
+149.   
+150.       t->entropycnt++;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:150:5: 
+148.       TEST_CTX *t = (TEST_CTX *)RAND_DRBG_get_ex_data(drbg, app_data_index);
+149.   
+150. >     t->entropycnt++;
+151.       *pout = (unsigned char *)t->entropy;
+152.       return t->entropylen;

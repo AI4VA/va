@@ -1,0 +1,77 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1643: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 1616 could be null and is dereferenced by call to `SSL_CTX_free()` at line 1643, column 5.
+Showing all 10 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1609:1: start of procedure process_responder()
+1607.   }
+1608.   
+1609. > OCSP_RESPONSE *process_responder(OCSP_REQUEST *req,
+1610.                                    const char *host, const char *path,
+1611.                                    const char *port, int use_ssl,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1615:5: 
+1613.                                    int req_timeout)
+1614.   {
+1615. >     BIO *cbio = NULL;
+1616.       SSL_CTX *ctx = NULL;
+1617.       OCSP_RESPONSE *resp = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1616:5: 
+1614.   {
+1615.       BIO *cbio = NULL;
+1616. >     SSL_CTX *ctx = NULL;
+1617.       OCSP_RESPONSE *resp = NULL;
+1618.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1617:5: 
+1615.       BIO *cbio = NULL;
+1616.       SSL_CTX *ctx = NULL;
+1617. >     OCSP_RESPONSE *resp = NULL;
+1618.   
+1619.       cbio = BIO_new_connect(host);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1619:5: 
+1617.       OCSP_RESPONSE *resp = NULL;
+1618.   
+1619. >     cbio = BIO_new_connect(host);
+1620.       if (cbio == NULL) {
+1621.           BIO_printf(bio_err, "Error creating connect BIO\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1620:9: Taking true branch
+1618.   
+1619.       cbio = BIO_new_connect(host);
+1620.       if (cbio == NULL) {
+                ^
+1621.           BIO_printf(bio_err, "Error creating connect BIO\n");
+1622.           goto end;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1621:9: Skipping BIO_printf(): empty list of specs
+1619.       cbio = BIO_new_connect(host);
+1620.       if (cbio == NULL) {
+1621.           BIO_printf(bio_err, "Error creating connect BIO\n");
+                ^
+1622.           goto end;
+1623.       }
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1641:2: 
+1639.       if (resp == NULL)
+1640.           BIO_printf(bio_err, "Error querying OCSP responder\n");
+1641. >  end:
+1642.       BIO_free_all(cbio);
+1643.       SSL_CTX_free(ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1642:5: Skipping BIO_free_all(): empty list of specs
+1640.           BIO_printf(bio_err, "Error querying OCSP responder\n");
+1641.    end:
+1642.       BIO_free_all(cbio);
+            ^
+1643.       SSL_CTX_free(ctx);
+1644.       return resp;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1643:5: 
+1641.    end:
+1642.       BIO_free_all(cbio);
+1643. >     SSL_CTX_free(ctx);
+1644.       return resp;
+1645.   }

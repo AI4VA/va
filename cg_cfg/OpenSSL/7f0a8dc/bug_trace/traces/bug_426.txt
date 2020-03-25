@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/evp_enc.c:1029: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/evp_enc.c:1029:5: Write of unused value
+1027.   int EVP_CIPHER_CTX_ctrl(EVP_CIPHER_CTX *ctx, int type, int arg, void *ptr)
+1028.   {
+1029.       int ret = EVP_CTRL_RET_UNSUPPORTED;
+            ^
+1030.       int set_params = 1;
+1031.       size_t sz = arg;

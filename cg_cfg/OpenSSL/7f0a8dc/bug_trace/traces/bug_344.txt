@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/encode.c:306: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/encode.c:306:5: Write of unused value
+304.                        const unsigned char *in, int inl)
+305.   {
+306.       int seof = 0, eof = 0, rv = -1, ret = 0, i, v, tmp, n, decoded_len;
+           ^
+307.       unsigned char *d;
+308.       const unsigned char *table;

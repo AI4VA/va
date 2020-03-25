@@ -1,0 +1,172 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1494: error: NULL_DEREFERENCE
+  pointer `str` last assigned on line 1487 could be null and is dereferenced at line 1494, column 17.
+Showing all 23 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1443:1: start of procedure do_body()
+1441.   }
+1442.   
+1443. > static int do_body(X509 **xret, EVP_PKEY *pkey, X509 *x509,
+1444.                      const EVP_MD *dgst, STACK_OF(OPENSSL_STRING) *sigopts,
+1445.                      STACK_OF(CONF_VALUE) *policy, CA_DB *db, BIGNUM *serial,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1452:5: 
+1450.                      int default_op, int ext_copy, int selfsign)
+1451.   {
+1452. >     X509_NAME *name = NULL, *CAname = NULL, *subject = NULL;
+1453.       const ASN1_TIME *tm;
+1454.       ASN1_STRING *str, *str2;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1456:5: 
+1454.       ASN1_STRING *str, *str2;
+1455.       ASN1_OBJECT *obj;
+1456. >     X509 *ret = NULL;
+1457.       X509_NAME_ENTRY *ne, *tne;
+1458.       EVP_PKEY *pktmp;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1459:5: 
+1457.       X509_NAME_ENTRY *ne, *tne;
+1458.       EVP_PKEY *pktmp;
+1459. >     int ok = -1, i, j, last, nid;
+1460.       const char *p;
+1461.       CONF_VALUE *cv;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1463:5: 
+1461.       CONF_VALUE *cv;
+1462.       OPENSSL_STRING row[DB_NUMBER];
+1463. >     OPENSSL_STRING *irow = NULL;
+1464.       OPENSSL_STRING *rrow = NULL;
+1465.       char buf[25];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1464:5: 
+1462.       OPENSSL_STRING row[DB_NUMBER];
+1463.       OPENSSL_STRING *irow = NULL;
+1464. >     OPENSSL_STRING *rrow = NULL;
+1465.       char buf[25];
+1466.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1467:10: 
+1465.       char buf[25];
+1466.   
+1467. >     for (i = 0; i < DB_NUMBER; i++)
+1468.           row[i] = NULL;
+1469.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1467:17: Loop condition is true. Entering loop body
+1465.       char buf[25];
+1466.   
+1467.       for (i = 0; i < DB_NUMBER; i++)
+                        ^
+1468.           row[i] = NULL;
+1469.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1468:9: 
+1466.   
+1467.       for (i = 0; i < DB_NUMBER; i++)
+1468. >         row[i] = NULL;
+1469.   
+1470.       if (subj) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1467:32: 
+1465.       char buf[25];
+1466.   
+1467. >     for (i = 0; i < DB_NUMBER; i++)
+1468.           row[i] = NULL;
+1469.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1467:17: Loop condition is false. Leaving loop
+1465.       char buf[25];
+1466.   
+1467.       for (i = 0; i < DB_NUMBER; i++)
+                        ^
+1468.           row[i] = NULL;
+1469.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1470:9: Taking false branch
+1468.           row[i] = NULL;
+1469.   
+1470.       if (subj) {
+                ^
+1471.           X509_NAME *n = parse_name(subj, chtype, multirdn);
+1472.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1481:9: Taking true branch
+1479.       }
+1480.   
+1481.       if (default_op)
+                ^
+1482.           BIO_printf(bio_err, "The Subject's Distinguished Name is as follows\n");
+1483.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1482:9: Skipping BIO_printf(): empty list of specs
+1480.   
+1481.       if (default_op)
+1482.           BIO_printf(bio_err, "The Subject's Distinguished Name is as follows\n");
+                ^
+1483.   
+1484.       name = X509_REQ_get_subject_name(req);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1484:5: 
+1482.           BIO_printf(bio_err, "The Subject's Distinguished Name is as follows\n");
+1483.   
+1484. >     name = X509_REQ_get_subject_name(req);
+1485.       for (i = 0; i < X509_NAME_entry_count(name); i++) {
+1486.           ne = X509_NAME_get_entry(name, i);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1485:10: 
+1483.   
+1484.       name = X509_REQ_get_subject_name(req);
+1485. >     for (i = 0; i < X509_NAME_entry_count(name); i++) {
+1486.           ne = X509_NAME_get_entry(name, i);
+1487.           str = X509_NAME_ENTRY_get_data(ne);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1485:17: Loop condition is true. Entering loop body
+1483.   
+1484.       name = X509_REQ_get_subject_name(req);
+1485.       for (i = 0; i < X509_NAME_entry_count(name); i++) {
+                        ^
+1486.           ne = X509_NAME_get_entry(name, i);
+1487.           str = X509_NAME_ENTRY_get_data(ne);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1486:9: 
+1484.       name = X509_REQ_get_subject_name(req);
+1485.       for (i = 0; i < X509_NAME_entry_count(name); i++) {
+1486. >         ne = X509_NAME_get_entry(name, i);
+1487.           str = X509_NAME_ENTRY_get_data(ne);
+1488.           obj = X509_NAME_ENTRY_get_object(ne);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1487:9: 
+1485.       for (i = 0; i < X509_NAME_entry_count(name); i++) {
+1486.           ne = X509_NAME_get_entry(name, i);
+1487. >         str = X509_NAME_ENTRY_get_data(ne);
+1488.           obj = X509_NAME_ENTRY_get_object(ne);
+1489.           nid = OBJ_obj2nid(obj);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1488:9: 
+1486.           ne = X509_NAME_get_entry(name, i);
+1487.           str = X509_NAME_ENTRY_get_data(ne);
+1488. >         obj = X509_NAME_ENTRY_get_object(ne);
+1489.           nid = OBJ_obj2nid(obj);
+1490.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1489:9: 
+1487.           str = X509_NAME_ENTRY_get_data(ne);
+1488.           obj = X509_NAME_ENTRY_get_object(ne);
+1489. >         nid = OBJ_obj2nid(obj);
+1490.   
+1491.           if (msie_hack) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1491:13: Taking true branch
+1489.           nid = OBJ_obj2nid(obj);
+1490.   
+1491.           if (msie_hack) {
+                    ^
+1492.               /* assume all type should be strings */
+1493.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1494:17: 
+1492.               /* assume all type should be strings */
+1493.   
+1494. >             if (str->type == V_ASN1_UNIVERSALSTRING)
+1495.                   ASN1_UNIVERSALSTRING_to_string(str);
+1496.   

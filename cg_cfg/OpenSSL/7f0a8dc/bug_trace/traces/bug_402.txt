@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/objects/obj_dat.c:646: error: DEAD_STORE
+  The value written to &s (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/objects/obj_dat.c:646:9: Write of unused value
+644.   
+645.       for (;;) {
+646.           s = o = NULL;
+               ^
+647.           i = BIO_gets(in, buf, 512);
+648.           if (i <= 0)

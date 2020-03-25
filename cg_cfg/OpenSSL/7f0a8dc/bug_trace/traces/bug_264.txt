@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sparse_array_test.c:181: error: UNINITIALIZED_VALUE
+  The value read from doall_data.res was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sparse_array_test.c:181:9: 
+179.       }
+180.       ossl_sa_char_doall_arg(sa, &leaf_check_all, &doall_data);
+181. >     if (doall_data.res == 0) {
+182.           TEST_info("while checking for deleted elements");
+183.           goto err;

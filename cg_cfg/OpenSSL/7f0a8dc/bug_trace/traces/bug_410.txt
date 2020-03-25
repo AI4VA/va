@@ -1,0 +1,40 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:732: error: NULL_DEREFERENCE
+  pointer `ec` last assigned on line 729 could be null and is dereferenced by call to `EC_KEY_get0_group()` at line 732, column 39.
+Showing all 5 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:724:1: start of procedure print_key_details()
+722.   }
+723.   
+724. > static void print_key_details(BIO *out, EVP_PKEY *key)
+725.   {
+726.       int keyid = EVP_PKEY_id(key);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:726:5: 
+724.   static void print_key_details(BIO *out, EVP_PKEY *key)
+725.   {
+726. >     int keyid = EVP_PKEY_id(key);
+727.   #ifndef OPENSSL_NO_EC
+728.       if (keyid == EVP_PKEY_EC) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:728:9: Taking true branch
+726.       int keyid = EVP_PKEY_id(key);
+727.   #ifndef OPENSSL_NO_EC
+728.       if (keyid == EVP_PKEY_EC) {
+               ^
+729.           EC_KEY *ec = EVP_PKEY_get1_EC_KEY(key);
+730.           int nid;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:729:9: 
+727.   #ifndef OPENSSL_NO_EC
+728.       if (keyid == EVP_PKEY_EC) {
+729. >         EC_KEY *ec = EVP_PKEY_get1_EC_KEY(key);
+730.           int nid;
+731.           const char *cname;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:732:9: 
+730.           int nid;
+731.           const char *cname;
+732. >         nid = EC_GROUP_get_curve_name(EC_KEY_get0_group(ec));
+733.           EC_KEY_free(ec);
+734.           cname = EC_curve_nid2nist(nid);

@@ -1,0 +1,142 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3654: error: NULL_DEREFERENCE
+  pointer `f` last assigned on line 3653 could be null and is dereferenced by call to `fgets()` at line 3654, column 16.
+Showing all 19 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3613:1: start of procedure do_multi()
+3611.   }
+3612.   
+3613. > static int do_multi(int multi, int size_num)
+3614.   {
+3615.       int n;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3618:5: 
+3616.       int fd[2];
+3617.       int *fds;
+3618. >     static char sep[] = ":";
+3619.   
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3620:5: 
+3618.       static char sep[] = ":";
+3619.   
+3620. >     fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621.       for (n = 0; n < multi; ++n) {
+3622.           if (pipe(fd) == -1) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3621:10: 
+3619.   
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621. >     for (n = 0; n < multi; ++n) {
+3622.           if (pipe(fd) == -1) {
+3623.               BIO_printf(bio_err, "pipe failure\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3621:17: Loop condition is true. Entering loop body
+3619.   
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621.       for (n = 0; n < multi; ++n) {
+                        ^
+3622.           if (pipe(fd) == -1) {
+3623.               BIO_printf(bio_err, "pipe failure\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3622:13: Taking false branch
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621.       for (n = 0; n < multi; ++n) {
+3622.           if (pipe(fd) == -1) {
+                    ^
+3623.               BIO_printf(bio_err, "pipe failure\n");
+3624.               exit(1);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3626:9: 
+3624.               exit(1);
+3625.           }
+3626. >         fflush(stdout);
+3627.           (void)BIO_flush(bio_err);
+3628.           if (fork()) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3627:15: 
+3625.           }
+3626.           fflush(stdout);
+3627. >         (void)BIO_flush(bio_err);
+3628.           if (fork()) {
+3629.               close(fd[1]);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3627:9: 
+3625.           }
+3626.           fflush(stdout);
+3627. >         (void)BIO_flush(bio_err);
+3628.           if (fork()) {
+3629.               close(fd[1]);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3628:13: Taking true branch
+3626.           fflush(stdout);
+3627.           (void)BIO_flush(bio_err);
+3628.           if (fork()) {
+                    ^
+3629.               close(fd[1]);
+3630.               fds[n] = fd[0];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3629:13: 
+3627.           (void)BIO_flush(bio_err);
+3628.           if (fork()) {
+3629. >             close(fd[1]);
+3630.               fds[n] = fd[0];
+3631.           } else {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3630:13: 
+3628.           if (fork()) {
+3629.               close(fd[1]);
+3630. >             fds[n] = fd[0];
+3631.           } else {
+3632.               close(fd[0]);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3644:9: 
+3642.               return 0;
+3643.           }
+3644. >         printf("Forked child %d\n", n);
+3645.       }
+3646.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3621:28: 
+3619.   
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621. >     for (n = 0; n < multi; ++n) {
+3622.           if (pipe(fd) == -1) {
+3623.               BIO_printf(bio_err, "pipe failure\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3621:17: Loop condition is false. Leaving loop
+3619.   
+3620.       fds = app_malloc(sizeof(*fds) * multi, "fd buffer for do_multi");
+3621.       for (n = 0; n < multi; ++n) {
+                        ^
+3622.           if (pipe(fd) == -1) {
+3623.               BIO_printf(bio_err, "pipe failure\n");
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3648:10: 
+3646.   
+3647.       /* for now, assume the pipe is long enough to take all the output */
+3648. >     for (n = 0; n < multi; ++n) {
+3649.           FILE *f;
+3650.           char buf[1024];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3648:17: Loop condition is true. Entering loop body
+3646.   
+3647.       /* for now, assume the pipe is long enough to take all the output */
+3648.       for (n = 0; n < multi; ++n) {
+                        ^
+3649.           FILE *f;
+3650.           char buf[1024];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3653:9: 
+3651.           char *p;
+3652.   
+3653. >         f = fdopen(fds[n], "r");
+3654.           while (fgets(buf, sizeof(buf), f)) {
+3655.               p = strchr(buf, '\n');
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3654:16: 
+3652.   
+3653.           f = fdopen(fds[n], "r");
+3654. >         while (fgets(buf, sizeof(buf), f)) {
+3655.               p = strchr(buf, '\n');
+3656.               if (p)

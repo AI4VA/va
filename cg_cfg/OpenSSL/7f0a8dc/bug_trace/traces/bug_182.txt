@@ -1,0 +1,53 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:83: error: NULL_DEREFERENCE
+  pointer `extoct` last assigned on line 82 could be null and is dereferenced by call to `ASN1_STRING_get0_data()` at line 83, column 9.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:70:1: start of procedure X509V3_EXT_print()
+68.   /* Main routine: print out a general extension */
+69.   
+70. > int X509V3_EXT_print(BIO *out, X509_EXTENSION *ext, unsigned long flag,
+71.                        int indent)
+72.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:73:5: 
+71.                        int indent)
+72.   {
+73. >     void *ext_str = NULL;
+74.       char *value = NULL;
+75.       ASN1_OCTET_STRING *extoct;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:74:5: 
+72.   {
+73.       void *ext_str = NULL;
+74. >     char *value = NULL;
+75.       ASN1_OCTET_STRING *extoct;
+76.       const unsigned char *p;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:79:5: 
+77.       int extlen;
+78.       const X509V3_EXT_METHOD *method;
+79. >     STACK_OF(CONF_VALUE) *nval = NULL;
+80.       int ok = 1;
+81.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:80:5: 
+78.       const X509V3_EXT_METHOD *method;
+79.       STACK_OF(CONF_VALUE) *nval = NULL;
+80. >     int ok = 1;
+81.   
+82.       extoct = X509_EXTENSION_get_data(ext);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:82:5: 
+80.       int ok = 1;
+81.   
+82. >     extoct = X509_EXTENSION_get_data(ext);
+83.       p = ASN1_STRING_get0_data(extoct);
+84.       extlen = ASN1_STRING_length(extoct);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:83:5: 
+81.   
+82.       extoct = X509_EXTENSION_get_data(ext);
+83. >     p = ASN1_STRING_get0_data(extoct);
+84.       extlen = ASN1_STRING_length(extoct);
+85.   

@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:50: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 48 could be null and is dereferenced at line 50, column 5.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:45:1: start of procedure kat_nonce()
+43.   }
+44.   
+45. > static size_t kat_nonce(RAND_DRBG *drbg, unsigned char **pout,
+46.                           int entropy, size_t min_len, size_t max_len)
+47.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:48:5: 
+46.                           int entropy, size_t min_len, size_t max_len)
+47.   {
+48. >     TEST_CTX *t = (TEST_CTX *)RAND_DRBG_get_ex_data(drbg, app_data_index);
+49.   
+50.       t->noncecnt++;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:50:5: 
+48.       TEST_CTX *t = (TEST_CTX *)RAND_DRBG_get_ex_data(drbg, app_data_index);
+49.   
+50. >     t->noncecnt++;
+51.       *pout = (unsigned char *)t->nonce;
+52.       return t->noncelen;

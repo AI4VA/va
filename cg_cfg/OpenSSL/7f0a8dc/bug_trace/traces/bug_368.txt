@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:581: error: DEAD_STORE
+  The value written to &numblocks (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:581:17: Write of unused value
+579.                    */
+580.   
+581.                   numblocks = 1;
+                       ^
+582.                   totalnum = num + 1; /* don't use wNAF splitting */
+583.                   wNAF[num] = tmp_wNAF;

@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:100: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:100:10: 
+98.        * that size and see what actual record size we end up with.
+99.        */
+100. >     for (s = mtus[0]; s <= mtus[29]; s++) {
+101.           size_t reclen;
+102.   

@@ -1,0 +1,68 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4769: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 4689 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 4769, column 5.
+Showing all 9 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4686:1: start of procedure ssl_generate_pkey_group()
+4684.   /* Generate a private key from a group ID */
+4685.   #if !defined(OPENSSL_NO_DH) || !defined(OPENSSL_NO_EC)
+4686. > EVP_PKEY *ssl_generate_pkey_group(SSL *s, uint16_t id)
+4687.   {
+4688.       const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4688:5: 
+4686.   EVP_PKEY *ssl_generate_pkey_group(SSL *s, uint16_t id)
+4687.   {
+4688. >     const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+4689.       EVP_PKEY_CTX *pctx = NULL;
+4690.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4689:5: 
+4687.   {
+4688.       const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+4689. >     EVP_PKEY_CTX *pctx = NULL;
+4690.       EVP_PKEY *pkey = NULL;
+4691.       uint16_t gtype;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4690:5: 
+4688.       const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+4689.       EVP_PKEY_CTX *pctx = NULL;
+4690. >     EVP_PKEY *pkey = NULL;
+4691.       uint16_t gtype;
+4692.   # ifndef OPENSSL_NO_DH
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4693:5: 
+4691.       uint16_t gtype;
+4692.   # ifndef OPENSSL_NO_DH
+4693. >     DH *dh = NULL;
+4694.   # endif
+4695.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4696:9: Taking true branch
+4694.   # endif
+4695.   
+4696.       if (ginf == NULL) {
+                ^
+4697.           SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_SSL_GENERATE_PKEY_GROUP,
+4698.                    ERR_R_INTERNAL_ERROR);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4697:9: 
+4695.   
+4696.       if (ginf == NULL) {
+4697. >         SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_SSL_GENERATE_PKEY_GROUP,
+4698.                    ERR_R_INTERNAL_ERROR);
+4699.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4768:2: 
+4766.       }
+4767.   
+4768. >  err:
+4769.       EVP_PKEY_CTX_free(pctx);
+4770.       return pkey;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4769:5: 
+4767.   
+4768.    err:
+4769. >     EVP_PKEY_CTX_free(pctx);
+4770.       return pkey;
+4771.   }

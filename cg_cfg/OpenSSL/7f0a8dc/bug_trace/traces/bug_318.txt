@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:248: error: DEAD_STORE
+  The value written to &params_n (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:248:16: Write of unused value
+246.                   OSSL_PARAM_construct_octet_string(OSSL_MAC_PARAM_KEY,
+247.                                                     key->data, key->length);
+248.           params[params_n++] = OSSL_PARAM_construct_end();
+                      ^
+249.           rv = EVP_MAC_CTX_set_params(hctx->ctx, params);
+250.       }

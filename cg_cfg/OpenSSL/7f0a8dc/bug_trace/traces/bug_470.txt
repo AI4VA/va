@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2367: error: DEAD_STORE
+  The value written to &fd (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2367:5: Write of unused value
+2365.       FILE *fp = NULL;
+2366.       BIO *b = NULL;
+2367.       int fd = -1, bflags, mode, textmode;
+            ^
+2368.   
+2369.       if (!private || filename == NULL || strcmp(filename, "-") == 0)

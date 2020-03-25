@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1282: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1282:9: Write of unused value
+1280.       else {
+1281.   #ifndef OPENSSL_SYS_VMS
+1282.           j = BIO_snprintf(buf[0], sizeof(buf[0]), "%s.%s", serialfile, suffix);
+                ^
+1283.   #else
+1284.           j = BIO_snprintf(buf[0], sizeof(buf[0]), "%s-%s", serialfile, suffix);

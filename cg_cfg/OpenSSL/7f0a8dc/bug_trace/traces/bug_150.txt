@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb_enc.c:47: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb_enc.c:47:5: Write of unused value
+45.       l = ll[1];
+46.       l2c(l, out);
+47.       l = ll[0] = ll[1] = 0;
+          ^
+48.   }

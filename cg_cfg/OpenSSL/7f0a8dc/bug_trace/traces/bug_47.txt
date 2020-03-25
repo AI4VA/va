@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp2.c:22: error: DEAD_STORE
+  The value written to &r_is_one (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp2.c:22:5: Write of unused value
+20.       int i, j, bits, b, bits1, bits2, ret =
+21.           0, wpos1, wpos2, window1, window2, wvalue1, wvalue2;
+22.       int r_is_one = 1;
+          ^
+23.       BIGNUM *d, *r;
+24.       const BIGNUM *a_mod_m;

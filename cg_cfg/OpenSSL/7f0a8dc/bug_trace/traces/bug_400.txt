@@ -1,0 +1,133 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:679: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 641 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 679, column 5.
+Showing all 18 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:606:1: start of procedure test_EVP_SM2_verify()
+604.   #if !defined(OPENSSL_NO_SM2) && !defined(FIPS_MODE)
+605.   
+606. > static int test_EVP_SM2_verify(void)
+607.   {
+608.       /* From https://tools.ietf.org/html/draft-shen-sm2-ecdsa-02#appendix-A */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:609:5: 
+607.   {
+608.       /* From https://tools.ietf.org/html/draft-shen-sm2-ecdsa-02#appendix-A */
+609. >     const char *pubkey =
+610.          "-----BEGIN PUBLIC KEY-----\n"
+611.          "MIIBMzCB7AYHKoZIzj0CATCB4AIBATAsBgcqhkjOPQEBAiEAhULWnkwETxjouSQ1\n"
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:620:5: 
+618.          "-----END PUBLIC KEY-----\n";
+619.   
+620. >     const char *msg = "message digest";
+621.       const char *id = "ALICE123@YAHOO.COM";
+622.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:621:5: 
+619.   
+620.       const char *msg = "message digest";
+621. >     const char *id = "ALICE123@YAHOO.COM";
+622.   
+623.       const uint8_t signature[] = {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:623:5: 
+621.       const char *id = "ALICE123@YAHOO.COM";
+622.   
+623. >     const uint8_t signature[] = {
+624.          0x30, 0x44, 0x02, 0x20,
+625.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:637:5: 
+635.       };
+636.   
+637. >     int rc = 0;
+638.       BIO *bio = NULL;
+639.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:638:5: 
+636.   
+637.       int rc = 0;
+638. >     BIO *bio = NULL;
+639.       EVP_PKEY *pkey = NULL;
+640.       EVP_MD_CTX *mctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:639:5: 
+637.       int rc = 0;
+638.       BIO *bio = NULL;
+639. >     EVP_PKEY *pkey = NULL;
+640.       EVP_MD_CTX *mctx = NULL;
+641.       EVP_PKEY_CTX *pctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:640:5: 
+638.       BIO *bio = NULL;
+639.       EVP_PKEY *pkey = NULL;
+640. >     EVP_MD_CTX *mctx = NULL;
+641.       EVP_PKEY_CTX *pctx = NULL;
+642.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:641:5: 
+639.       EVP_PKEY *pkey = NULL;
+640.       EVP_MD_CTX *mctx = NULL;
+641. >     EVP_PKEY_CTX *pctx = NULL;
+642.   
+643.       bio = BIO_new_mem_buf(pubkey, strlen(pubkey));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:643:5: 
+641.       EVP_PKEY_CTX *pctx = NULL;
+642.   
+643. >     bio = BIO_new_mem_buf(pubkey, strlen(pubkey));
+644.       if (!TEST_true(bio != NULL))
+645.           goto done;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:644:10: Condition is false
+642.   
+643.       bio = BIO_new_mem_buf(pubkey, strlen(pubkey));
+644.       if (!TEST_true(bio != NULL))
+                ^
+645.           goto done;
+646.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:644:10: Condition is false
+642.   
+643.       bio = BIO_new_mem_buf(pubkey, strlen(pubkey));
+644.       if (!TEST_true(bio != NULL))
+                ^
+645.           goto done;
+646.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:644:10: Taking true branch
+642.   
+643.       bio = BIO_new_mem_buf(pubkey, strlen(pubkey));
+644.       if (!TEST_true(bio != NULL))
+                ^
+645.           goto done;
+646.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:676:2: 
+674.       rc = 1;
+675.   
+676. >  done:
+677.       BIO_free(bio);
+678.       EVP_PKEY_free(pkey);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:677:5: 
+675.   
+676.    done:
+677. >     BIO_free(bio);
+678.       EVP_PKEY_free(pkey);
+679.       EVP_PKEY_CTX_free(pctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:678:5: 
+676.    done:
+677.       BIO_free(bio);
+678. >     EVP_PKEY_free(pkey);
+679.       EVP_PKEY_CTX_free(pctx);
+680.       EVP_MD_CTX_free(mctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:679:5: 
+677.       BIO_free(bio);
+678.       EVP_PKEY_free(pkey);
+679. >     EVP_PKEY_CTX_free(pctx);
+680.       EVP_MD_CTX_free(mctx);
+681.       return rc;

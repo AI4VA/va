@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ex_data.c:111: error: DEAD_STORE
+  The value written to &ip (type ex_callbacks_st*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ex_data.c:111:5: Write of unused value
+109.   int crypto_free_ex_index_ex(OPENSSL_CTX *ctx, int class_index, int idx)
+110.   {
+111.       EX_CALLBACKS *ip = get_and_lock(ctx, class_index);
+           ^
+112.       EX_CALLBACK *a;
+113.       int toret = 0;

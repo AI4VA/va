@@ -1,0 +1,181 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:200: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 155 could be null and is dereferenced at line 200, column 9.
+Showing all 24 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:150:1: start of procedure client_hello_select_server_ctx()
+148.   }
+149.   
+150. > static int client_hello_select_server_ctx(SSL *s, void *arg, int ignore)
+151.   {
+152.       const char *servername;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:155:5: 
+153.       const unsigned char *p;
+154.       size_t len, remaining;
+155. >     HANDSHAKE_EX_DATA *ex_data =
+156.           (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+157.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:162:10: Taking false branch
+160.        * was written, so parsing the normal case is a bit complex.
+161.        */
+162.       if (!SSL_client_hello_get0_ext(s, TLSEXT_TYPE_server_name, &p,
+                ^
+163.                                      &remaining) ||
+164.           remaining <= 2)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:164:9: Taking false branch
+162.       if (!SSL_client_hello_get0_ext(s, TLSEXT_TYPE_server_name, &p,
+163.                                      &remaining) ||
+164.           remaining <= 2)
+               ^
+165.           return 0;
+166.       /* Extract the length of the supplied list of names. */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:167:5: 
+165.           return 0;
+166.       /* Extract the length of the supplied list of names. */
+167. >     len = (*(p++) << 8);
+168.       len += *(p++);
+169.       if (len + 2 != remaining)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:168:5: 
+166.       /* Extract the length of the supplied list of names. */
+167.       len = (*(p++) << 8);
+168. >     len += *(p++);
+169.       if (len + 2 != remaining)
+170.           return 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:169:9: Taking false branch
+167.       len = (*(p++) << 8);
+168.       len += *(p++);
+169.       if (len + 2 != remaining)
+               ^
+170.           return 0;
+171.       remaining = len;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:171:5: 
+169.       if (len + 2 != remaining)
+170.           return 0;
+171. >     remaining = len;
+172.       /*
+173.        * The list in practice only has a single element, so we only consider
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:176:9: Taking false branch
+174.        * the first one.
+175.        */
+176.       if (remaining == 0 || *p++ != TLSEXT_NAMETYPE_host_name)
+               ^
+177.           return 0;
+178.       remaining--;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:176:27: Taking false branch
+174.        * the first one.
+175.        */
+176.       if (remaining == 0 || *p++ != TLSEXT_NAMETYPE_host_name)
+                                 ^
+177.           return 0;
+178.       remaining--;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:178:5: 
+176.       if (remaining == 0 || *p++ != TLSEXT_NAMETYPE_host_name)
+177.           return 0;
+178. >     remaining--;
+179.       /* Now we can finally pull out the byte array with the actual hostname. */
+180.       if (remaining <= 2)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:180:9: Taking false branch
+178.       remaining--;
+179.       /* Now we can finally pull out the byte array with the actual hostname. */
+180.       if (remaining <= 2)
+               ^
+181.           return 0;
+182.       len = (*(p++) << 8);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:182:5: 
+180.       if (remaining <= 2)
+181.           return 0;
+182. >     len = (*(p++) << 8);
+183.       len += *(p++);
+184.       if (len + 2 > remaining)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:183:5: 
+181.           return 0;
+182.       len = (*(p++) << 8);
+183. >     len += *(p++);
+184.       if (len + 2 > remaining)
+185.           return 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:184:9: Taking false branch
+182.       len = (*(p++) << 8);
+183.       len += *(p++);
+184.       if (len + 2 > remaining)
+               ^
+185.           return 0;
+186.       remaining = len;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:186:5: 
+184.       if (len + 2 > remaining)
+185.           return 0;
+186. >     remaining = len;
+187.       servername = (const char *)p;
+188.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:187:5: 
+185.           return 0;
+186.       remaining = len;
+187. >     servername = (const char *)p;
+188.   
+189.       if (len == strlen("server2") && strncmp(servername, "server2", len) == 0) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:189:9: Taking true branch
+187.       servername = (const char *)p;
+188.   
+189.       if (len == strlen("server2") && strncmp(servername, "server2", len) == 0) {
+               ^
+190.           SSL_CTX *new_ctx = arg;
+191.           SSL_set_SSL_CTX(s, new_ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:189:37: Taking true branch
+187.       servername = (const char *)p;
+188.   
+189.       if (len == strlen("server2") && strncmp(servername, "server2", len) == 0) {
+                                           ^
+190.           SSL_CTX *new_ctx = arg;
+191.           SSL_set_SSL_CTX(s, new_ctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:190:9: 
+188.   
+189.       if (len == strlen("server2") && strncmp(servername, "server2", len) == 0) {
+190. >         SSL_CTX *new_ctx = arg;
+191.           SSL_set_SSL_CTX(s, new_ctx);
+192.           /*
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:191:9: 
+189.       if (len == strlen("server2") && strncmp(servername, "server2", len) == 0) {
+190.           SSL_CTX *new_ctx = arg;
+191. >         SSL_set_SSL_CTX(s, new_ctx);
+192.           /*
+193.            * Copy over all the SSL_CTX options - reasonable behavior
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:197:9: 
+195.            * contexts differ/conflict
+196.            */
+197. >         SSL_clear_options(s, 0xFFFFFFFFL);
+198.           SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+199.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:198:9: 
+196.            */
+197.           SSL_clear_options(s, 0xFFFFFFFFL);
+198. >         SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+199.   
+200.           ex_data->servername = SSL_TEST_SERVERNAME_SERVER2;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:200:9: 
+198.           SSL_set_options(s, SSL_CTX_get_options(new_ctx));
+199.   
+200. >         ex_data->servername = SSL_TEST_SERVERNAME_SERVER2;
+201.           return 1;
+202.       } else if (len == strlen("server1") &&

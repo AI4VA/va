@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/common/keymgmt/dsa_kmgmt.c:58: error: DEAD_STORE
+  The value written to &priv_key (type bignum_st*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/common/keymgmt/dsa_kmgmt.c:58:5: Write of unused value
+56.       if (pub_key != NULL && !DSA_set0_key(dsa, pub_key, priv_key))
+57.           goto err;
+58.       priv_key = pub_key = NULL;
+          ^
+59.   
+60.       return 1;

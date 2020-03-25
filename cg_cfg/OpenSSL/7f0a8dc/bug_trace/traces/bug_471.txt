@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:2490: error: DEAD_STORE
+  The value written to &dh_secbits (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:2490:5: Write of unused value
+2488.   DH *ssl_get_auto_dh(SSL *s)
+2489.   {
+2490.       int dh_secbits = 80;
+            ^
+2491.       if (s->cert->dh_tmp_auto == 2)
+2492.           return DH_get_1024_160();

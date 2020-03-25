@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:1281: error: DEAD_STORE
+  The value written to &start (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:1281:5: Write of unused value
+1279.   {
+1280.       int i, j, bits, ret = 0, wstart, wend, window, wvalue;
+1281.       int start = 1;
+            ^
+1282.       BIGNUM *d;
+1283.       /* Table of variables obtained from 'ctx' */

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/randfile.c:177: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/randfile.c:177:5: Write of unused value
+175.   {
+176.       unsigned char buf[RAND_BUF_SIZE];
+177.       int ret = -1;
+           ^
+178.       FILE *out = NULL;
+179.   #ifndef OPENSSL_NO_POSIX_IO

@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3826: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3826:13: Write of unused value
+3824.               break;
+3825.           case 10:
+3826.               kexch_alg = NID_ffdhe6144;
+                    ^
+3827.               break;
+3828.           case 11:

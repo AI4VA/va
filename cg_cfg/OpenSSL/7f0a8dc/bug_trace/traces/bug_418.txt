@@ -1,0 +1,161 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:993: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 923 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 993, column 5.
+Showing all 22 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:915:1: start of procedure test_EVP_PKEY_check()
+913.   static EVP_PKEY_METHOD *custom_pmeth;
+914.   
+915. > static int test_EVP_PKEY_check(int i)
+916.   {
+917.       int ret = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:917:5: 
+915.   static int test_EVP_PKEY_check(int i)
+916.   {
+917. >     int ret = 0;
+918.       const unsigned char *p;
+919.       EVP_PKEY *pkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:919:5: 
+917.       int ret = 0;
+918.       const unsigned char *p;
+919. >     EVP_PKEY *pkey = NULL;
+920.   #ifndef OPENSSL_NO_EC
+921.       EC_KEY *eckey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:921:5: 
+919.       EVP_PKEY *pkey = NULL;
+920.   #ifndef OPENSSL_NO_EC
+921. >     EC_KEY *eckey = NULL;
+922.   #endif
+923.       EVP_PKEY_CTX *ctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:923:5: 
+921.       EC_KEY *eckey = NULL;
+922.   #endif
+923. >     EVP_PKEY_CTX *ctx = NULL;
+924.       EVP_PKEY_CTX *ctx2 = NULL;
+925.       const APK_DATA *ak = &keycheckdata[i];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:924:5: 
+922.   #endif
+923.       EVP_PKEY_CTX *ctx = NULL;
+924. >     EVP_PKEY_CTX *ctx2 = NULL;
+925.       const APK_DATA *ak = &keycheckdata[i];
+926.       const unsigned char *input = ak->kder;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:925:5: 
+923.       EVP_PKEY_CTX *ctx = NULL;
+924.       EVP_PKEY_CTX *ctx2 = NULL;
+925. >     const APK_DATA *ak = &keycheckdata[i];
+926.       const unsigned char *input = ak->kder;
+927.       size_t input_len = ak->size;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:926:5: 
+924.       EVP_PKEY_CTX *ctx2 = NULL;
+925.       const APK_DATA *ak = &keycheckdata[i];
+926. >     const unsigned char *input = ak->kder;
+927.       size_t input_len = ak->size;
+928.       int expected_id = ak->evptype;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:927:5: 
+925.       const APK_DATA *ak = &keycheckdata[i];
+926.       const unsigned char *input = ak->kder;
+927. >     size_t input_len = ak->size;
+928.       int expected_id = ak->evptype;
+929.       int expected_check = ak->check;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:928:5: 
+926.       const unsigned char *input = ak->kder;
+927.       size_t input_len = ak->size;
+928. >     int expected_id = ak->evptype;
+929.       int expected_check = ak->check;
+930.       int expected_pub_check = ak->pub_check;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:929:5: 
+927.       size_t input_len = ak->size;
+928.       int expected_id = ak->evptype;
+929. >     int expected_check = ak->check;
+930.       int expected_pub_check = ak->pub_check;
+931.       int expected_param_check = ak->param_check;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:930:5: 
+928.       int expected_id = ak->evptype;
+929.       int expected_check = ak->check;
+930. >     int expected_pub_check = ak->pub_check;
+931.       int expected_param_check = ak->param_check;
+932.       int type = ak->type;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:931:5: 
+929.       int expected_check = ak->check;
+930.       int expected_pub_check = ak->pub_check;
+931. >     int expected_param_check = ak->param_check;
+932.       int type = ak->type;
+933.       BIO *pubkey = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:932:5: 
+930.       int expected_pub_check = ak->pub_check;
+931.       int expected_param_check = ak->param_check;
+932. >     int type = ak->type;
+933.       BIO *pubkey = NULL;
+934.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:933:5: 
+931.       int expected_param_check = ak->param_check;
+932.       int type = ak->type;
+933. >     BIO *pubkey = NULL;
+934.   
+935.       p = input;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:935:5: 
+933.       BIO *pubkey = NULL;
+934.   
+935. >     p = input;
+936.   
+937.       switch (type) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:937:5: 
+935.       p = input;
+936.   
+937. >     switch (type) {
+938.       case 0:
+939.           if (!TEST_ptr(pkey = d2i_AutoPrivateKey(NULL, &p, input_len))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:938:5: Switch condition is false. Skipping switch case
+936.   
+937.       switch (type) {
+938.       case 0:
+           ^
+939.           if (!TEST_ptr(pkey = d2i_AutoPrivateKey(NULL, &p, input_len))
+940.               || !TEST_ptr_eq(p, input + input_len)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:945:5: Switch condition is true. Entering switch case
+943.           break;
+944.   #ifndef OPENSSL_NO_EC
+945.       case 1:
+           ^
+946.           if (!TEST_ptr(pubkey = BIO_new_mem_buf(input, input_len))
+947.               || !TEST_ptr(eckey = d2i_EC_PUBKEY_bio(pubkey, NULL))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:946:14: Taking true branch
+944.   #ifndef OPENSSL_NO_EC
+945.       case 1:
+946.           if (!TEST_ptr(pubkey = BIO_new_mem_buf(input, input_len))
+                    ^
+947.               || !TEST_ptr(eckey = d2i_EC_PUBKEY_bio(pubkey, NULL))
+948.               || !TEST_ptr(pkey = EVP_PKEY_new())
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:992:2: 
+990.       ret = 1;
+991.   
+992. >  done:
+993.       EVP_PKEY_CTX_free(ctx);
+994.       EVP_PKEY_CTX_free(ctx2);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:993:5: 
+991.   
+992.    done:
+993. >     EVP_PKEY_CTX_free(ctx);
+994.       EVP_PKEY_CTX_free(ctx2);
+995.       EVP_PKEY_free(pkey);

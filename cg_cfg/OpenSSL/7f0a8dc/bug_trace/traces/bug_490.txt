@@ -1,0 +1,54 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4823: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 4779 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 4823, column 5.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4777:1: start of procedure ssl_generate_param_group()
+4775.    * Generate parameters from a group ID
+4776.    */
+4777. > EVP_PKEY *ssl_generate_param_group(uint16_t id)
+4778.   {
+4779.       EVP_PKEY_CTX *pctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4779:5: 
+4777.   EVP_PKEY *ssl_generate_param_group(uint16_t id)
+4778.   {
+4779. >     EVP_PKEY_CTX *pctx = NULL;
+4780.       EVP_PKEY *pkey = NULL;
+4781.       const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4780:5: 
+4778.   {
+4779.       EVP_PKEY_CTX *pctx = NULL;
+4780. >     EVP_PKEY *pkey = NULL;
+4781.       const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+4782.       int pkey_ctx_id;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4781:5: 
+4779.       EVP_PKEY_CTX *pctx = NULL;
+4780.       EVP_PKEY *pkey = NULL;
+4781. >     const TLS_GROUP_INFO *ginf = tls1_group_id_lookup(id);
+4782.       int pkey_ctx_id;
+4783.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4784:9: Taking true branch
+4782.       int pkey_ctx_id;
+4783.   
+4784.       if (ginf == NULL)
+                ^
+4785.           goto err;
+4786.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4822:2: 
+4820.       }
+4821.   
+4822. >  err:
+4823.       EVP_PKEY_CTX_free(pctx);
+4824.       return pkey;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4823:5: 
+4821.   
+4822.    err:
+4823. >     EVP_PKEY_CTX_free(pctx);
+4824.       return pkey;
+4825.   }

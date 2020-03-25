@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1651: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.servername was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1651:5: 
+1649.       ret->server_protocol = SSL_version(server.ssl);
+1650.       ret->client_protocol = SSL_version(client.ssl);
+1651. >     ret->servername = server_ex_data.servername;
+1652.       if ((sess = SSL_get0_session(client.ssl)) != NULL) {
+1653.           SSL_SESSION_get0_ticket(sess, &tick, &tick_len);

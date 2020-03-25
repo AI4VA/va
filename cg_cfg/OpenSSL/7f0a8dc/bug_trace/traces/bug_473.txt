@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2576: error: DEAD_STORE
+  The value written to &opt (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2576:5: Write of unused value
+2574.       size_t sz = (size_t)sk_OPENSSL_STRING_num(opts);
+2575.       size_t params_n;
+2576.       char *opt = "", *stmp, *vtmp = NULL;
+            ^
+2577.   
+2578.       if (opts == NULL)

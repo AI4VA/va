@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:48: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:48:9: 
+46.               save++;
+47.           }
+48. >         *(out++) = *(in++) ^ d[n];
+49.           n = (n + 1) & 0x07;
+50.       }

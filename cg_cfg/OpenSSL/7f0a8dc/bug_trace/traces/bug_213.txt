@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/whrlpool/wp_dgst.c:154: error: DEAD_STORE
+  The value written to &byteoff (type unsigned int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/whrlpool/wp_dgst.c:154:25: Write of unused value
+152.   #ifndef OPENSSL_SMALL_FOOTPRINT
+153.               if (bitrem == inpgap) {
+154.                   c->data[byteoff++] |= inp[0] & (0xff >> inpgap);
+                               ^
+155.                   inpgap = 8 - inpgap;
+156.                   bitoff += inpgap;

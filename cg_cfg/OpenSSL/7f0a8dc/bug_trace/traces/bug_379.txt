@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:500: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:500:15: Write of unused value
+498.              && TEST_mem_eq(--p, sizeof("3456"), "3456", sizeof("3456"))
+499.              && TEST_mem_ne(p++, sizeof("456"), "456", sizeof("456"))
+500.              && TEST_mem_eq(p--, sizeof("456"), "456", sizeof("456"));
+                     ^
+501.   }
+502.   

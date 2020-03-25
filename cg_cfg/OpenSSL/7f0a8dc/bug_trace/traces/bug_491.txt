@@ -1,0 +1,99 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5138: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 5069 could be null and is dereferenced by call to `SSL_CTX_free()` at line 5138, column 5.
+Showing all 13 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5067:1: start of procedure test_key_update_in_write()
+5065.    * Test 1: Server sends KeyUpdate while Client is writing
+5066.    */
+5067. > static int test_key_update_in_write(int tst)
+5068.   {
+5069.       SSL_CTX *cctx = NULL, *sctx = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5069:5: 
+5067.   static int test_key_update_in_write(int tst)
+5068.   {
+5069. >     SSL_CTX *cctx = NULL, *sctx = NULL;
+5070.       SSL *clientssl = NULL, *serverssl = NULL;
+5071.       int testresult = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5070:5: 
+5068.   {
+5069.       SSL_CTX *cctx = NULL, *sctx = NULL;
+5070. >     SSL *clientssl = NULL, *serverssl = NULL;
+5071.       int testresult = 0;
+5072.       char buf[20];
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5071:5: 
+5069.       SSL_CTX *cctx = NULL, *sctx = NULL;
+5070.       SSL *clientssl = NULL, *serverssl = NULL;
+5071. >     int testresult = 0;
+5072.       char buf[20];
+5073.       static char *mess = "A test message";
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5073:5: 
+5071.       int testresult = 0;
+5072.       char buf[20];
+5073. >     static char *mess = "A test message";
+5074.       BIO *bretry = BIO_new(bio_s_always_retry());
+5075.       BIO *tmp = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5074:5: Skipping BIO_new(): empty list of specs
+5072.       char buf[20];
+5073.       static char *mess = "A test message";
+5074.       BIO *bretry = BIO_new(bio_s_always_retry());
+            ^
+5075.       BIO *tmp = NULL;
+5076.       SSL *peerupdate = NULL, *peerwrite = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5075:5: 
+5073.       static char *mess = "A test message";
+5074.       BIO *bretry = BIO_new(bio_s_always_retry());
+5075. >     BIO *tmp = NULL;
+5076.       SSL *peerupdate = NULL, *peerwrite = NULL;
+5077.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5076:5: 
+5074.       BIO *bretry = BIO_new(bio_s_always_retry());
+5075.       BIO *tmp = NULL;
+5076. >     SSL *peerupdate = NULL, *peerwrite = NULL;
+5077.   
+5078.       if (!TEST_ptr(bretry)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5078:10: Taking true branch
+5076.       SSL *peerupdate = NULL, *peerwrite = NULL;
+5077.   
+5078.       if (!TEST_ptr(bretry)
+                 ^
+5079.               || !TEST_true(create_ssl_ctx_pair(TLS_server_method(),
+5080.                                                 TLS_client_method(),
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5135:2: 
+5133.       testresult = 1;
+5134.   
+5135. >  end:
+5136.       SSL_free(serverssl);
+5137.       SSL_free(clientssl);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5136:5: Skipping SSL_free(): empty list of specs
+5134.   
+5135.    end:
+5136.       SSL_free(serverssl);
+            ^
+5137.       SSL_free(clientssl);
+5138.       SSL_CTX_free(sctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5137:5: Skipping SSL_free(): empty list of specs
+5135.    end:
+5136.       SSL_free(serverssl);
+5137.       SSL_free(clientssl);
+            ^
+5138.       SSL_CTX_free(sctx);
+5139.       SSL_CTX_free(cctx);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5138:5: 
+5136.       SSL_free(serverssl);
+5137.       SSL_free(clientssl);
+5138. >     SSL_CTX_free(sctx);
+5139.       SSL_CTX_free(cctx);
+5140.       BIO_free(bretry);

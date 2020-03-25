@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_ctr.c:371: error: DEAD_STORE
+  The value written to &ctr (type rand_drbg_ctr_st*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_ctr.c:371:5: Write of unused value
+369.   int drbg_ctr_init(RAND_DRBG *drbg)
+370.   {
+371.       RAND_DRBG_CTR *ctr = &drbg->data.ctr;
+           ^
+372.       size_t keylen;
+373.       EVP_CIPHER *cipher = NULL;

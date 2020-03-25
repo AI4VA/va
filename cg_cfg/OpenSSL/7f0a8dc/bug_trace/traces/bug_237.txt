@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct_ctx.c:114: error: DEAD_STORE
+  The value written to &idx (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct_ctx.c:114:5: Write of unused value
+112.       X509 *pretmp = NULL;
+113.       int certderlen = 0, prederlen = 0;
+114.       int idx = -1;
+           ^
+115.       int poison_ext_is_dup, sct_ext_is_dup;
+116.       int poison_idx = ct_x509_get_ext(cert, NID_ct_precert_poison, &poison_ext_is_dup);

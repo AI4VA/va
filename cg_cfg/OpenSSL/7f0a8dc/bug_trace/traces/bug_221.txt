@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_init.c:97: error: DEAD_STORE
+  The value written to &to_return (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_init.c:97:5: Write of unused value
+95.   int ENGINE_finish(ENGINE *e)
+96.   {
+97.       int to_return = 1;
+           ^
+98.   
+99.       if (e == NULL)

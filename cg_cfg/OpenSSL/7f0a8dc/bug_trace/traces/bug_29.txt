@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:86: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:86:13: Write of unused value
+84.               c2l(in, tin0);
+85.               tin[0] = tin0 ^ outW0;
+86.               c2l(in, tin1);
+                  ^
+87.               tin[1] = tin1 ^ outW1;
+88.               DES_encrypt1(tin, schedule, DES_DECRYPT);

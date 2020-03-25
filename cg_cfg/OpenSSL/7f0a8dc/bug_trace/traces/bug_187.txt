@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_time.c:158: error: UNINITIALIZED_VALUE
+  The value read from tmp.tm_year was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_time.c:158:17: 
+156.                   tmp.tm_year = n < 50 ? n + 100 : n;
+157.               else
+158. >                 tmp.tm_year += n;
+159.               break;
+160.           case 2:

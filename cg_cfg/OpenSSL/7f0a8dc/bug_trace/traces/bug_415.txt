@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:1061: error: UNINITIALIZED_VALUE
+  The value read from t_d[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:1061:9: 
+1059.            * S1
+1060.            */
+1061. >         nist_set_256(t_d, buf.bn, 0, 0, 0, 0, 0, 23 - 4, 22 - 4, 21 - 4);
+1062.           /* left shift */
+1063.           {

@@ -1,0 +1,54 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:174: error: NULL_DEREFERENCE
+  pointer `ptmp` last assigned on line 171 could be null and is dereferenced at line 174, column 9.
+Showing all 7 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:149:1: start of procedure X509_PURPOSE_add()
+147.   }
+148.   
+149. > int X509_PURPOSE_add(int id, int trust, int flags,
+150.                        int (*ck) (const X509_PURPOSE *, const X509 *, int),
+151.                        const char *name, const char *sname, void *arg)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:158:5: 
+156.        * This is set according to what we change: application can't set it
+157.        */
+158. >     flags &= ~X509_PURPOSE_DYNAMIC;
+159.       /* This will always be set for application modified trust entries */
+160.       flags |= X509_PURPOSE_DYNAMIC_NAME;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:160:5: 
+158.       flags &= ~X509_PURPOSE_DYNAMIC;
+159.       /* This will always be set for application modified trust entries */
+160. >     flags |= X509_PURPOSE_DYNAMIC_NAME;
+161.       /* Get existing entry if any */
+162.       idx = X509_PURPOSE_get_by_id(id);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:162:5: 
+160.       flags |= X509_PURPOSE_DYNAMIC_NAME;
+161.       /* Get existing entry if any */
+162. >     idx = X509_PURPOSE_get_by_id(id);
+163.       /* Need a new entry */
+164.       if (idx == -1) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:164:9: Taking false branch
+162.       idx = X509_PURPOSE_get_by_id(id);
+163.       /* Need a new entry */
+164.       if (idx == -1) {
+               ^
+165.           if ((ptmp = OPENSSL_malloc(sizeof(*ptmp))) == NULL) {
+166.               X509V3err(X509V3_F_X509_PURPOSE_ADD, ERR_R_MALLOC_FAILURE);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:171:9: 
+169.           ptmp->flags = X509_PURPOSE_DYNAMIC;
+170.       } else
+171. >         ptmp = X509_PURPOSE_get0(idx);
+172.   
+173.       /* OPENSSL_free existing name if dynamic */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:174:9: 
+172.   
+173.       /* OPENSSL_free existing name if dynamic */
+174. >     if (ptmp->flags & X509_PURPOSE_DYNAMIC_NAME) {
+175.           OPENSSL_free(ptmp->name);
+176.           OPENSSL_free(ptmp->sname);

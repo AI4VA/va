@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/init.c:166: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/init.c:166:5: Write of unused value
+164.   DEFINE_RUN_ONCE_STATIC(ossl_init_load_crypto_strings)
+165.   {
+166.       int ret = 1;
+           ^
+167.       /*
+168.        * OPENSSL_NO_AUTOERRINIT is provided here to prevent at compile time

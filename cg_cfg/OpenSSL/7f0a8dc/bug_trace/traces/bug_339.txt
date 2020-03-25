@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:304: error: DEAD_STORE
+  The value written to &verdict (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:304:5: Write of unused value
+302.   {
+303.       int num_failed = 0;
+304.       int verdict = 1;
+           ^
+305.       int ii, i, jj, j, jstep;
+306.       int permute[OSSL_NELEM(all_tests)];

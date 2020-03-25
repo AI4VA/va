@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:792: error: UNINITIALIZED_VALUE
+  The value read from c_d[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:792:9: 
+790.            * S2
+791.            */
+792. >         nist_set_256(c_d, buf.bn, 0, 15, 14, 13, 12, 0, 0, 0);
+793.           carry = (int)bn_add_words(t_d, t_d, c_d, BN_NIST_256_TOP);
+794.           /* left shift */

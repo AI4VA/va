@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/tls13_enc.c:105: error: DEAD_STORE
+  The value written to &p (type ossl_param_st*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/tls13_enc.c:105:6: Write of unused value
+103.       *p++ = OSSL_PARAM_construct_octet_string(OSSL_KDF_PARAM_INFO,
+104.                                                hkdflabel, hkdflabellen);
+105.       *p++ = OSSL_PARAM_construct_end();
+            ^
+106.   
+107.       ret = EVP_KDF_CTX_set_params(kctx, params) <= 0

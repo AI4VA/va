@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:126: error: UNINITIALIZED_VALUE
+  The value read from asn1_tags.utype was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:126:13: 
+124.   
+125.       if ((asn1_tags.utype == V_ASN1_SEQUENCE)
+126. >         || (asn1_tags.utype == V_ASN1_SET)) {
+127.           if (!cnf) {
+128.               *perr = ASN1_R_SEQUENCE_OR_SET_NEEDS_CONFIG;

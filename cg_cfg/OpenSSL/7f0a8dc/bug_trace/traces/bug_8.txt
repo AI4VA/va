@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/pcbc_enc.c:65: error: DEAD_STORE
+  The value written to &sin0 (type unsigned int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/pcbc_enc.c:65:5: Write of unused value
+63.       }
+64.       tin[0] = tin[1] = 0;
+65.       sin0 = sin1 = xor0 = xor1 = tout0 = tout1 = 0;
+          ^
+66.   }

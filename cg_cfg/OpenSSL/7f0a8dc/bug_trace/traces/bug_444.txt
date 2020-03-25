@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1643: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.alert_sent was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1643:5: 
+1641.       }
+1642.    err:
+1643. >     ret->server_alert_sent = server_ex_data.alert_sent;
+1644.       ret->server_num_fatal_alerts_sent = server_ex_data.num_fatal_alerts_sent;
+1645.       ret->server_alert_received = client_ex_data.alert_received;

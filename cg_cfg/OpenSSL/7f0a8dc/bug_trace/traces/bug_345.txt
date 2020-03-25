@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_hash.c:309: error: DEAD_STORE
+  The value written to &hash (type rand_drbg_hash_st*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_hash.c:309:5: Write of unused value
+307.   {
+308.       EVP_MD *md;
+309.       RAND_DRBG_HASH *hash = &drbg->data.hash;
+           ^
+310.   
+311.       /*

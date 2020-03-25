@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:397: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:397:5: Write of unused value
+395.       SSL *ssl;
+396.       BIO_SSL *bs;
+397.       long ret = 1;
+           ^
+398.   
+399.       bs = BIO_get_data(b);

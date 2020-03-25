@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/mdc2/mdc2dgst.c:106: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/mdc2/mdc2dgst.c:106:9: Write of unused value
+104.           p = c->hh;
+105.           l2c(ttin0, p);
+106.           l2c(tin1, p);
+               ^
+107.       }
+108.   }

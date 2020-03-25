@@ -1,0 +1,39 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:88: error: NULL_DEREFERENCE
+  pointer `xk` last assigned on line 87 could be null and is dereferenced by call to `EVP_PKEY_cmp()` at line 88, column 13.
+Showing all 5 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:82:1: start of procedure X509_REQ_check_private_key()
+80.   }
+81.   
+82. > int X509_REQ_check_private_key(X509_REQ *x, EVP_PKEY *k)
+83.   {
+84.       EVP_PKEY *xk = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:84:5: 
+82.   int X509_REQ_check_private_key(X509_REQ *x, EVP_PKEY *k)
+83.   {
+84. >     EVP_PKEY *xk = NULL;
+85.       int ok = 0;
+86.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:85:5: 
+83.   {
+84.       EVP_PKEY *xk = NULL;
+85. >     int ok = 0;
+86.   
+87.       xk = X509_REQ_get_pubkey(x);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:87:5: 
+85.       int ok = 0;
+86.   
+87. >     xk = X509_REQ_get_pubkey(x);
+88.       switch (EVP_PKEY_cmp(xk, k)) {
+89.       case 1:
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:88:5: 
+86.   
+87.       xk = X509_REQ_get_pubkey(x);
+88. >     switch (EVP_PKEY_cmp(xk, k)) {
+89.       case 1:
+90.           ok = 1;

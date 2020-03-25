@@ -1,0 +1,170 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:428: error: NULL_DEREFERENCE
+  pointer `signer` last assigned on line 390 could be null and is dereferenced by call to `ts_check_signer_name()` at line 428, column 25.
+Showing all 22 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:387:1: start of procedure int_ts_RESP_verify_token()
+385.    *      - Check if the TSA name is the expected TSA.
+386.    */
+387. > static int int_ts_RESP_verify_token(TS_VERIFY_CTX *ctx,
+388.                                       PKCS7 *token, TS_TST_INFO *tst_info)
+389.   {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:390:5: 
+388.                                       PKCS7 *token, TS_TST_INFO *tst_info)
+389.   {
+390. >     X509 *signer = NULL;
+391.       GENERAL_NAME *tsa_name = tst_info->tsa;
+392.       X509_ALGOR *md_alg = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:391:5: 
+389.   {
+390.       X509 *signer = NULL;
+391. >     GENERAL_NAME *tsa_name = tst_info->tsa;
+392.       X509_ALGOR *md_alg = NULL;
+393.       unsigned char *imprint = NULL;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:392:5: 
+390.       X509 *signer = NULL;
+391.       GENERAL_NAME *tsa_name = tst_info->tsa;
+392. >     X509_ALGOR *md_alg = NULL;
+393.       unsigned char *imprint = NULL;
+394.       unsigned imprint_len = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:393:5: 
+391.       GENERAL_NAME *tsa_name = tst_info->tsa;
+392.       X509_ALGOR *md_alg = NULL;
+393. >     unsigned char *imprint = NULL;
+394.       unsigned imprint_len = 0;
+395.       int ret = 0;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:394:5: 
+392.       X509_ALGOR *md_alg = NULL;
+393.       unsigned char *imprint = NULL;
+394. >     unsigned imprint_len = 0;
+395.       int ret = 0;
+396.       int flags = ctx->flags;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:395:5: 
+393.       unsigned char *imprint = NULL;
+394.       unsigned imprint_len = 0;
+395. >     int ret = 0;
+396.       int flags = ctx->flags;
+397.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:396:5: 
+394.       unsigned imprint_len = 0;
+395.       int ret = 0;
+396. >     int flags = ctx->flags;
+397.   
+398.       /* Some options require us to also check the signature */
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:399:11: Taking true branch
+397.   
+398.       /* Some options require us to also check the signature */
+399.       if (((flags & TS_VFY_SIGNER) && tsa_name != NULL)
+                 ^
+400.               || (flags & TS_VFY_TSA_NAME)) {
+401.           flags |= TS_VFY_SIGNATURE;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:399:37: Taking true branch
+397.   
+398.       /* Some options require us to also check the signature */
+399.       if (((flags & TS_VFY_SIGNER) && tsa_name != NULL)
+                                           ^
+400.               || (flags & TS_VFY_TSA_NAME)) {
+401.           flags |= TS_VFY_SIGNATURE;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:401:9: 
+399.       if (((flags & TS_VFY_SIGNER) && tsa_name != NULL)
+400.               || (flags & TS_VFY_TSA_NAME)) {
+401. >         flags |= TS_VFY_SIGNATURE;
+402.       }
+403.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:404:10: Taking false branch
+402.       }
+403.   
+404.       if ((flags & TS_VFY_SIGNATURE)
+                ^
+405.           && !TS_RESP_verify_signature(token, ctx->certs, ctx->store, &signer))
+406.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:407:10: Taking false branch
+405.           && !TS_RESP_verify_signature(token, ctx->certs, ctx->store, &signer))
+406.           goto err;
+407.       if ((flags & TS_VFY_VERSION)
+                ^
+408.           && TS_TST_INFO_get_version(tst_info) != 1) {
+409.           TSerr(TS_F_INT_TS_RESP_VERIFY_TOKEN, TS_R_UNSUPPORTED_VERSION);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:412:10: Taking true branch
+410.           goto err;
+411.       }
+412.       if ((flags & TS_VFY_POLICY)
+                ^
+413.           && !ts_check_policy(ctx->policy, tst_info))
+414.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:413:13: Taking false branch
+411.       }
+412.       if ((flags & TS_VFY_POLICY)
+413.           && !ts_check_policy(ctx->policy, tst_info))
+                   ^
+414.           goto err;
+415.       if ((flags & TS_VFY_IMPRINT)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:415:10: Taking true branch
+413.           && !ts_check_policy(ctx->policy, tst_info))
+414.           goto err;
+415.       if ((flags & TS_VFY_IMPRINT)
+                ^
+416.           && !ts_check_imprints(ctx->md_alg, ctx->imprint, ctx->imprint_len,
+417.                                 tst_info))
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:416:13: Taking false branch
+414.           goto err;
+415.       if ((flags & TS_VFY_IMPRINT)
+416.           && !ts_check_imprints(ctx->md_alg, ctx->imprint, ctx->imprint_len,
+                   ^
+417.                                 tst_info))
+418.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:419:10: Taking false branch
+417.                                 tst_info))
+418.           goto err;
+419.       if ((flags & TS_VFY_DATA)
+                ^
+420.           && (!ts_compute_imprint(ctx->data, tst_info,
+421.                                   &md_alg, &imprint, &imprint_len)
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:424:10: Taking false branch
+422.               || !ts_check_imprints(md_alg, imprint, imprint_len, tst_info)))
+423.           goto err;
+424.       if ((flags & TS_VFY_NONCE)
+                ^
+425.           && !ts_check_nonces(ctx->nonce, tst_info))
+426.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:427:10: Taking true branch
+425.           && !ts_check_nonces(ctx->nonce, tst_info))
+426.           goto err;
+427.       if ((flags & TS_VFY_SIGNER)
+                ^
+428.           && tsa_name && !ts_check_signer_name(tsa_name, signer)) {
+429.           TSerr(TS_F_INT_TS_RESP_VERIFY_TOKEN, TS_R_TSA_NAME_MISMATCH);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:428:12: Taking true branch
+426.           goto err;
+427.       if ((flags & TS_VFY_SIGNER)
+428.           && tsa_name && !ts_check_signer_name(tsa_name, signer)) {
+                  ^
+429.           TSerr(TS_F_INT_TS_RESP_VERIFY_TOKEN, TS_R_TSA_NAME_MISMATCH);
+430.           goto err;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:428:25: 
+426.           goto err;
+427.       if ((flags & TS_VFY_SIGNER)
+428. >         && tsa_name && !ts_check_signer_name(tsa_name, signer)) {
+429.           TSerr(TS_F_INT_TS_RESP_VERIFY_TOKEN, TS_R_TSA_NAME_MISMATCH);
+430.           goto err;

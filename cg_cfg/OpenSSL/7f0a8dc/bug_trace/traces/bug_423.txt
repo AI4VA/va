@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:1607: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:1607:5: Write of unused value
+1605.           }
+1606.       }
+1607.       argc = opt_num_rest();
+            ^
+1608.       argv = opt_rest();
+1609.   

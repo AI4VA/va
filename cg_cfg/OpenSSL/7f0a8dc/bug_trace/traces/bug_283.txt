@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_pk1.c:162: error: DEAD_STORE
+  The value written to &mlen (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_pk1.c:162:5: Write of unused value
+160.       unsigned char *em = NULL;
+161.       unsigned int good, found_zero_byte, mask;
+162.       int zero_index = 0, msg_index, mlen = -1;
+           ^
+163.   
+164.       if (tlen <= 0 || flen <= 0)

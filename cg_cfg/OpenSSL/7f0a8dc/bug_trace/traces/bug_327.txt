@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock.c:237: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock.c:237:5: Write of unused value
+235.   {
+236.       BIO_ADDR res;
+237.       int ret = -1;
+           ^
+238.   
+239.       ret = BIO_accept_ex(sock, &res, 0);

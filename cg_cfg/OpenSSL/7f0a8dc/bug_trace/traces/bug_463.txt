@@ -1,0 +1,126 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1910: error: NULL_DEREFERENCE
+  pointer `ktmp2` last assigned on line 1909 could be null and is dereferenced by call to `EVP_PKEY_copy_parameters()` at line 1910, column 9.
+Showing all 16 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1883:1: start of procedure X509_get_pubkey_parameters()
+1881.   }
+1882.   
+1883. > int X509_get_pubkey_parameters(EVP_PKEY *pkey, STACK_OF(X509) *chain)
+1884.   {
+1885.       EVP_PKEY *ktmp = NULL, *ktmp2;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1885:5: 
+1883.   int X509_get_pubkey_parameters(EVP_PKEY *pkey, STACK_OF(X509) *chain)
+1884.   {
+1885. >     EVP_PKEY *ktmp = NULL, *ktmp2;
+1886.       int i, j;
+1887.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1888:10: Taking true branch
+1886.       int i, j;
+1887.   
+1888.       if ((pkey != NULL) && !EVP_PKEY_missing_parameters(pkey))
+                 ^
+1889.           return 1;
+1890.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1888:28: Taking false branch
+1886.       int i, j;
+1887.   
+1888.       if ((pkey != NULL) && !EVP_PKEY_missing_parameters(pkey))
+                                   ^
+1889.           return 1;
+1890.   
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1891:10: 
+1889.           return 1;
+1890.   
+1891. >     for (i = 0; i < sk_X509_num(chain); i++) {
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+1893.           if (ktmp == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1891:17: Loop condition is true. Entering loop body
+1889.           return 1;
+1890.   
+1891.       for (i = 0; i < sk_X509_num(chain); i++) {
+                        ^
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+1893.           if (ktmp == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1892:9: Skipping sk_X509_value(): method has no implementation
+1890.   
+1891.       for (i = 0; i < sk_X509_num(chain); i++) {
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+                ^
+1893.           if (ktmp == NULL) {
+1894.               X509err(X509_F_X509_GET_PUBKEY_PARAMETERS,
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1893:13: Taking false branch
+1891.       for (i = 0; i < sk_X509_num(chain); i++) {
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+1893.           if (ktmp == NULL) {
+                    ^
+1894.               X509err(X509_F_X509_GET_PUBKEY_PARAMETERS,
+1895.                       X509_R_UNABLE_TO_GET_CERTS_PUBLIC_KEY);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1898:14: Taking false branch
+1896.               return 0;
+1897.           }
+1898.           if (!EVP_PKEY_missing_parameters(ktmp))
+                     ^
+1899.               break;
+1900.       }
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1891:41: 
+1889.           return 1;
+1890.   
+1891. >     for (i = 0; i < sk_X509_num(chain); i++) {
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+1893.           if (ktmp == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1891:17: Loop condition is false. Leaving loop
+1889.           return 1;
+1890.   
+1891.       for (i = 0; i < sk_X509_num(chain); i++) {
+                        ^
+1892.           ktmp = X509_get0_pubkey(sk_X509_value(chain, i));
+1893.           if (ktmp == NULL) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1901:9: Taking false branch
+1899.               break;
+1900.       }
+1901.       if (ktmp == NULL) {
+                ^
+1902.           X509err(X509_F_X509_GET_PUBKEY_PARAMETERS,
+1903.                   X509_R_UNABLE_TO_FIND_PARAMETERS_IN_CHAIN);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1908:10: 
+1906.   
+1907.       /* first, populate the other certs */
+1908. >     for (j = i - 1; j >= 0; j--) {
+1909.           ktmp2 = X509_get0_pubkey(sk_X509_value(chain, j));
+1910.           EVP_PKEY_copy_parameters(ktmp2, ktmp);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1908:21: Loop condition is true. Entering loop body
+1906.   
+1907.       /* first, populate the other certs */
+1908.       for (j = i - 1; j >= 0; j--) {
+                            ^
+1909.           ktmp2 = X509_get0_pubkey(sk_X509_value(chain, j));
+1910.           EVP_PKEY_copy_parameters(ktmp2, ktmp);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1909:9: Skipping sk_X509_value(): method has no implementation
+1907.       /* first, populate the other certs */
+1908.       for (j = i - 1; j >= 0; j--) {
+1909.           ktmp2 = X509_get0_pubkey(sk_X509_value(chain, j));
+                ^
+1910.           EVP_PKEY_copy_parameters(ktmp2, ktmp);
+1911.       }
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1910:9: 
+1908.       for (j = i - 1; j >= 0; j--) {
+1909.           ktmp2 = X509_get0_pubkey(sk_X509_value(chain, j));
+1910. >         EVP_PKEY_copy_parameters(ktmp2, ktmp);
+1911.       }
+1912.   

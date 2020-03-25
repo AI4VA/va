@@ -1,0 +1,1977 @@
+<html>
+<head>
+<title>Infer found 492 bugs</title>
+</head>
+<body>
+<h2>List of bugs found</h2>
+<ol><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cbc_cksm.c:23: error: DEAD_STORE
+  The value written to &iv (type unsigned char const *) is never used.
+(<a href="traces/bug_1.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cbc_cksm.c:41: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_2.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cbc_cksm.c:43: error: DEAD_STORE
+  The value written to &tout0 (type unsigned int) is never used.
+(<a href="traces/bug_3.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb3_enc.c:22: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_4.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb3_enc.c:32: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_5.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/pcbc_enc.c:27: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_6.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/pcbc_enc.c:46: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_7.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/pcbc_enc.c:65: error: DEAD_STORE
+  The value written to &sin0 (type unsigned int) is never used.
+(<a href="traces/bug_8.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/app_params.c:69: error: DEAD_STORE
+  The value written to &bufsz (type unsigned long) is never used.
+(<a href="traces/bug_9.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:40: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_10.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:73: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_11.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:52: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_12.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:83: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_13.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:49: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_14.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:78: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_15.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cbc.c:85: error: DEAD_STORE
+  The value written to &tin0 (type unsigned long) is never used.
+(<a href="traces/bug_16.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:39: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_17.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:72: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_18.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:51: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_19.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:82: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_20.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:48: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_21.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:77: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_22.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_cbc.c:84: error: DEAD_STORE
+  The value written to &tin0 (type unsigned long) is never used.
+(<a href="traces/bug_23.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ecb.c:21: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_24.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ecb.c:31: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+(<a href="traces/bug_25.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ecb.c:30: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_26.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:82: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+(<a href="traces/bug_27.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:53: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_28.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:86: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_29.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:29: error: DEAD_STORE
+  The value written to &in2 (type unsigned char const *) is never used.
+(<a href="traces/bug_30.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:32: error: DEAD_STORE
+  The value written to &in2 (type unsigned char const *) is never used.
+(<a href="traces/bug_31.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:101: error: DEAD_STORE
+  The value written to &inW0 (type unsigned int) is never used.
+(<a href="traces/bug_32.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:38: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_33.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:66: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_34.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:69: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_35.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:98: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_36.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:62: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_37.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:91: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_38.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/xcbc_enc.c:100: error: DEAD_STORE
+  The value written to &tin0 (type unsigned int) is never used.
+(<a href="traces/bug_39.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_skey.c:27: error: DEAD_STORE
+  The value written to &key (type unsigned char const *) is never used.
+(<a href="traces/bug_40.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/dtls1_bitmap.c:19: error: DEAD_STORE
+  The value written to &v1 (type unsigned char const *) is never used.
+(<a href="traces/bug_41.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/dtls1_bitmap.c:20: error: DEAD_STORE
+  The value written to &v2 (type unsigned char const *) is never used.
+(<a href="traces/bug_42.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve448/arch_32/f_impl.c:33: error: UNINITIALIZED_VALUE
+  The value read from aa[_] was never initialized.
+(<a href="traces/bug_43.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve448/arch_32/f_impl.c:41: error: UNINITIALIZED_VALUE
+  The value read from aa[_] was never initialized.
+(<a href="traces/bug_44.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve448/arch_32/f_impl.c:33: error: UNINITIALIZED_VALUE
+  The value read from bb[_] was never initialized.
+(<a href="traces/bug_45.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve448/arch_32/f_impl.c:41: error: UNINITIALIZED_VALUE
+  The value read from bb[_] was never initialized.
+(<a href="traces/bug_46.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp2.c:22: error: DEAD_STORE
+  The value written to &r_is_one (type int) is never used.
+(<a href="traces/bug_47.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslcorrupttest.c:21: error: NULL_DEREFERENCE
+  pointer `next` last assigned on line 19 could be null and is dereferenced by call to `BIO_test_flags()` at line 21, column 13.
+(<a href="traces/bug_48.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:38: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_49.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:49: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_50.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:33: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_51.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:58: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_52.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:60: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_53.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64ede.c:52: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_54.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:37: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_55.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:45: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_56.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:32: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_57.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:56: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_58.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:58: error: DEAD_STORE
+  The value written to &t (type unsigned int) is never used.
+(<a href="traces/bug_59.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb64enc.c:48: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_60.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:38: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_61.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:46: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_62.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:33: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_63.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:57: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_64.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:59: error: DEAD_STORE
+  The value written to &t (type unsigned int) is never used.
+(<a href="traces/bug_65.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ofb64.c:49: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_66.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:38: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_67.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:46: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_68.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:33: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_69.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:57: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_70.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:59: error: DEAD_STORE
+  The value written to &t (type unsigned int) is never used.
+(<a href="traces/bug_71.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_ofb64.c:49: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_72.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:34: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_73.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:44: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_74.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:56: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_75.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:66: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_76.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:76: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_77.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64enc.c:34: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_78.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64enc.c:41: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_79.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64enc.c:54: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_80.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64enc.c:61: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_81.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64enc.c:71: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_82.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb_enc.c:47: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_83.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb_enc.c:80: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_84.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ofb_enc.c:81: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_85.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:38: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_86.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:46: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_87.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:33: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_88.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:57: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_89.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:59: error: DEAD_STORE
+  The value written to &t (type unsigned long) is never used.
+(<a href="traces/bug_90.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ofb64.c:49: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_91.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:38: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_92.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:46: error: DEAD_STORE
+  The value written to &dp (type unsigned char*) is never used.
+(<a href="traces/bug_93.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:33: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_94.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:57: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_95.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:59: error: DEAD_STORE
+  The value written to &t (type unsigned long) is never used.
+(<a href="traces/bug_96.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:49: error: UNINITIALIZED_VALUE
+  The value read from d[_] was never initialized.
+(<a href="traces/bug_97.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_cfb64.c:35: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_98.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_cfb64.c:42: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_99.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_cfb64.c:55: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_100.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_cfb64.c:62: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_101.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_cfb64.c:72: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_102.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_cfb64.c:35: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_103.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_cfb64.c:42: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_104.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_cfb64.c:55: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_105.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_cfb64.c:62: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_106.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_cfb64.c:72: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_107.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cfb64.c:35: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_108.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cfb64.c:42: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_109.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cfb64.c:55: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_110.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cfb64.c:62: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_111.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_cfb64.c:72: error: DEAD_STORE
+  The value written to &v0 (type unsigned long) is never used.
+(<a href="traces/bug_112.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ecb.c:26: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_113.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ecb.c:33: error: DEAD_STORE
+  The value written to &l0 (type unsigned long) is never used.
+(<a href="traces/bug_114.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/idea/i_ecb.c:32: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_115.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2cfb64.c:35: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_116.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2cfb64.c:42: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_117.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2cfb64.c:55: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_118.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2cfb64.c:62: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_119.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2cfb64.c:72: error: DEAD_STORE
+  The value written to &v0 (type unsigned long) is never used.
+(<a href="traces/bug_120.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/common/keymgmt/dh_kmgmt.c:56: error: DEAD_STORE
+  The value written to &priv_key (type bignum_st*) is never used.
+(<a href="traces/bug_121.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/common/keymgmt/dsa_kmgmt.c:58: error: DEAD_STORE
+  The value written to &priv_key (type bignum_st*) is never used.
+(<a href="traces/bug_122.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs7/pk7_doit.c:24: error: DEAD_STORE
+  The value written to &isOther (type int) is never used.
+(<a href="traces/bug_123.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_ecb.c:29: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_124.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_ecb.c:39: error: DEAD_STORE
+  The value written to &l (type unsigned long) is never used.
+(<a href="traces/bug_125.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2_ecb.c:38: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_126.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb_enc.c:50: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_127.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb_enc.c:148: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_128.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb_enc.c:149: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_129.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ecb.c:32: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_130.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ecb.c:42: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+(<a href="traces/bug_131.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_ecb.c:41: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_132.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_verify.c:72: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_133.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:115: error: UNINITIALIZED_VALUE
+  The value read from k[_] was never initialized.
+(<a href="traces/bug_134.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:116: error: UNINITIALIZED_VALUE
+  The value read from k[_] was never initialized.
+(<a href="traces/bug_135.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:47: error: UNINITIALIZED_VALUE
+  The value read from x[_] was never initialized.
+(<a href="traces/bug_136.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:48: error: UNINITIALIZED_VALUE
+  The value read from x[_] was never initialized.
+(<a href="traces/bug_137.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:49: error: UNINITIALIZED_VALUE
+  The value read from x[_] was never initialized.
+(<a href="traces/bug_138.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_skey.c:50: error: UNINITIALIZED_VALUE
+  The value read from x[_] was never initialized.
+(<a href="traces/bug_139.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:38: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_140.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:46: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_141.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:58: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_142.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:72: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_143.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:88: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_144.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:106: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+(<a href="traces/bug_145.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:40: error: NULL_DEREFERENCE
+  pointer `data` last assigned on line 38 could be null and is dereferenced at line 40, column 16.
+(<a href="traces/bug_146.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509name.c:43: error: NULL_DEREFERENCE
+  pointer `data` last assigned on line 38 could be null and is dereferenced at line 43, column 10.
+(<a href="traces/bug_147.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/tls13_enc.c:105: error: DEAD_STORE
+  The value written to &p (type ossl_param_st*) is never used.
+(<a href="traces/bug_148.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb_enc.c:40: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_149.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb_enc.c:47: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+(<a href="traces/bug_150.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/ecb_enc.c:46: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_151.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:40: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 38 could be null and is dereferenced at line 40, column 5.
+(<a href="traces/bug_152.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/d1_msg.c:48: error: DEAD_STORE
+  The value written to &ptr (type unsigned char*) is never used.
+(<a href="traces/bug_153.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cms/cms_pwri.c:61: error: DEAD_STORE
+  The value written to &pbe_nid (type int) is never used.
+(<a href="traces/bug_154.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock2.c:42: error: DEAD_STORE
+  The value written to &sock (type int) is never used.
+(<a href="traces/bug_155.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/mdc2test.c:53: error: DEAD_STORE
+  The value written to &i (type unsigned long) is never used.
+(<a href="traces/bug_156.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/aes/aes_ige.c:47: error: DEAD_STORE
+  The value written to &len (type unsigned long) is never used.
+(<a href="traces/bug_157.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/dsa/dsa_gen.c:191: error: UNINITIALIZED_VALUE
+  The value read from buf[_] was never initialized.
+(<a href="traces/bug_158.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_cbc.c:51: error: DEAD_STORE
+  The value written to &md_out (type unsigned char*) is never used.
+(<a href="traces/bug_159.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbg_cavs_test.c:50: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 48 could be null and is dereferenced at line 50, column 5.
+(<a href="traces/bug_160.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_lib.c:63: error: NULL_DEREFERENCE
+  pointer `ex` last assigned on line 57 could be null and is dereferenced by call to `X509V3_EXT_print()` at line 63, column 14.
+(<a href="traces/bug_161.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:100: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_162.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:100: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_163.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:112: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_164.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:117: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_165.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:122: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_166.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dtls_mtu_test.c:128: error: UNINITIALIZED_VALUE
+  The value read from mtus[_] was never initialized.
+(<a href="traces/bug_167.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_x931p.c:121: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_168.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_null.c:54: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_169.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_conv.c:84: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_170.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_cbc.c:61: error: DEAD_STORE
+  The value written to &md_out (type unsigned char*) is never used.
+(<a href="traces/bug_171.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/dsaparam.c:242: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_172.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/dsaparam.c:244: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_173.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_ssl.c:68: error: DEAD_STORE
+  The value written to &mlen (type int) is never used.
+(<a href="traces/bug_174.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_type.c:65: error: DEAD_STORE
+  The value written to &result (type int) is never used.
+(<a href="traces/bug_175.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/keymgmt_lib.c:174: error: DEAD_STORE
+  The value written to &j (type unsigned long) is never used.
+(<a href="traces/bug_176.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_gen.c:215: error: UNINITIALIZED_VALUE
+  The value read from bitsr[_] was never initialized.
+(<a href="traces/bug_177.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_gen.c:262: error: UNINITIALIZED_VALUE
+  The value read from bitsr[_] was never initialized.
+(<a href="traces/bug_178.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:78: error: NULL_DEREFERENCE
+  pointer `pt` last assigned on line 77 could be null and is dereferenced at line 78, column 12.
+(<a href="traces/bug_179.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/time_offset_test.c:71: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_180.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/dhparam.c:144: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_181.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_prn.c:83: error: NULL_DEREFERENCE
+  pointer `extoct` last assigned on line 82 could be null and is dereferenced by call to `ASN1_STRING_get0_data()` at line 83, column 9.
+(<a href="traces/bug_182.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/mdc2/mdc2dgst.c:103: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_183.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/mdc2/mdc2dgst.c:106: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_184.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_time.c:128: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_185.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_time.c:165: error: UNINITIALIZED_VALUE
+  The value read from tmp.tm_mon was never initialized.
+(<a href="traces/bug_186.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_time.c:158: error: UNINITIALIZED_VALUE
+  The value read from tmp.tm_year was never initialized.
+(<a href="traces/bug_187.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/pkcs12/p12_utl.c:141: error: DEAD_STORE
+  The value written to &unitmp (type unsigned char*) is never used.
+(<a href="traces/bug_188.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_conn.c:206: error: RESOURCE_LEAK
+  resource acquired by call to `BIO_socket()` at line 137, column 19 is not released after line 206, column 18.
+(<a href="traces/bug_189.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:104: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_190.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:136: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_191.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:116: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_192.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:147: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_193.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:113: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_194.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:142: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_195.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cast/c_enc.c:149: error: DEAD_STORE
+  The value written to &tin0 (type unsigned int) is never used.
+(<a href="traces/bug_196.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/ameth_lib.c:100: error: UNINITIALIZED_VALUE
+  The value read from t was never initialized.
+(<a href="traces/bug_197.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:92: error: NULL_DEREFERENCE
+  pointer `pt` last assigned on line 91 could be null and is dereferenced at line 92, column 12.
+(<a href="traces/bug_198.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ecparam.c:442: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_199.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ecparam.c:444: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_200.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_req.c:88: error: NULL_DEREFERENCE
+  pointer `xk` last assigned on line 87 could be null and is dereferenced by call to `EVP_PKEY_cmp()` at line 88, column 13.
+(<a href="traces/bug_201.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/passwd.c:180: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_202.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/passwd.c:186: error: DEAD_STORE
+  The value written to &pw_source_defined (type int) is never used.
+(<a href="traces/bug_203.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_print.c:331: error: DEAD_STORE
+  The value written to &ch (type unsigned char) is never used.
+(<a href="traces/bug_204.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:101: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_205.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:129: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_206.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:140: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_207.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:166: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_208.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:177: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_209.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:187: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_210.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/cfb64ede.c:188: error: DEAD_STORE
+  The value written to &v0 (type unsigned int) is never used.
+(<a href="traces/bug_211.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:146: error: DEAD_STORE
+  The value written to &l (type unsigned int) is never used.
+(<a href="traces/bug_212.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/whrlpool/wp_dgst.c:154: error: DEAD_STORE
+  The value written to &byteoff (type unsigned int) is never used.
+(<a href="traces/bug_213.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/pkeyutl.c:103: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+(<a href="traces/bug_214.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_time.c:259: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_215.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/enc.c:563: error: UNINITIALIZED_VALUE
+  The value read from salt[_] was never initialized.
+(<a href="traces/bug_216.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/fcrypt.c:129: error: DEAD_STORE
+  The value written to &b (type unsigned char*) is never used.
+(<a href="traces/bug_217.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:94: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_218.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:103: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 95 could be null and is dereferenced at line 103, column 13.
+(<a href="traces/bug_219.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:98: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 95 could be null and is dereferenced at line 98, column 13.
+(<a href="traces/bug_220.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_init.c:97: error: DEAD_STORE
+  The value written to &to_return (type int) is never used.
+(<a href="traces/bug_221.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_null.c:98: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_222.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:125: error: UNINITIALIZED_VALUE
+  The value read from asn1_tags.utype was never initialized.
+(<a href="traces/bug_223.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:126: error: UNINITIALIZED_VALUE
+  The value read from asn1_tags.utype was never initialized.
+(<a href="traces/bug_224.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:135: error: UNINITIALIZED_VALUE
+  The value read from asn1_tags.utype was never initialized.
+(<a href="traces/bug_225.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/asn1_gen.c:137: error: UNINITIALIZED_VALUE
+  The value read from asn1_tags.utype was never initialized.
+(<a href="traces/bug_226.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_genn.c:101: error: DEAD_STORE
+  The value written to &result (type int) is never used.
+(<a href="traces/bug_227.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:128: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_228.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:160: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_229.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:140: error: DEAD_STORE
+  The value written to &ivec (type unsigned char*) is never used.
+(<a href="traces/bug_230.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:171: error: DEAD_STORE
+  The value written to &ivec (type unsigned char*) is never used.
+(<a href="traces/bug_231.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:137: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_232.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:166: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_233.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bf/bf_enc.c:173: error: DEAD_STORE
+  The value written to &tin0 (type unsigned int) is never used.
+(<a href="traces/bug_234.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_util.c:111: error: NULL_DEREFERENCE
+  pointer `data` last assigned on line 108 could be null and is dereferenced at line 111, column 23.
+(<a href="traces/bug_235.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_ndef.c:124: error: DEAD_STORE
+  The value written to &derlen (type int) is never used.
+(<a href="traces/bug_236.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct_ctx.c:114: error: DEAD_STORE
+  The value written to &idx (type int) is never used.
+(<a href="traces/bug_237.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ex_data.c:111: error: DEAD_STORE
+  The value written to &ip (type ex_callbacks_st*) is never used.
+(<a href="traces/bug_238.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:121: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 121, column 9.
+(<a href="traces/bug_239.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:136: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 136, column 9.
+(<a href="traces/bug_240.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:139: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 139, column 9.
+(<a href="traces/bug_241.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:142: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 117 could be null and is dereferenced at line 142, column 9.
+(<a href="traces/bug_242.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:121: error: NULL_DEREFERENCE
+  pointer `next` last assigned on line 119 could be null and is dereferenced by call to `BIO_test_flags()` at line 121, column 13.
+(<a href="traces/bug_243.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/dsa_no_digest_size_test.c:199: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 134 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 199, column 5.
+(<a href="traces/bug_244.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_trs.c:147: error: NULL_DEREFERENCE
+  pointer `trtmp` last assigned on line 144 could be null and is dereferenced at line 147, column 9.
+(<a href="traces/bug_245.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:140: error: NULL_DEREFERENCE
+  pointer `xtmp` last assigned on line 127 could be null and is dereferenced by call to `X509_up_ref()` at line 140, column 9.
+(<a href="traces/bug_246.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_cbc.c:471: error: UNINITIALIZED_VALUE
+  The value read from hmac_pad[_] was never initialized.
+(<a href="traces/bug_247.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_blind.c:136: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_248.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/tasn_dec.c:346: error: DEAD_STORE
+  The value written to &q (type unsigned char const *) is never used.
+(<a href="traces/bug_249.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/sha/sha512.c:206: error: DEAD_STORE
+  The value written to &md (type unsigned char*) is never used.
+(<a href="traces/bug_250.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:223: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_251.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:224: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_252.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:225: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_253.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:226: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_254.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:227: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_255.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:228: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_256.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:229: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_257.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:230: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_258.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:231: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_259.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2s_prov.c:232: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_260.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:150: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 148 could be null and is dereferenced at line 150, column 5.
+(<a href="traces/bug_261.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sparse_array_test.c:169: error: UNINITIALIZED_VALUE
+  The value read from doall_data.res was never initialized.
+(<a href="traces/bug_262.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sparse_array_test.c:176: error: UNINITIALIZED_VALUE
+  The value read from doall_data.res was never initialized.
+(<a href="traces/bug_263.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sparse_array_test.c:181: error: UNINITIALIZED_VALUE
+  The value read from doall_data.res was never initialized.
+(<a href="traces/bug_264.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/v3_purp.c:174: error: NULL_DEREFERENCE
+  pointer `ptmp` last assigned on line 171 could be null and is dereferenced at line 174, column 9.
+(<a href="traces/bug_265.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_acpt.c:266: error: DEAD_STORE
+  The value written to &s (type int) is never used.
+(<a href="traces/bug_266.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:186: error: DEAD_STORE
+  The value written to &remaining (type unsigned long) is never used.
+(<a href="traces/bug_267.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:200: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 155 could be null and is dereferenced at line 200, column 9.
+(<a href="traces/bug_268.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:204: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 155 could be null and is dereferenced at line 204, column 9.
+(<a href="traces/bug_269.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:207: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 155 could be null and is dereferenced at line 207, column 9.
+(<a href="traces/bug_270.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:230: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_271.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:231: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_272.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:232: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_273.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:233: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_274.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:234: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_275.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:235: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_276.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:236: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_277.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:237: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_278.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:238: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_279.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:239: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_280.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:240: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_281.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/providers/default/digests/blake2b_prov.c:241: error: UNINITIALIZED_VALUE
+  The value read from m[_] was never initialized.
+(<a href="traces/bug_282.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rsa/rsa_pk1.c:162: error: DEAD_STORE
+  The value written to &mlen (type int) is never used.
+(<a href="traces/bug_283.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:160: error: NULL_DEREFERENCE
+  pointer `t` last assigned on line 158 could be null and is dereferenced at line 160, column 5.
+(<a href="traces/bug_284.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/provider.c:187: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_285.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:163: error: DEAD_STORE
+  The value written to &client_random_size (type unsigned long) is never used.
+(<a href="traces/bug_286.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/modes_internal_test.c:171: error: DEAD_STORE
+  The value written to &len (type unsigned long) is never used.
+(<a href="traces/bug_287.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:255: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_288.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:165: error: DEAD_STORE
+  The value written to &start (type int) is never used.
+(<a href="traces/bug_289.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/init.c:166: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_290.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:179: error: DEAD_STORE
+  The value written to &hands (type thread_event_handler_st**) is never used.
+(<a href="traces/bug_291.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_nbio.c:176: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_292.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/randfile.c:177: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_293.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/tls13_enc.c:262: error: DEAD_STORE
+  The value written to &p (type ossl_param_st*) is never used.
+(<a href="traces/bug_294.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/sparse_array.c:185: error: DEAD_STORE
+  The value written to &level (type int) is never used.
+(<a href="traces/bug_295.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/cms.c:589: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_296.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/cms.c:211: error: DEAD_STORE
+  The value written to &keyidx (type int) is never used.
+(<a href="traces/bug_297.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:237: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_sec was never initialized.
+(<a href="traces/bug_298.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:241: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_sec was never initialized.
+(<a href="traces/bug_299.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:245: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_sec was never initialized.
+(<a href="traces/bug_300.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:235: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_usec was never initialized.
+(<a href="traces/bug_301.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:236: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_usec was never initialized.
+(<a href="traces/bug_302.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_dgram.c:239: error: UNINITIALIZED_VALUE
+  The value read from timeleft.tv_usec was never initialized.
+(<a href="traces/bug_303.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_mem.c:196: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_304.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:230: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_305.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:273: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_306.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:213: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_307.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:245: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_308.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:250: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_309.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:293: error: DEAD_STORE
+  The value written to &iv (type unsigned char*) is never used.
+(<a href="traces/bug_310.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:241: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_311.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:286: error: DEAD_STORE
+  The value written to &out (type unsigned char*) is never used.
+(<a href="traces/bug_312.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/des_enc.c:295: error: DEAD_STORE
+  The value written to &tin0 (type unsigned int) is never used.
+(<a href="traces/bug_313.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/engine/eng_dyn.c:218: error: DEAD_STORE
+  The value written to &new_idx (type int) is never used.
+(<a href="traces/bug_314.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_hmac.c:203: error: DEAD_STORE
+  The value written to &hmac (type rand_drbg_hmac_st*) is never used.
+(<a href="traces/bug_315.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_prime.c:204: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_316.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/bio_md.c:203: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_317.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:248: error: DEAD_STORE
+  The value written to &params_n (type unsigned long) is never used.
+(<a href="traces/bug_318.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pkey_mac.c:210: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+(<a href="traces/bug_319.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/by_dir.c:224: error: DEAD_STORE
+  The value written to &postfix (type unsigned char*) is never used.
+(<a href="traces/bug_320.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:253: error: DEAD_STORE
+  The value written to &cipher (type evp_cipher_st const *) is never used.
+(<a href="traces/bug_321.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:352: error: DEAD_STORE
+  The value written to &nodes (type int) is never used.
+(<a href="traces/bug_322.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/srp.c:400: error: DEAD_STORE
+  The value written to &userindex (type int) is never used.
+(<a href="traces/bug_323.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/bioprinttest.c:238: error: DEAD_STORE
+  The value written to &t (type int) is never used.
+(<a href="traces/bug_324.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/rec_layer_d1.c:230: error: DEAD_STORE
+  The value written to &replayok (type int) is never used.
+(<a href="traces/bug_325.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1023: error: DEAD_STORE
+  The value written to &outdirlen (type unsigned long) is never used.
+(<a href="traces/bug_326.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock.c:237: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_327.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/enginetest.c:346: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 251 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 346, column 5.
+(<a href="traces/bug_328.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_asn1.c:271: error: UNINITIALIZED_VALUE
+  The value read from ret was never initialized.
+(<a href="traces/bug_329.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ui/ui_lib.c:303: error: NULL_DEREFERENCE
+  pointer `cancel_chars_copy` last assigned on line 269 could be null and is dereferenced by call to `general_allocate_boolean()` at line 303, column 12.
+(<a href="traces/bug_330.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/format_output.c:331: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_331.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/engine.c:359: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_332.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:298: error: NULL_DEREFERENCE
+  pointer `ginfo` last assigned on line 295 could be null and is dereferenced at line 298, column 14.
+(<a href="traces/bug_333.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/des/set_key.c:312: error: DEAD_STORE
+  The value written to &in (type unsigned char const *) is never used.
+(<a href="traces/bug_334.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock.c:301: error: DEAD_STORE
+  The value written to &l (type int) is never used.
+(<a href="traces/bug_335.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_sock.c:298: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_336.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:412: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_337.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:300: error: DEAD_STORE
+  The value written to &start (type int) is never used.
+(<a href="traces/bug_338.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:304: error: DEAD_STORE
+  The value written to &verdict (type int) is never used.
+(<a href="traces/bug_339.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:330: error: UNINITIALIZED_VALUE
+  The value read from permute[_] was never initialized.
+(<a href="traces/bug_340.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:331: error: UNINITIALIZED_VALUE
+  The value read from permute[_] was never initialized.
+(<a href="traces/bug_341.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/driver.c:336: error: UNINITIALIZED_VALUE
+  The value read from permute[_] was never initialized.
+(<a href="traces/bug_342.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_lbuf.c:304: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_343.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/encode.c:306: error: DEAD_STORE
+  The value written to &rv (type int) is never used.
+(<a href="traces/bug_344.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_hash.c:309: error: DEAD_STORE
+  The value written to &hash (type rand_drbg_hash_st*) is never used.
+(<a href="traces/bug_345.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_lib.c:316: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_346.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:347: error: NULL_DEREFERENCE
+  pointer `local` last assigned on line 334 could be null and is dereferenced by call to `init_get_thread_local()` at line 347, column 13.
+(<a href="traces/bug_347.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bss_mem.c:329: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_348.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:333: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 331 could be null and is dereferenced at line 333, column 5.
+(<a href="traces/bug_349.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:356: error: NULL_DEREFERENCE
+  pointer `client_proto` last assigned on line 332 could be null and is dereferenced by call to `memcmp()` at line 356, column 10.
+(<a href="traces/bug_350.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:344: error: NULL_DEREFERENCE
+  pointer `server_proto` last assigned on line 333 could be null and is dereferenced by call to `memcmp()` at line 344, column 9.
+(<a href="traces/bug_351.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/list.c:358: error: UNINITIALIZED_VALUE
+  The value read from dc.columns was never initialized.
+(<a href="traces/bug_352.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/list.c:360: error: UNINITIALIZED_VALUE
+  The value read from dc.width was never initialized.
+(<a href="traces/bug_353.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/digest.c:374: error: DEAD_STORE
+  The value written to &i (type unsigned long) is never used.
+(<a href="traces/bug_354.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/drbg_ctr.c:371: error: DEAD_STORE
+  The value written to &ctr (type rand_drbg_ctr_st*) is never used.
+(<a href="traces/bug_355.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ct/ct_sct.c:383: error: DEAD_STORE
+  The value written to &is_sct_valid (type int) is never used.
+(<a href="traces/bug_356.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:384: error: NULL_DEREFERENCE
+  pointer `gtr` last assigned on line 382 could be null and is dereferenced at line 384, column 34.
+(<a href="traces/bug_357.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/initthread.c:385: error: NULL_DEREFERENCE
+  pointer `gtr` last assigned on line 382 could be null and is dereferenced at line 385, column 53.
+(<a href="traces/bug_358.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/params_test.c:393: error: DEAD_STORE
+  The value written to &n (type unsigned long) is never used.
+(<a href="traces/bug_359.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:428: error: NULL_DEREFERENCE
+  pointer `signer` last assigned on line 390 could be null and is dereferenced by call to `ts_check_signer_name()` at line 428, column 25.
+(<a href="traces/bug_360.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/bio_enc.c:391: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_361.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssl_test.c:493: error: NULL_DEREFERENCE
+  pointer `server_ctx` last assigned on line 394 could be null and is dereferenced by call to `SSL_CTX_free()` at line 493, column 5.
+(<a href="traces/bug_362.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/bio_ssl.c:397: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_363.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/params_api_test.c:411: error: UNINITIALIZED_VALUE
+  The value read from p was never initialized.
+(<a href="traces/bug_364.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/bio_ok.c:409: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_365.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_asn1.c:417: error: UNINITIALIZED_VALUE
+  The value read from extmp.ex_free_func was never initialized.
+(<a href="traces/bug_366.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_asn1.c:416: error: UNINITIALIZED_VALUE
+  The value read from extmp.ex_func was never initialized.
+(<a href="traces/bug_367.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:581: error: DEAD_STORE
+  The value written to &numblocks (type unsigned long) is never used.
+(<a href="traces/bug_368.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:422: error: DEAD_STORE
+  The value written to &r_is_at_infinity (type int) is never used.
+(<a href="traces/bug_369.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/bf_buff.c:413: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_370.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_enc.c:421: error: DEAD_STORE
+  The value written to &n (type int) is never used.
+(<a href="traces/bug_371.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/format_output.c:482: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_372.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/testutil/tests.c:436: error: NULL_DEREFERENCE
+  pointer `aa` last assigned on line 435 could be null and is dereferenced by call to `BN_set_negative()` at line 436, column 5.
+(<a href="traces/bug_373.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/sm2/sm2_sign.c:447: error: DEAD_STORE
+  The value written to &derlen (type int) is never used.
+(<a href="traces/bug_374.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_verify.c:482: error: UNINITIALIZED_VALUE
+  The value read from failure_text[_] was never initialized.
+(<a href="traces/bug_375.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:541: error: UNINITIALIZED_VALUE
+  The value read from allpkts[_] was never initialized.
+(<a href="traces/bug_376.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:475: error: DEAD_STORE
+  The value written to &c (type unsigned char) is never used.
+(<a href="traces/bug_377.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:469: error: DEAD_STORE
+  The value written to &l (type long) is never used.
+(<a href="traces/bug_378.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/test_test.c:500: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_379.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:582: error: DEAD_STORE
+  The value written to &carry (type int) is never used.
+(<a href="traces/bug_380.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:591: error: DEAD_STORE
+  The value written to &carry (type int) is never used.
+(<a href="traces/bug_381.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:575: error: UNINITIALIZED_VALUE
+  The value read from t_d[_] was never initialized.
+(<a href="traces/bug_382.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_lib.c:488: error: DEAD_STORE
+  The value written to &max_version (type int) is never used.
+(<a href="traces/bug_383.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_lib.c:486: error: DEAD_STORE
+  The value written to &min_version (type int) is never used.
+(<a href="traces/bug_384.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/rehash.c:498: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_385.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/conf/conf_mod.c:487: error: DEAD_STORE
+  The value written to &sep (type unsigned char*) is never used.
+(<a href="traces/bug_386.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/tasn_dec.c:587: error: DEAD_STORE
+  The value written to &len (type long) is never used.
+(<a href="traces/bug_387.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/tasn_dec.c:523: error: DEAD_STORE
+  The value written to &q (type unsigned char const *) is never used.
+(<a href="traces/bug_388.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:530: error: NULL_DEREFERENCE
+  pointer `x` last assigned on line 529 could be null and is dereferenced by call to `X509_get1_ocsp()` at line 530, column 11.
+(<a href="traces/bug_389.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:537: error: DEAD_STORE
+  The value written to &p (type ossl_param_st*) is never used.
+(<a href="traces/bug_390.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_dtls.c:535: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_391.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_dtls.c:616: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_392.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/bio_b64.c:537: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_393.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_print.c:788: error: UNINITIALIZED_VALUE
+  The value read from econvert[_] was never initialized.
+(<a href="traces/bug_394.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:585: error: DEAD_STORE
+  The value written to &p (type ossl_param_st*) is never used.
+(<a href="traces/bug_395.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/pmeth_lib.c:582: error: NULL_DEREFERENCE
+  pointer `name` last assigned on line 573 could be null and is dereferenced by call to `strlen()` at line 582, column 45.
+(<a href="traces/bug_396.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:565: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 563 could be null and is dereferenced at line 565, column 9.
+(<a href="traces/bug_397.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/digest.c:577: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_398.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:591: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 589 could be null and is dereferenced at line 591, column 25.
+(<a href="traces/bug_399.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:679: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 641 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 679, column 5.
+(<a href="traces/bug_400.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:704: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 639 could be null and is dereferenced by call to `SSL_CTX_free()` at line 704, column 5.
+(<a href="traces/bug_401.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/objects/obj_dat.c:646: error: DEAD_STORE
+  The value written to &s (type unsigned char*) is never used.
+(<a href="traces/bug_402.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_dtls.c:642: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+(<a href="traces/bug_403.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:792: error: UNINITIALIZED_VALUE
+  The value read from c_d[_] was never initialized.
+(<a href="traces/bug_404.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:788: error: UNINITIALIZED_VALUE
+  The value read from t_d[_] was never initialized.
+(<a href="traces/bug_405.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:691: error: UNINITIALIZED_VALUE
+  The value read from hints.ai_flags was never initialized.
+(<a href="traces/bug_406.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:695: error: UNINITIALIZED_VALUE
+  The value read from hints.ai_flags was never initialized.
+(<a href="traces/bug_407.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/cms/cms_sd.c:701: error: DEAD_STORE
+  The value written to &pctx (type evp_pkey_ctx_st*) is never used.
+(<a href="traces/bug_408.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltestlib.c:689: error: DEAD_STORE
+  The value written to &ret (type long) is never used.
+(<a href="traces/bug_409.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:732: error: NULL_DEREFERENCE
+  pointer `ec` last assigned on line 729 could be null and is dereferenced by call to `EC_KEY_get0_group()` at line 732, column 39.
+(<a href="traces/bug_410.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ts/ts_rsp_sign.c:801: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_411.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/store/loader_file.c:847: error: UNINITIALIZED_VALUE
+  The value read from st.st_mode was never initialized.
+(<a href="traces/bug_412.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:834: error: NULL_DEREFERENCE
+  pointer `meth` last assigned on line 832 could be null and is dereferenced at line 834, column 9.
+(<a href="traces/bug_413.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:842: error: NULL_DEREFERENCE
+  pointer `meth` last assigned on line 840 could be null and is dereferenced at line 842, column 9.
+(<a href="traces/bug_414.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_nist.c:1061: error: UNINITIALIZED_VALUE
+  The value read from t_d[_] was never initialized.
+(<a href="traces/bug_415.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:904: error: NULL_DEREFERENCE
+  pointer `meth` last assigned on line 902 could be null and is dereferenced at line 904, column 9.
+(<a href="traces/bug_416.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rand/rand_lib.c:914: error: NULL_DEREFERENCE
+  pointer `meth` last assigned on line 912 could be null and is dereferenced at line 914, column 9.
+(<a href="traces/bug_417.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:993: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 923 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 993, column 5.
+(<a href="traces/bug_418.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_ciph.c:1184: error: UNINITIALIZED_VALUE
+  The value read from buflen was never initialized.
+(<a href="traces/bug_419.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_ciph.c:1186: error: UNINITIALIZED_VALUE
+  The value read from buflen was never initialized.
+(<a href="traces/bug_420.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/ssl_ciph.c:1208: error: UNINITIALIZED_VALUE
+  The value read from found was never initialized.
+(<a href="traces/bug_421.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/ssl3_record.c:1159: error: UNINITIALIZED_VALUE
+  The value read from reclen[_] was never initialized.
+(<a href="traces/bug_422.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:1607: error: DEAD_STORE
+  The value written to &argc (type int) is never used.
+(<a href="traces/bug_423.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:1608: error: DEAD_STORE
+  The value written to &argv (type unsigned char**) is never used.
+(<a href="traces/bug_424.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:997: error: UNINITIALIZED_VALUE
+  The value read from t[_] was never initialized.
+(<a href="traces/bug_425.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/evp/evp_enc.c:1029: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_426.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1158: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_427.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/record/ssl3_record.c:1269: error: DEAD_STORE
+  The value written to &j (type unsigned long) is never used.
+(<a href="traces/bug_428.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/store/loader_file.c:1298: error: DEAD_STORE
+  The value written to &matchcount (type int) is never used.
+(<a href="traces/bug_429.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1282: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_430.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:1357: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_431.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bn/bn_exp.c:1281: error: DEAD_STORE
+  The value written to &start (type int) is never used.
+(<a href="traces/bug_432.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1303: error: DEAD_STORE
+  The value written to &p (type unsigned char*) is never used.
+(<a href="traces/bug_433.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1325: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_434.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1326: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_435.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:1409: error: DEAD_STORE
+  The value written to &ret (type int) is never used.
+(<a href="traces/bug_436.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1479: error: DEAD_STORE
+  The value written to &param (type ossl_param_st*) is never used.
+(<a href="traces/bug_437.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_extra_test.c:1501: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 1404 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1501, column 5.
+(<a href="traces/bug_438.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1433: error: DEAD_STORE
+  The value written to &status (type int) is never used.
+(<a href="traces/bug_439.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1645: error: UNINITIALIZED_VALUE
+  The value read from client_ex_data.alert_received was never initialized.
+(<a href="traces/bug_440.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1646: error: UNINITIALIZED_VALUE
+  The value read from client_ex_data.alert_sent was never initialized.
+(<a href="traces/bug_441.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1647: error: UNINITIALIZED_VALUE
+  The value read from client_ex_data.num_fatal_alerts_sent was never initialized.
+(<a href="traces/bug_442.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1648: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.alert_received was never initialized.
+(<a href="traces/bug_443.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1643: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.alert_sent was never initialized.
+(<a href="traces/bug_444.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1644: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.num_fatal_alerts_sent was never initialized.
+(<a href="traces/bug_445.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1651: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.servername was never initialized.
+(<a href="traces/bug_446.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:1667: error: UNINITIALIZED_VALUE
+  The value read from server_ex_data.session_ticket_do_not_call was never initialized.
+(<a href="traces/bug_447.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/evp_test.c:1472: error: NULL_DEREFERENCE
+  pointer `copy` last assigned on line 1427 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1472, column 5.
+(<a href="traces/bug_448.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:1494: error: NULL_DEREFERENCE
+  pointer `str` last assigned on line 1487 could be null and is dereferenced at line 1494, column 17.
+(<a href="traces/bug_449.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3271: error: DEAD_STORE
+  The value written to &rsa_count (type long) is never used.
+(<a href="traces/bug_450.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1480: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_451.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1481: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_452.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1482: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_453.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1529: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_454.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1530: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_455.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1531: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_456.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1532: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_457.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1533: error: DEAD_STORE
+  The value written to &j (type int) is never used.
+(<a href="traces/bug_458.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ocsp.c:1643: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 1616 could be null and is dereferenced by call to `SSL_CTX_free()` at line 1643, column 5.
+(<a href="traces/bug_459.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1672: error: DEAD_STORE
+  The value written to &bp (type unsigned char*) is never used.
+(<a href="traces/bug_460.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:1625: error: DEAD_STORE
+  The value written to &cp (type unsigned char const *) is never used.
+(<a href="traces/bug_461.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/req.c:1739: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 1685 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 1739, column 9.
+(<a href="traces/bug_462.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:1910: error: NULL_DEREFERENCE
+  pointer `ktmp2` last assigned on line 1909 could be null and is dereferenced by call to `EVP_PKEY_copy_parameters()` at line 1910, column 9.
+(<a href="traces/bug_463.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ectest.c:2057: error: DEAD_STORE
+  The value written to &g_next (type ec_group_st**) is never used.
+(<a href="traces/bug_464.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ectest.c:2055: error: DEAD_STORE
+  The value written to &p_next (type ec_parameters_st**) is never used.
+(<a href="traces/bug_465.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/x509/x509_vfy.c:2149: error: NULL_DEREFERENCE
+  pointer `ptmp` last assigned on line 2148 could be null and is dereferenced at line 2149, column 13.
+(<a href="traces/bug_466.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:2218: error: DEAD_STORE
+  The value written to &ok (type int) is never used.
+(<a href="traces/bug_467.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:2396: error: UNINITIALIZED_VALUE
+  The value read from readbytes was never initialized.
+(<a href="traces/bug_468.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/s_server.c:2401: error: UNINITIALIZED_VALUE
+  The value read from readbytes was never initialized.
+(<a href="traces/bug_469.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2367: error: DEAD_STORE
+  The value written to &fd (type int) is never used.
+(<a href="traces/bug_470.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/t1_lib.c:2490: error: DEAD_STORE
+  The value written to &dh_secbits (type int) is never used.
+(<a href="traces/bug_471.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ca.c:2525: error: DEAD_STORE
+  The value written to &pbuf (type unsigned char*) is never used.
+(<a href="traces/bug_472.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/lib/apps.c:2576: error: DEAD_STORE
+  The value written to &opt (type unsigned char*) is never used.
+(<a href="traces/bug_473.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/ssltest_old.c:2847: error: DEAD_STORE
+  The value written to &ok (type int) is never used.
+(<a href="traces/bug_474.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/statem/statem_clnt.c:2979: error: NULL_DEREFERENCE
+  pointer `pkey` last assigned on line 2978 could be null and is dereferenced by call to `EVP_PKEY_get0_RSA()` at line 2979, column 9.
+(<a href="traces/bug_475.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/speed.c:3654: error: NULL_DEREFERENCE
+  pointer `f` last assigned on line 3653 could be null and is dereferenced by call to `fgets()` at line 3654, column 16.
+(<a href="traces/bug_476.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3791: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_477.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3794: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_478.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3797: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_479.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3800: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_480.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3803: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_481.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3817: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_482.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3820: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_483.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3823: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_484.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3826: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_485.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:3829: error: DEAD_STORE
+  The value written to &kexch_alg (type int) is never used.
+(<a href="traces/bug_486.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve25519.c:4246: error: UNINITIALIZED_VALUE
+  The value read from e[_] was never initialized.
+(<a href="traces/bug_487.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/curve25519.c:4251: error: UNINITIALIZED_VALUE
+  The value read from e[_] was never initialized.
+(<a href="traces/bug_488.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4769: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 4689 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 4769, column 5.
+(<a href="traces/bug_489.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_lib.c:4823: error: NULL_DEREFERENCE
+  pointer `pctx` last assigned on line 4779 could be null and is dereferenced by call to `EVP_PKEY_CTX_free()` at line 4823, column 5.
+(<a href="traces/bug_490.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5138: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 5069 could be null and is dereferenced by call to `SSL_CTX_free()` at line 5138, column 5.
+(<a href="traces/bug_491.txt">trace</a>)
+</li><li>
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/sslapitest.c:5582: error: NULL_DEREFERENCE
+  pointer `sctx` last assigned on line 5519 could be null and is dereferenced by call to `SSL_CTX_free()` at line 5582, column 5.
+(<a href="traces/bug_492.txt">trace</a>)
+</li></ol>
+</body>
+</html>

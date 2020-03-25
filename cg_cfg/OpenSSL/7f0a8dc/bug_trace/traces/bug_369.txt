@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:422: error: DEAD_STORE
+  The value written to &r_is_at_infinity (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/ec/ec_mult.c:422:5: Write of unused value
+420.       int k;
+421.       int r_is_inverted = 0;
+422.       int r_is_at_infinity = 1;
+           ^
+423.       size_t *wsize = NULL;       /* individual window sizes */
+424.       signed char **wNAF = NULL;  /* individual wNAFs */

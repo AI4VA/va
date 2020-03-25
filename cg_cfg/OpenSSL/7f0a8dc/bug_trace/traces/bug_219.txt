@@ -1,0 +1,41 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:103: error: NULL_DEREFERENCE
+  pointer `ex_data` last assigned on line 95 could be null and is dereferenced at line 103, column 13.
+Showing all 5 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:92:1: start of procedure info_cb()
+90.   static int ex_data_idx;
+91.   
+92. > static void info_cb(const SSL *s, int where, int ret)
+93.   {
+94.       if (where & SSL_CB_ALERT) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:94:9: Taking true branch
+92.   static void info_cb(const SSL *s, int where, int ret)
+93.   {
+94.       if (where & SSL_CB_ALERT) {
+              ^
+95.           HANDSHAKE_EX_DATA *ex_data =
+96.               (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:95:9: 
+93.   {
+94.       if (where & SSL_CB_ALERT) {
+95. >         HANDSHAKE_EX_DATA *ex_data =
+96.               (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+97.           if (where & SSL_CB_WRITE) {
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:97:13: Taking false branch
+95.           HANDSHAKE_EX_DATA *ex_data =
+96.               (HANDSHAKE_EX_DATA*)(SSL_get_ex_data(s, ex_data_idx));
+97.           if (where & SSL_CB_WRITE) {
+                   ^
+98.               ex_data->alert_sent = ret;
+99.               if (strcmp(SSL_alert_type_string(ret), "F") == 0
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/handshake_helper.c:103:13: 
+101.                   ex_data->num_fatal_alerts_sent++;
+102.           } else {
+103. >             ex_data->alert_received = ret;
+104.           }
+105.       }

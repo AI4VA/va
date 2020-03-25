@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/bioprinttest.c:238: error: DEAD_STORE
+  The value written to &t (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/bioprinttest.c:238:12: Write of unused value
+236.           && TEST_true(dofptest(i, t++, 666.0 + frac, pwp->w, pwp->p))
+237.           && TEST_true(dofptest(i, t++, 6666.0 + frac, pwp->w, pwp->p))
+238.           && TEST_true(dofptest(i, t++, 66666.0 + frac, pwp->w, pwp->p));
+                  ^
+239.       if (justprint)
+240.           printf("    },\n");

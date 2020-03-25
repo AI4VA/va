@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:59: error: DEAD_STORE
+  The value written to &t (type unsigned long) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/rc2/rc2ofb64.c:59:5: Write of unused value
+57.           l2c(v1, iv);
+58.       }
+59.       t = v0 = v1 = ti[0] = ti[1] = 0;
+          ^
+60.       *num = n;
+61.   }

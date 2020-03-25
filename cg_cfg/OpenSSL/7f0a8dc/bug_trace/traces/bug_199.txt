@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ecparam.c:442: error: DEAD_STORE
+  The value written to &i (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/apps/ecparam.c:442:13: Write of unused value
+440.           assert(private);
+441.           if (outformat == FORMAT_ASN1)
+442.               i = i2d_ECPrivateKey_bio(out, eckey);
+                   ^
+443.           else
+444.               i = PEM_write_bio_ECPrivateKey(out, eckey, NULL,

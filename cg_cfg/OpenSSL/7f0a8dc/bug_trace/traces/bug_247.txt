@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_cbc.c:471: error: UNINITIALIZED_VALUE
+  The value read from hmac_pad[_] was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/ssl/s3_cbc.c:471:13: 
+469.           /* Complete the HMAC in the standard manner. */
+470.           for (i = 0; i < md_block_size; i++)
+471. >             hmac_pad[i] ^= 0x6a;
+472.   
+473.           if (EVP_DigestUpdate(md_ctx, hmac_pad, md_block_size) <= 0

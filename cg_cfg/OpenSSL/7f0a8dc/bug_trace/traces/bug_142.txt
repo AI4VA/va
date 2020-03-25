@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:58: error: DEAD_STORE
+  The value written to &p (type unsigned char const *) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/a_utf8.c:58:19: Write of unused value
+56.           value = (*p++ & 0xf) << 12;
+57.           value |= (*p++ & 0x3f) << 6;
+58.           value |= *p++ & 0x3f;
+                        ^
+59.           if (value < 0x800)
+60.               return -4;

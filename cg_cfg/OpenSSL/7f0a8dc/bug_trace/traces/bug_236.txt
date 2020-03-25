@@ -1,0 +1,12 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_ndef.c:124: error: DEAD_STORE
+  The value written to &derlen (type int) is never used.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/asn1/bio_ndef.c:124:5: Write of unused value
+122.       ndef_aux->derbuf = p;
+123.       *pbuf = p;
+124.       derlen = ASN1_item_ndef_i2d(ndef_aux->val, &p, ndef_aux->it);
+           ^
+125.   
+126.       if (!*ndef_aux->boundary)

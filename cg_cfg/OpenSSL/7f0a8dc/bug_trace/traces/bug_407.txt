@@ -1,0 +1,11 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:695: error: UNINITIALIZED_VALUE
+  The value read from hints.ai_flags was never initialized.
+Showing all 1 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/crypto/bio/b_addr.c:695:13: 
+693.   
+694.           if (lookup_type == BIO_LOOKUP_SERVER)
+695. >             hints.ai_flags |= AI_PASSIVE;
+696.   
+697.           /* Note that |res| SHOULD be a 'struct addrinfo **' thanks to

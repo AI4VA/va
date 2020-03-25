@@ -1,0 +1,25 @@
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:591: error: NULL_DEREFERENCE
+  pointer `ctx` last assigned on line 589 could be null and is dereferenced at line 591, column 25.
+Showing all 3 steps of the trace
+
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:587:1: start of procedure unhook_drbg()
+585.   
+586.   /* Installs the hook for the get_entropy() callback of the given drbg */
+587. > static void unhook_drbg(RAND_DRBG *drbg)
+588.   {
+589.       HOOK_CTX *ctx = get_hook_ctx(drbg);
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:589:5: 
+587.   static void unhook_drbg(RAND_DRBG *drbg)
+588.   {
+589. >     HOOK_CTX *ctx = get_hook_ctx(drbg);
+590.   
+591.       drbg->get_entropy = ctx->get_entropy;
+
+/gpfs/automountdir/r92gpfs02/zhengyu/work/ai4code/benchmarks/openssl/src/test/drbgtest.c:591:5: 
+589.       HOOK_CTX *ctx = get_hook_ctx(drbg);
+590.   
+591. >     drbg->get_entropy = ctx->get_entropy;
+592.       CRYPTO_free_ex_data(CRYPTO_EX_INDEX_DRBG, drbg, &drbg->ex_data);
+593.   }
