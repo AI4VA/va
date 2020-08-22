@@ -1,0 +1,100 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	281	File	/home/robin/Documents/GGNNBugDetecter/sa-bAbI/data_dir/test/68b343d5f2.c								
+ANR	282	Function	main	2:0:45:971							
+ANR	283	FunctionDef	main ()		282	0					
+ANR	284	CompoundStatement		3:0:90:971	282	0					
+ANR	285	IdentifierDeclStatement	char entity_7 [ 24 ] ;	4:4:139:156	282	0	True				
+ANR	286	IdentifierDecl	entity_7 [ 24 ]		282	0					
+ANR	287	IdentifierDeclType	char [ 24 ]		282	0					
+ANR	288	Identifier	entity_7		282	1					
+ANR	289	PrimaryExpression	24		282	2					
+ANR	290	IdentifierDeclStatement	int entity_9 ;	5:4:183:195	282	1	True				
+ANR	291	IdentifierDecl	entity_9		282	0					
+ANR	292	IdentifierDeclType	int		282	0					
+ANR	293	Identifier	entity_9		282	1					
+ANR	294	IdentifierDeclStatement	int entity_8 ;	6:4:227:239	282	2	True				
+ANR	295	IdentifierDecl	entity_8		282	0					
+ANR	296	IdentifierDeclType	int		282	0					
+ANR	297	Identifier	entity_8		282	1					
+ANR	298	ExpressionStatement	entity_8 = 61	7:4:271:284	282	3	True				
+ANR	299	AssignmentExpression	entity_8 = 61		282	0		=			
+ANR	300	Identifier	entity_8		282	0					
+ANR	301	PrimaryExpression	61		282	1					
+ANR	302	IdentifierDeclStatement	int entity_4 ;	8:4:315:327	282	4	True				
+ANR	303	IdentifierDecl	entity_4		282	0					
+ANR	304	IdentifierDeclType	int		282	0					
+ANR	305	Identifier	entity_4		282	1					
+ANR	306	IdentifierDeclStatement	char entity_6 [ 70 ] ;	9:4:359:376	282	5	True				
+ANR	307	IdentifierDecl	entity_6 [ 70 ]		282	0					
+ANR	308	IdentifierDeclType	char [ 70 ]		282	0					
+ANR	309	Identifier	entity_6		282	1					
+ANR	310	PrimaryExpression	70		282	2					
+ANR	311	ExpressionStatement	entity_4 = 72	10:4:403:416	282	6	True				
+ANR	312	AssignmentExpression	entity_4 = 72		282	0		=			
+ANR	313	Identifier	entity_4		282	0					
+ANR	314	PrimaryExpression	72		282	1					
+ANR	315	ExpressionStatement	entity_9 = 56	11:4:447:460	282	7	True				
+ANR	316	AssignmentExpression	entity_9 = 56		282	0		=			
+ANR	317	Identifier	entity_9		282	0					
+ANR	318	PrimaryExpression	56		282	1					
+ANR	319	ExpressionStatement	entity_7 [ entity_4 ] = 'e'	12:4:491:515	282	8	True				
+ANR	320	AssignmentExpression	entity_7 [ entity_4 ] = 'e'		282	0		=			
+ANR	321	ArrayIndexing	entity_7 [ entity_4 ]		282	0					
+ANR	322	Identifier	entity_7		282	0					
+ANR	323	Identifier	entity_4		282	1					
+ANR	324	PrimaryExpression	'e'		282	1					
+ANR	325	WhileStatement	while ( entity_8 < entity_9 )		282	9					
+ANR	326	Condition	entity_8 < entity_9	13:10:557:575	282	0	True				
+ANR	327	RelationalExpression	entity_8 < entity_9		282	0		<			
+ANR	328	Identifier	entity_8		282	0					
+ANR	329	Identifier	entity_9		282	1					
+ANR	330	CompoundStatement		11:30:486:486	282	1					
+ANR	331	ExpressionStatement	entity_8 ++	14:4:595:605	282	0	True				
+ANR	332	PostIncDecOperationExpression	entity_8 ++		282	0					
+ANR	333	Identifier	entity_8		282	0					
+ANR	334	IncDec	++		282	1					
+ANR	335	IdentifierDeclStatement	int entity_5 ;	16:4:683:695	282	10	True				
+ANR	336	IdentifierDecl	entity_5		282	0					
+ANR	337	IdentifierDeclType	int		282	0					
+ANR	338	Identifier	entity_5		282	1					
+ANR	339	ExpressionStatement	entity_6 [ entity_8 ] = 'T'	17:4:727:751	282	11	True				
+ANR	340	AssignmentExpression	entity_6 [ entity_8 ] = 'T'		282	0		=			
+ANR	341	ArrayIndexing	entity_6 [ entity_8 ]		282	0					
+ANR	342	Identifier	entity_6		282	0					
+ANR	343	Identifier	entity_8		282	1					
+ANR	344	PrimaryExpression	'T'		282	1					
+ANR	345	ExpressionStatement	entity_5 = 80	18:4:785:798	282	12	True				
+ANR	346	AssignmentExpression	entity_5 = 80		282	0		=			
+ANR	347	Identifier	entity_5		282	0					
+ANR	348	PrimaryExpression	80		282	1					
+ANR	349	IdentifierDeclStatement	char entity_1 [ 85 ] ;	19:4:829:846	282	13	True				
+ANR	350	IdentifierDecl	entity_1 [ 85 ]		282	0					
+ANR	351	IdentifierDeclType	char [ 85 ]		282	0					
+ANR	352	Identifier	entity_1		282	1					
+ANR	353	PrimaryExpression	85		282	2					
+ANR	354	ExpressionStatement	entity_1 [ entity_5 ] = '0'	20:4:873:897	282	14	True				
+ANR	355	AssignmentExpression	entity_1 [ entity_5 ] = '0'		282	0		=			
+ANR	356	ArrayIndexing	entity_1 [ entity_5 ]		282	0					
+ANR	357	Identifier	entity_1		282	0					
+ANR	358	Identifier	entity_5		282	1					
+ANR	359	PrimaryExpression	'0'		282	1					
+ANR	360	ReturnStatement	return 0 ;	21:4:931:939	282	15	True				
+ANR	361	PrimaryExpression	0		282	0					
+ANR	362	ReturnType	int		282	1					
+ANR	363	Identifier	main		282	2					
+ANR	364	ParameterList			282	3					
+ANR	365	CFGEntryNode	ENTRY		282		True				
+ANR	366	CFGExitNode	EXIT		282		True				
+ANR	367	Symbol	* entity_4		282						
+ANR	368	Symbol	entity_1		282						
+ANR	369	Symbol	* entity_5		282						
+ANR	370	Symbol	* entity_1		282						
+ANR	371	Symbol	entity_8		282						
+ANR	372	Symbol	entity_9		282						
+ANR	373	Symbol	entity_4		282						
+ANR	374	Symbol	entity_5		282						
+ANR	375	Symbol	entity_6		282						
+ANR	376	Symbol	entity_7		282						
+ANR	377	Symbol	* entity_8		282						
+ANR	378	Symbol	* entity_6		282						
+ANR	379	Symbol	* entity_7		282						

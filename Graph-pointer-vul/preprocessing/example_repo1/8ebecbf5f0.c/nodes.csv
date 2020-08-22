@@ -1,0 +1,83 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	380	File	/home/robin/Documents/GGNNBugDetecter/sa-bAbI/data_dir/test/8ebecbf5f0.c								
+ANR	381	Function	main	2:0:43:791							
+ANR	382	FunctionDef	main ()		381	0					
+ANR	383	CompoundStatement		3:0:86:791	381	0					
+ANR	384	IdentifierDeclStatement	char entity_3 [ 69 ] ;	4:4:133:150	381	0	True				
+ANR	385	IdentifierDecl	entity_3 [ 69 ]		381	0					
+ANR	386	IdentifierDeclType	char [ 69 ]		381	0					
+ANR	387	Identifier	entity_3		381	1					
+ANR	388	PrimaryExpression	69		381	2					
+ANR	389	IdentifierDeclStatement	int entity_2 ;	5:4:175:187	381	1	True				
+ANR	390	IdentifierDecl	entity_2		381	0					
+ANR	391	IdentifierDeclType	int		381	0					
+ANR	392	Identifier	entity_2		381	1					
+ANR	393	IdentifierDeclStatement	int entity_6 ;	6:4:217:229	381	2	True				
+ANR	394	IdentifierDecl	entity_6		381	0					
+ANR	395	IdentifierDeclType	int		381	0					
+ANR	396	Identifier	entity_6		381	1					
+ANR	397	ExpressionStatement	entity_2 = rand ( )	7:4:259:276	381	3	True				
+ANR	398	AssignmentExpression	entity_2 = rand ( )		381	0		=			
+ANR	399	Identifier	entity_2		381	0					
+ANR	400	CallExpression	rand ( )		381	1					
+ANR	401	Callee	rand		381	0					
+ANR	402	Identifier	rand		381	0					
+ANR	403	ArgumentList			381	1					
+ANR	404	ExpressionStatement	entity_6 = 89	8:4:301:314	381	4	True				
+ANR	405	AssignmentExpression	entity_6 = 89		381	0		=			
+ANR	406	Identifier	entity_6		381	0					
+ANR	407	PrimaryExpression	89		381	1					
+ANR	408	IfStatement	if ( entity_2 < entity_6 )		381	5					
+ANR	409	Condition	entity_2 < entity_6	9:7:346:364	381	0	True				
+ANR	410	RelationalExpression	entity_2 < entity_6		381	0		<			
+ANR	411	Identifier	entity_2		381	0					
+ANR	412	Identifier	entity_6		381	1					
+ANR	413	CompoundStatement		7:27:279:279	381	1					
+ANR	414	ElseStatement	else		381	0					
+ANR	415	CompoundStatement		8:11:305:305	381	0					
+ANR	416	ExpressionStatement	entity_2 = 87	11:4:427:440	381	0	True				
+ANR	417	AssignmentExpression	entity_2 = 87		381	0		=			
+ANR	418	Identifier	entity_2		381	0					
+ANR	419	PrimaryExpression	87		381	1					
+ANR	420	IdentifierDeclStatement	int entity_7 ;	13:4:511:523	381	6	True				
+ANR	421	IdentifierDecl	entity_7		381	0					
+ANR	422	IdentifierDeclType	int		381	0					
+ANR	423	Identifier	entity_7		381	1					
+ANR	424	ExpressionStatement	entity_7 = 84	14:4:553:566	381	7	True				
+ANR	425	AssignmentExpression	entity_7 = 84		381	0		=			
+ANR	426	Identifier	entity_7		381	0					
+ANR	427	PrimaryExpression	84		381	1					
+ANR	428	ExpressionStatement	entity_3 [ entity_2 ] = 'p'	15:4:595:619	381	8	True				
+ANR	429	AssignmentExpression	entity_3 [ entity_2 ] = 'p'		381	0		=			
+ANR	430	ArrayIndexing	entity_3 [ entity_2 ]		381	0					
+ANR	431	Identifier	entity_3		381	0					
+ANR	432	Identifier	entity_2		381	1					
+ANR	433	PrimaryExpression	'p'		381	1					
+ANR	434	IdentifierDeclStatement	char entity_4 [ 63 ] ;	16:4:653:670	381	9	True				
+ANR	435	IdentifierDecl	entity_4 [ 63 ]		381	0					
+ANR	436	IdentifierDeclType	char [ 63 ]		381	0					
+ANR	437	Identifier	entity_4		381	1					
+ANR	438	PrimaryExpression	63		381	2					
+ANR	439	ExpressionStatement	entity_4 [ entity_7 ] = 'F'	17:4:695:719	381	10	True				
+ANR	440	AssignmentExpression	entity_4 [ entity_7 ] = 'F'		381	0		=			
+ANR	441	ArrayIndexing	entity_4 [ entity_7 ]		381	0					
+ANR	442	Identifier	entity_4		381	0					
+ANR	443	Identifier	entity_7		381	1					
+ANR	444	PrimaryExpression	'F'		381	1					
+ANR	445	ReturnStatement	return 0 ;	18:4:753:761	381	11	True				
+ANR	446	PrimaryExpression	0		381	0					
+ANR	447	ReturnType	int		381	1					
+ANR	448	Identifier	main		381	2					
+ANR	449	ParameterList			381	3					
+ANR	450	CFGEntryNode	ENTRY		381		True				
+ANR	451	CFGExitNode	EXIT		381		True				
+ANR	452	Symbol	rand		381						
+ANR	453	Symbol	* entity_4		381						
+ANR	454	Symbol	entity_2		381						
+ANR	455	Symbol	* entity_2		381						
+ANR	456	Symbol	entity_3		381						
+ANR	457	Symbol	* entity_3		381						
+ANR	458	Symbol	entity_4		381						
+ANR	459	Symbol	entity_6		381						
+ANR	460	Symbol	entity_7		381						
+ANR	461	Symbol	* entity_7		381						

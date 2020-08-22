@@ -1,0 +1,99 @@
+2 Function main
+3 FunctionDef main ( )
+4 CompoundStatement 
+5 IdentifierDeclStatement int ID ;
+6 IdentifierDecl ID
+7 IdentifierDeclType int
+8 Identifier ID
+9 IdentifierDeclStatement int ID ;
+10 IdentifierDecl ID
+11 IdentifierDeclType int
+12 Identifier ID
+13 IdentifierDeclStatement char ID [ 8 ] ;
+14 IdentifierDecl ID [ 8 ]
+15 IdentifierDeclType char [ 8 ]
+16 Identifier ID
+17 PrimaryExpression 8
+18 ExpressionStatement ID = 33
+19 AssignmentExpression ID = 33
+20 Identifier ID
+21 PrimaryExpression 33
+22 IdentifierDeclStatement int ID ;
+23 IdentifierDecl ID
+24 IdentifierDeclType int
+25 Identifier ID
+26 ExpressionStatement ID = rand ( )
+27 AssignmentExpression ID = rand ( )
+28 Identifier ID
+29 CallExpression rand ( )
+30 Callee rand
+31 Identifier rand
+32 ArgumentList 
+33 IfStatement if ( ID < ID )
+34 Condition ID < ID
+35 RelationalExpression ID < ID
+36 Identifier ID
+37 Identifier ID
+38 CompoundStatement 
+39 ElseStatement else
+40 CompoundStatement 
+41 ExpressionStatement ID = 28
+42 AssignmentExpression ID = 28
+43 Identifier ID
+44 PrimaryExpression 28
+45 ForStatement for ( ID = 9 ; ID < ID ; ID ++ )
+46 ForInit ID = 9 ;
+47 AssignmentExpression ID = 9
+48 Identifier ID
+49 PrimaryExpression 9
+50 Condition ID < ID
+51 RelationalExpression ID < ID
+52 Identifier ID
+53 Identifier ID
+54 PostIncDecOperationExpression ID ++
+55 Identifier ID
+56 IncDec ++
+57 CompoundStatement 
+58 IdentifierDeclStatement int ID ;
+59 IdentifierDecl ID
+60 IdentifierDeclType int
+61 Identifier ID
+62 ExpressionStatement ID [ ID ] = CHAR
+63 AssignmentExpression ID [ ID ] = CHAR
+64 ArrayIndexing ID [ ID ]
+65 Identifier ID
+66 Identifier ID
+67 PrimaryExpression CHAR
+68 ExpressionStatement ID = 76
+69 AssignmentExpression ID = 76
+70 Identifier ID
+71 PrimaryExpression 76
+72 IdentifierDeclStatement char ID [ 5 ] ;
+73 IdentifierDecl ID [ 5 ]
+74 IdentifierDeclType char [ 5 ]
+75 Identifier ID
+76 PrimaryExpression 5
+77 ExpressionStatement ID [ ID ] = CHAR
+78 AssignmentExpression ID [ ID ] = CHAR
+79 ArrayIndexing ID [ ID ]
+80 Identifier ID
+81 Identifier ID
+82 PrimaryExpression CHAR
+83 ReturnStatement return 0 ;
+84 PrimaryExpression 0
+85 ReturnType int
+86 Identifier main
+87 ParameterList 
+88 CFGEntryNode CFG-ENTRY
+89 CFGExitNode CFG-EXIT
+90 Symbol rand
+91 Symbol ID
+92 Symbol ID
+93 Symbol ID
+94 Symbol * ID
+95 Symbol * ID
+96 Symbol ID
+97 Symbol ID
+98 Symbol * ID
+99 Symbol ID
+100 Symbol * ID

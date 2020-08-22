@@ -1,0 +1,123 @@
+673 Function main
+674 FunctionDef main ( )
+675 CompoundStatement 
+676 IdentifierDeclStatement int ID ;
+677 IdentifierDecl ID
+678 IdentifierDeclType int
+679 Identifier ID
+680 IdentifierDeclStatement char ID [ 77 ] ;
+681 IdentifierDecl ID [ 77 ]
+682 IdentifierDeclType char [ 77 ]
+683 Identifier ID
+684 PrimaryExpression 77
+685 IdentifierDeclStatement int ID ;
+686 IdentifierDecl ID
+687 IdentifierDeclType int
+688 Identifier ID
+689 IdentifierDeclStatement int ID ;
+690 IdentifierDecl ID
+691 IdentifierDeclType int
+692 Identifier ID
+693 ExpressionStatement ID = 14
+694 AssignmentExpression ID = 14
+695 Identifier ID
+696 PrimaryExpression 14
+697 ExpressionStatement ID = 47
+698 AssignmentExpression ID = 47
+699 Identifier ID
+700 PrimaryExpression 47
+701 IdentifierDeclStatement int ID ;
+702 IdentifierDecl ID
+703 IdentifierDeclType int
+704 Identifier ID
+705 ExpressionStatement ID = 54
+706 AssignmentExpression ID = 54
+707 Identifier ID
+708 PrimaryExpression 54
+709 IdentifierDeclStatement int ID ;
+710 IdentifierDecl ID
+711 IdentifierDeclType int
+712 Identifier ID
+713 IdentifierDeclStatement char ID [ 21 ] ;
+714 IdentifierDecl ID [ 21 ]
+715 IdentifierDeclType char [ 21 ]
+716 Identifier ID
+717 PrimaryExpression 21
+718 ExpressionStatement ID = 87
+719 AssignmentExpression ID = 87
+720 Identifier ID
+721 PrimaryExpression 87
+722 ExpressionStatement ID = rand ( )
+723 AssignmentExpression ID = rand ( )
+724 Identifier ID
+725 CallExpression rand ( )
+726 Callee rand
+727 Identifier rand
+728 ArgumentList 
+729 ExpressionStatement ID [ ID ] = CHAR
+730 AssignmentExpression ID [ ID ] = CHAR
+731 ArrayIndexing ID [ ID ]
+732 Identifier ID
+733 Identifier ID
+734 PrimaryExpression CHAR
+735 IdentifierDeclStatement char ID [ 47 ] ;
+736 IdentifierDecl ID [ 47 ]
+737 IdentifierDeclType char [ 47 ]
+738 Identifier ID
+739 PrimaryExpression 47
+740 IfStatement if ( ID < ID )
+741 Condition ID < ID
+742 RelationalExpression ID < ID
+743 Identifier ID
+744 Identifier ID
+745 CompoundStatement 
+746 ExpressionStatement ID [ ID ] = CHAR
+747 AssignmentExpression ID [ ID ] = CHAR
+748 ArrayIndexing ID [ ID ]
+749 Identifier ID
+750 Identifier ID
+751 PrimaryExpression CHAR
+752 ElseStatement else
+753 CompoundStatement 
+754 ExpressionStatement ID = 42
+755 AssignmentExpression ID = 42
+756 Identifier ID
+757 PrimaryExpression 42
+758 WhileStatement while ( ID < ID )
+759 Condition ID < ID
+760 RelationalExpression ID < ID
+761 Identifier ID
+762 Identifier ID
+763 CompoundStatement 
+764 ExpressionStatement ID ++
+765 PostIncDecOperationExpression ID ++
+766 Identifier ID
+767 IncDec ++
+768 ExpressionStatement ID [ ID ] = CHAR
+769 AssignmentExpression ID [ ID ] = CHAR
+770 ArrayIndexing ID [ ID ]
+771 Identifier ID
+772 Identifier ID
+773 PrimaryExpression CHAR
+774 ReturnStatement return 0 ;
+775 PrimaryExpression 0
+776 ReturnType int
+777 Identifier main
+778 ParameterList 
+779 CFGEntryNode CFG-ENTRY
+780 CFGExitNode CFG-EXIT
+781 Symbol ID
+782 Symbol * ID
+783 Symbol ID
+784 Symbol * ID
+785 Symbol * ID
+786 Symbol ID
+787 Symbol ID
+788 Symbol ID
+789 Symbol ID
+790 Symbol ID
+791 Symbol ID
+792 Symbol rand
+793 Symbol * ID
+794 Symbol * ID
+795 Symbol * ID

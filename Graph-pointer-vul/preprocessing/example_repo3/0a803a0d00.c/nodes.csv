@@ -1,0 +1,101 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	1	File	/home/robin/Documents/GGNNBugDetecter/sa-bAbI/data_dir/test/0a803a0d00.c								
+ANR	2	Function	main	2:0:69:1463							
+ANR	3	FunctionDef	main ()		2	0					
+ANR	4	CompoundStatement		3:0:138:1463	2	0					
+ANR	5	IdentifierDeclStatement	int entity_2 ;	4:4:211:223	2	0	True				
+ANR	6	IdentifierDecl	entity_2		2	0					
+ANR	7	IdentifierDeclType	int		2	0					
+ANR	8	Identifier	entity_2		2	1					
+ANR	9	IdentifierDeclStatement	int entity_8 ;	5:4:279:291	2	1	True				
+ANR	10	IdentifierDecl	entity_8		2	0					
+ANR	11	IdentifierDeclType	int		2	0					
+ANR	12	Identifier	entity_8		2	1					
+ANR	13	IdentifierDeclStatement	char entity_1 [ 8 ] ;	6:4:347:363	2	2	True				
+ANR	14	IdentifierDecl	entity_1 [ 8 ]		2	0					
+ANR	15	IdentifierDeclType	char [ 8 ]		2	0					
+ANR	16	Identifier	entity_1		2	1					
+ANR	17	PrimaryExpression	8		2	2					
+ANR	18	ExpressionStatement	entity_8 = 33	7:4:415:428	2	3	True				
+ANR	19	AssignmentExpression	entity_8 = 33		2	0		=			
+ANR	20	Identifier	entity_8		2	0					
+ANR	21	PrimaryExpression	33		2	1					
+ANR	22	IdentifierDeclStatement	int entity_6 ;	8:4:483:495	2	4	True				
+ANR	23	IdentifierDecl	entity_6		2	0					
+ANR	24	IdentifierDeclType	int		2	0					
+ANR	25	Identifier	entity_6		2	1					
+ANR	26	ExpressionStatement	entity_2 = rand ( )	9:4:551:568	2	5	True				
+ANR	27	AssignmentExpression	entity_2 = rand ( )		2	0		=			
+ANR	28	Identifier	entity_2		2	0					
+ANR	29	CallExpression	rand ( )		2	1					
+ANR	30	Callee	rand		2	0					
+ANR	31	Identifier	rand		2	0					
+ANR	32	ArgumentList			2	1					
+ANR	33	IfStatement	if ( entity_2 < entity_8 )		2	6					
+ANR	34	Condition	entity_2 < entity_8	10:8:623:641	2	0	True				
+ANR	35	RelationalExpression	entity_2 < entity_8		2	0		<			
+ANR	36	Identifier	entity_2		2	0					
+ANR	37	Identifier	entity_8		2	1					
+ANR	38	CompoundStatement		8:28:504:504	2	1					
+ANR	39	ElseStatement	else		2	0					
+ANR	40	CompoundStatement		9:11:555:555	2	0					
+ANR	41	ExpressionStatement	entity_2 = 28	12:4:755:768	2	0	True				
+ANR	42	AssignmentExpression	entity_2 = 28		2	0		=			
+ANR	43	Identifier	entity_2		2	0					
+ANR	44	PrimaryExpression	28		2	1					
+ANR	45	ForStatement	for ( entity_6 = 9 ; entity_6 < entity_2 ; entity_6 ++ )		2	7					
+ANR	46	ForInit	entity_6 = 9 ;	14:8:895:907	2	0	True				
+ANR	47	AssignmentExpression	entity_6 = 9		2	0		=			
+ANR	48	Identifier	entity_6		2	0					
+ANR	49	PrimaryExpression	9		2	1					
+ANR	50	Condition	entity_6 < entity_2	14:22:909:927	2	1	True				
+ANR	51	RelationalExpression	entity_6 < entity_2		2	0		<			
+ANR	52	Identifier	entity_6		2	0					
+ANR	53	Identifier	entity_2		2	1					
+ANR	54	PostIncDecOperationExpression	entity_6 ++	14:43:930:939	2	2	True				
+ANR	55	Identifier	entity_6		2	0					
+ANR	56	IncDec	++		2	1					
+ANR	57	CompoundStatement		12:54:802:802	2	3					
+ANR	58	IdentifierDeclStatement	int entity_3 ;	16:4:1027:1039	2	8	True				
+ANR	59	IdentifierDecl	entity_3		2	0					
+ANR	60	IdentifierDeclType	int		2	0					
+ANR	61	Identifier	entity_3		2	1					
+ANR	62	ExpressionStatement	entity_1 [ entity_6 ] = 'F'	17:4:1095:1119	2	9	True				
+ANR	63	AssignmentExpression	entity_1 [ entity_6 ] = 'F'		2	0		=			
+ANR	64	ArrayIndexing	entity_1 [ entity_6 ]		2	0					
+ANR	65	Identifier	entity_1		2	0					
+ANR	66	Identifier	entity_6		2	1					
+ANR	67	PrimaryExpression	'F'		2	1					
+ANR	68	ExpressionStatement	entity_3 = 76	18:4:1179:1192	2	10	True				
+ANR	69	AssignmentExpression	entity_3 = 76		2	0		=			
+ANR	70	Identifier	entity_3		2	0					
+ANR	71	PrimaryExpression	76		2	1					
+ANR	72	IdentifierDeclStatement	char entity_7 [ 5 ] ;	19:4:1247:1263	2	11	True				
+ANR	73	IdentifierDecl	entity_7 [ 5 ]		2	0					
+ANR	74	IdentifierDeclType	char [ 5 ]		2	0					
+ANR	75	Identifier	entity_7		2	1					
+ANR	76	PrimaryExpression	5		2	2					
+ANR	77	ExpressionStatement	entity_7 [ entity_3 ] = '6'	20:4:1315:1339	2	12	True				
+ANR	78	AssignmentExpression	entity_7 [ entity_3 ] = '6'		2	0		=			
+ANR	79	ArrayIndexing	entity_7 [ entity_3 ]		2	0					
+ANR	80	Identifier	entity_7		2	0					
+ANR	81	Identifier	entity_3		2	1					
+ANR	82	PrimaryExpression	'6'		2	1					
+ANR	83	ReturnStatement	return 0 ;	21:4:1399:1407	2	13	True				
+ANR	84	PrimaryExpression	0		2	0					
+ANR	85	ReturnType	int		2	1					
+ANR	86	Identifier	main		2	2					
+ANR	87	ParameterList			2	3					
+ANR	88	CFGEntryNode	ENTRY		2		True				
+ANR	89	CFGExitNode	EXIT		2		True				
+ANR	90	Symbol	rand		2						
+ANR	91	Symbol	entity_1		2						
+ANR	92	Symbol	entity_2		2						
+ANR	93	Symbol	entity_3		2						
+ANR	94	Symbol	* entity_3		2						
+ANR	95	Symbol	* entity_1		2						
+ANR	96	Symbol	entity_8		2						
+ANR	97	Symbol	entity_6		2						
+ANR	98	Symbol	* entity_6		2						
+ANR	99	Symbol	entity_7		2						
+ANR	100	Symbol	* entity_7		2						

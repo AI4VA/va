@@ -1,0 +1,74 @@
+207 Function main
+208 FunctionDef main ( )
+209 CompoundStatement 
+210 IdentifierDeclStatement int ID ;
+211 IdentifierDecl ID
+212 IdentifierDeclType int
+213 Identifier ID
+214 IdentifierDeclStatement int ID ;
+215 IdentifierDecl ID
+216 IdentifierDeclType int
+217 Identifier ID
+218 IdentifierDeclStatement char ID [ 40 ] ;
+219 IdentifierDecl ID [ 40 ]
+220 IdentifierDeclType char [ 40 ]
+221 Identifier ID
+222 PrimaryExpression 40
+223 ExpressionStatement ID = 73
+224 AssignmentExpression ID = 73
+225 Identifier ID
+226 PrimaryExpression 73
+227 IdentifierDeclStatement char ID [ 70 ] ;
+228 IdentifierDecl ID [ 70 ]
+229 IdentifierDeclType char [ 70 ]
+230 Identifier ID
+231 PrimaryExpression 70
+232 IdentifierDeclStatement int ID ;
+233 IdentifierDecl ID
+234 IdentifierDeclType int
+235 Identifier ID
+236 ExpressionStatement ID = 69
+237 AssignmentExpression ID = 69
+238 Identifier ID
+239 PrimaryExpression 69
+240 ForStatement for ( ID = 42 ; ID < ID ; ID ++ )
+241 ForInit ID = 42 ;
+242 AssignmentExpression ID = 42
+243 Identifier ID
+244 PrimaryExpression 42
+245 Condition ID < ID
+246 RelationalExpression ID < ID
+247 Identifier ID
+248 Identifier ID
+249 PostIncDecOperationExpression ID ++
+250 Identifier ID
+251 IncDec ++
+252 CompoundStatement 
+253 ExpressionStatement ID [ ID ] = CHAR
+254 AssignmentExpression ID [ ID ] = CHAR
+255 ArrayIndexing ID [ ID ]
+256 Identifier ID
+257 Identifier ID
+258 PrimaryExpression CHAR
+259 ExpressionStatement ID [ ID ] = CHAR
+260 AssignmentExpression ID [ ID ] = CHAR
+261 ArrayIndexing ID [ ID ]
+262 Identifier ID
+263 Identifier ID
+264 PrimaryExpression CHAR
+265 ReturnStatement return 0 ;
+266 PrimaryExpression 0
+267 ReturnType int
+268 Identifier main
+269 ParameterList 
+270 CFGEntryNode CFG-ENTRY
+271 CFGExitNode CFG-EXIT
+272 Symbol ID
+273 Symbol * ID
+274 Symbol ID
+275 Symbol * ID
+276 Symbol ID
+277 Symbol * ID
+278 Symbol ID
+279 Symbol ID
+280 Symbol * ID

@@ -1,0 +1,125 @@
+command	key	type	code	location	functionId	childNum	isCFGNode	operator	baseType	completeType	identifier
+ANR	672	File	/home/robin/Documents/GGNNBugDetecter/sa-bAbI/data_dir/test/f49b4f897f.c								
+ANR	673	Function	main	2:0:45:1237							
+ANR	674	FunctionDef	main ()		673	0					
+ANR	675	CompoundStatement		3:0:90:1237	673	0					
+ANR	676	IdentifierDeclStatement	int entity_8 ;	4:4:139:151	673	0	True				
+ANR	677	IdentifierDecl	entity_8		673	0					
+ANR	678	IdentifierDeclType	int		673	0					
+ANR	679	Identifier	entity_8		673	1					
+ANR	680	IdentifierDeclStatement	char entity_9 [ 77 ] ;	5:4:183:200	673	1	True				
+ANR	681	IdentifierDecl	entity_9 [ 77 ]		673	0					
+ANR	682	IdentifierDeclType	char [ 77 ]		673	0					
+ANR	683	Identifier	entity_9		673	1					
+ANR	684	PrimaryExpression	77		673	2					
+ANR	685	IdentifierDeclStatement	int entity_1 ;	6:4:227:239	673	2	True				
+ANR	686	IdentifierDecl	entity_1		673	0					
+ANR	687	IdentifierDeclType	int		673	0					
+ANR	688	Identifier	entity_1		673	1					
+ANR	689	IdentifierDeclStatement	int entity_7 ;	7:4:271:283	673	3	True				
+ANR	690	IdentifierDecl	entity_7		673	0					
+ANR	691	IdentifierDeclType	int		673	0					
+ANR	692	Identifier	entity_7		673	1					
+ANR	693	ExpressionStatement	entity_1 = 14	8:4:315:328	673	4	True				
+ANR	694	AssignmentExpression	entity_1 = 14		673	0		=			
+ANR	695	Identifier	entity_1		673	0					
+ANR	696	PrimaryExpression	14		673	1					
+ANR	697	ExpressionStatement	entity_8 = 47	9:4:359:372	673	5	True				
+ANR	698	AssignmentExpression	entity_8 = 47		673	0		=			
+ANR	699	Identifier	entity_8		673	0					
+ANR	700	PrimaryExpression	47		673	1					
+ANR	701	IdentifierDeclStatement	int entity_5 ;	10:4:403:415	673	6	True				
+ANR	702	IdentifierDecl	entity_5		673	0					
+ANR	703	IdentifierDeclType	int		673	0					
+ANR	704	Identifier	entity_5		673	1					
+ANR	705	ExpressionStatement	entity_7 = 54	11:4:447:460	673	7	True				
+ANR	706	AssignmentExpression	entity_7 = 54		673	0		=			
+ANR	707	Identifier	entity_7		673	0					
+ANR	708	PrimaryExpression	54		673	1					
+ANR	709	IdentifierDeclStatement	int entity_4 ;	12:4:491:503	673	8	True				
+ANR	710	IdentifierDecl	entity_4		673	0					
+ANR	711	IdentifierDeclType	int		673	0					
+ANR	712	Identifier	entity_4		673	1					
+ANR	713	IdentifierDeclStatement	char entity_6 [ 21 ] ;	13:4:535:552	673	9	True				
+ANR	714	IdentifierDecl	entity_6 [ 21 ]		673	0					
+ANR	715	IdentifierDeclType	char [ 21 ]		673	0					
+ANR	716	Identifier	entity_6		673	1					
+ANR	717	PrimaryExpression	21		673	2					
+ANR	718	ExpressionStatement	entity_5 = 87	14:4:579:592	673	10	True				
+ANR	719	AssignmentExpression	entity_5 = 87		673	0		=			
+ANR	720	Identifier	entity_5		673	0					
+ANR	721	PrimaryExpression	87		673	1					
+ANR	722	ExpressionStatement	entity_4 = rand ( )	15:4:623:640	673	11	True				
+ANR	723	AssignmentExpression	entity_4 = rand ( )		673	0		=			
+ANR	724	Identifier	entity_4		673	0					
+ANR	725	CallExpression	rand ( )		673	1					
+ANR	726	Callee	rand		673	0					
+ANR	727	Identifier	rand		673	0					
+ANR	728	ArgumentList			673	1					
+ANR	729	ExpressionStatement	entity_9 [ entity_5 ] = '4'	16:4:667:691	673	12	True				
+ANR	730	AssignmentExpression	entity_9 [ entity_5 ] = '4'		673	0		=			
+ANR	731	ArrayIndexing	entity_9 [ entity_5 ]		673	0					
+ANR	732	Identifier	entity_9		673	0					
+ANR	733	Identifier	entity_5		673	1					
+ANR	734	PrimaryExpression	'4'		673	1					
+ANR	735	IdentifierDeclStatement	char entity_3 [ 47 ] ;	17:4:727:744	673	13	True				
+ANR	736	IdentifierDecl	entity_3 [ 47 ]		673	0					
+ANR	737	IdentifierDeclType	char [ 47 ]		673	0					
+ANR	738	Identifier	entity_3		673	1					
+ANR	739	PrimaryExpression	47		673	2					
+ANR	740	IfStatement	if ( entity_4 < entity_8 )		673	14					
+ANR	741	Condition	entity_4 < entity_8	18:8:775:793	673	0	True				
+ANR	742	RelationalExpression	entity_4 < entity_8		673	0		<			
+ANR	743	Identifier	entity_4		673	0					
+ANR	744	Identifier	entity_8		673	1					
+ANR	745	CompoundStatement		16:28:704:704	673	1					
+ANR	746	ExpressionStatement	entity_3 [ entity_1 ] = '2'	19:4:815:839	673	0	True				
+ANR	747	AssignmentExpression	entity_3 [ entity_1 ] = '2'		673	0		=			
+ANR	748	ArrayIndexing	entity_3 [ entity_1 ]		673	0					
+ANR	749	Identifier	entity_3		673	0					
+ANR	750	Identifier	entity_1		673	1					
+ANR	751	PrimaryExpression	'2'		673	1					
+ANR	752	ElseStatement	else		673	0					
+ANR	753	CompoundStatement		18:11:789:789	673	0					
+ANR	754	ExpressionStatement	entity_4 = 42	21:4:917:930	673	0	True				
+ANR	755	AssignmentExpression	entity_4 = 42		673	0		=			
+ANR	756	Identifier	entity_4		673	0					
+ANR	757	PrimaryExpression	42		673	1					
+ANR	758	WhileStatement	while ( entity_7 < entity_4 )		673	15					
+ANR	759	Condition	entity_7 < entity_4	23:10:1011:1029	673	0	True				
+ANR	760	RelationalExpression	entity_7 < entity_4		673	0		<			
+ANR	761	Identifier	entity_7		673	0					
+ANR	762	Identifier	entity_4		673	1					
+ANR	763	CompoundStatement		21:30:940:940	673	1					
+ANR	764	ExpressionStatement	entity_7 ++	24:4:1049:1059	673	0	True				
+ANR	765	PostIncDecOperationExpression	entity_7 ++		673	0					
+ANR	766	Identifier	entity_7		673	0					
+ANR	767	IncDec	++		673	1					
+ANR	768	ExpressionStatement	entity_6 [ entity_7 ] = 'Q'	26:4:1137:1161	673	16	True				
+ANR	769	AssignmentExpression	entity_6 [ entity_7 ] = 'Q'		673	0		=			
+ANR	770	ArrayIndexing	entity_6 [ entity_7 ]		673	0					
+ANR	771	Identifier	entity_6		673	0					
+ANR	772	Identifier	entity_7		673	1					
+ANR	773	PrimaryExpression	'Q'		673	1					
+ANR	774	ReturnStatement	return 0 ;	27:4:1197:1205	673	17	True				
+ANR	775	PrimaryExpression	0		673	0					
+ANR	776	ReturnType	int		673	1					
+ANR	777	Identifier	main		673	2					
+ANR	778	ParameterList			673	3					
+ANR	779	CFGEntryNode	ENTRY		673		True				
+ANR	780	CFGExitNode	EXIT		673		True				
+ANR	781	Symbol	entity_1		673						
+ANR	782	Symbol	* entity_5		673						
+ANR	783	Symbol	entity_3		673						
+ANR	784	Symbol	* entity_3		673						
+ANR	785	Symbol	* entity_1		673						
+ANR	786	Symbol	entity_8		673						
+ANR	787	Symbol	entity_9		673						
+ANR	788	Symbol	entity_4		673						
+ANR	789	Symbol	entity_5		673						
+ANR	790	Symbol	entity_6		673						
+ANR	791	Symbol	entity_7		673						
+ANR	792	Symbol	rand		673						
+ANR	793	Symbol	* entity_9		673						
+ANR	794	Symbol	* entity_6		673						
+ANR	795	Symbol	* entity_7		673						

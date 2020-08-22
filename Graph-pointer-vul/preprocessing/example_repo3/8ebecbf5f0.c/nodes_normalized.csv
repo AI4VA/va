@@ -1,0 +1,81 @@
+381 Function main
+382 FunctionDef main ( )
+383 CompoundStatement 
+384 IdentifierDeclStatement char ID [ 69 ] ;
+385 IdentifierDecl ID [ 69 ]
+386 IdentifierDeclType char [ 69 ]
+387 Identifier ID
+388 PrimaryExpression 69
+389 IdentifierDeclStatement int ID ;
+390 IdentifierDecl ID
+391 IdentifierDeclType int
+392 Identifier ID
+393 IdentifierDeclStatement int ID ;
+394 IdentifierDecl ID
+395 IdentifierDeclType int
+396 Identifier ID
+397 ExpressionStatement ID = rand ( )
+398 AssignmentExpression ID = rand ( )
+399 Identifier ID
+400 CallExpression rand ( )
+401 Callee rand
+402 Identifier rand
+403 ArgumentList 
+404 ExpressionStatement ID = 89
+405 AssignmentExpression ID = 89
+406 Identifier ID
+407 PrimaryExpression 89
+408 IfStatement if ( ID < ID )
+409 Condition ID < ID
+410 RelationalExpression ID < ID
+411 Identifier ID
+412 Identifier ID
+413 CompoundStatement 
+414 ElseStatement else
+415 CompoundStatement 
+416 ExpressionStatement ID = 87
+417 AssignmentExpression ID = 87
+418 Identifier ID
+419 PrimaryExpression 87
+420 IdentifierDeclStatement int ID ;
+421 IdentifierDecl ID
+422 IdentifierDeclType int
+423 Identifier ID
+424 ExpressionStatement ID = 84
+425 AssignmentExpression ID = 84
+426 Identifier ID
+427 PrimaryExpression 84
+428 ExpressionStatement ID [ ID ] = CHAR
+429 AssignmentExpression ID [ ID ] = CHAR
+430 ArrayIndexing ID [ ID ]
+431 Identifier ID
+432 Identifier ID
+433 PrimaryExpression CHAR
+434 IdentifierDeclStatement char ID [ 63 ] ;
+435 IdentifierDecl ID [ 63 ]
+436 IdentifierDeclType char [ 63 ]
+437 Identifier ID
+438 PrimaryExpression 63
+439 ExpressionStatement ID [ ID ] = CHAR
+440 AssignmentExpression ID [ ID ] = CHAR
+441 ArrayIndexing ID [ ID ]
+442 Identifier ID
+443 Identifier ID
+444 PrimaryExpression CHAR
+445 ReturnStatement return 0 ;
+446 PrimaryExpression 0
+447 ReturnType int
+448 Identifier main
+449 ParameterList 
+450 CFGEntryNode CFG-ENTRY
+451 CFGExitNode CFG-EXIT
+452 Symbol rand
+453 Symbol * ID
+454 Symbol ID
+455 Symbol * ID
+456 Symbol ID
+457 Symbol * ID
+458 Symbol ID
+459 Symbol ID
+460 Symbol ID
+461 Symbol * ID

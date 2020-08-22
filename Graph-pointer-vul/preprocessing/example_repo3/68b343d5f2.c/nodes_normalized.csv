@@ -1,0 +1,98 @@
+282 Function main
+283 FunctionDef main ( )
+284 CompoundStatement 
+285 IdentifierDeclStatement char ID [ 24 ] ;
+286 IdentifierDecl ID [ 24 ]
+287 IdentifierDeclType char [ 24 ]
+288 Identifier ID
+289 PrimaryExpression 24
+290 IdentifierDeclStatement int ID ;
+291 IdentifierDecl ID
+292 IdentifierDeclType int
+293 Identifier ID
+294 IdentifierDeclStatement int ID ;
+295 IdentifierDecl ID
+296 IdentifierDeclType int
+297 Identifier ID
+298 ExpressionStatement ID = 61
+299 AssignmentExpression ID = 61
+300 Identifier ID
+301 PrimaryExpression 61
+302 IdentifierDeclStatement int ID ;
+303 IdentifierDecl ID
+304 IdentifierDeclType int
+305 Identifier ID
+306 IdentifierDeclStatement char ID [ 70 ] ;
+307 IdentifierDecl ID [ 70 ]
+308 IdentifierDeclType char [ 70 ]
+309 Identifier ID
+310 PrimaryExpression 70
+311 ExpressionStatement ID = 72
+312 AssignmentExpression ID = 72
+313 Identifier ID
+314 PrimaryExpression 72
+315 ExpressionStatement ID = 56
+316 AssignmentExpression ID = 56
+317 Identifier ID
+318 PrimaryExpression 56
+319 ExpressionStatement ID [ ID ] = CHAR
+320 AssignmentExpression ID [ ID ] = CHAR
+321 ArrayIndexing ID [ ID ]
+322 Identifier ID
+323 Identifier ID
+324 PrimaryExpression CHAR
+325 WhileStatement while ( ID < ID )
+326 Condition ID < ID
+327 RelationalExpression ID < ID
+328 Identifier ID
+329 Identifier ID
+330 CompoundStatement 
+331 ExpressionStatement ID ++
+332 PostIncDecOperationExpression ID ++
+333 Identifier ID
+334 IncDec ++
+335 IdentifierDeclStatement int ID ;
+336 IdentifierDecl ID
+337 IdentifierDeclType int
+338 Identifier ID
+339 ExpressionStatement ID [ ID ] = CHAR
+340 AssignmentExpression ID [ ID ] = CHAR
+341 ArrayIndexing ID [ ID ]
+342 Identifier ID
+343 Identifier ID
+344 PrimaryExpression CHAR
+345 ExpressionStatement ID = 80
+346 AssignmentExpression ID = 80
+347 Identifier ID
+348 PrimaryExpression 80
+349 IdentifierDeclStatement char ID [ 85 ] ;
+350 IdentifierDecl ID [ 85 ]
+351 IdentifierDeclType char [ 85 ]
+352 Identifier ID
+353 PrimaryExpression 85
+354 ExpressionStatement ID [ ID ] = CHAR
+355 AssignmentExpression ID [ ID ] = CHAR
+356 ArrayIndexing ID [ ID ]
+357 Identifier ID
+358 Identifier ID
+359 PrimaryExpression CHAR
+360 ReturnStatement return 0 ;
+361 PrimaryExpression 0
+362 ReturnType int
+363 Identifier main
+364 ParameterList 
+365 CFGEntryNode CFG-ENTRY
+366 CFGExitNode CFG-EXIT
+367 Symbol * ID
+368 Symbol ID
+369 Symbol * ID
+370 Symbol * ID
+371 Symbol ID
+372 Symbol ID
+373 Symbol ID
+374 Symbol ID
+375 Symbol ID
+376 Symbol ID
+377 Symbol * ID
+378 Symbol * ID
+379 Symbol * ID
